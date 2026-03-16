@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Door-to-Door Women Political Network | Voter Data System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f5f7f4;color:#111;font-size:14px}
+:root{--green:#1a7a3c;--dgreen:#0f5226;--lgreen:#e3f2e9;--red:#c62828;--gold:#f5c518;--dark:#111;--gray:#888;--border:#e0e8dd;--bg:#f5f7f4;--white:#fff}
+
+/* ─── HIDDEN PAGES ─── */
+.page{display:none}
+.page.active{display:block}
+
+/* ══════════════════════════════════
+   PUBLIC HOMEPAGE
+══════════════════════════════════ */
+.pub-nav{display:flex;align-items:center;justify-content:space-between;padding:13px 36px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.pub-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark span{color:#fff;font-weight:700;font-size:12px;letter-spacing:-.3px}
+.logo-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--green);line-height:1.25;max-width:190px}
+.pub-nav-links{display:flex;gap:28px}
+.pub-nav-links a{font-size:13px;font-weight:500;color:#555;text-decoration:none;cursor:pointer}
+.pub-nav-links a:hover{color:var(--green)}
+.pub-nav-btn{background:var(--green);color:#fff;border:none;padding:9px 20px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.pub-nav-btn:hover{background:var(--dgreen)}
+
+/* ticker */
+.ticker{background:var(--green);overflow:hidden;padding:9px 0}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 50s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-size:12.5px;font-weight:500;color:#fff;padding:0 26px;border-right:1px solid rgba(255,255,255,.22);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tdot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:450px}
+.hero-l{background:linear-gradient(145deg,#0c4a24,#1a7a3c 55%,#2fa855);padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.13);color:#fff;font-size:11px;font-weight:600;padding:5px 15px;border-radius:20px;text-transform:uppercase;letter-spacing:.9px;margin-bottom:20px;border:1px solid rgba(255,255,255,.2)}
+.hero-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.22;margin-bottom:16px}
+.hero-title em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:32px;max-width:410px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--green);border:none;padding:12px 28px;border-radius:7px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-g{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.42);padding:10px 24px;border-radius:7px;font-size:13.5px;font-weight:500;cursor:pointer;font-family:inherit}
+
+.hero-r{background:#f3f7f1;display:flex;align-items:stretch}
+.login-box{background:#fff;margin:24px;border-radius:14px;padding:32px 28px;flex:1;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--border);box-shadow:0 4px 22px rgba(0,0,0,.06)}
+.login-box h2{font-family:'Playfair Display',serif;font-size:20px;color:#111;margin-bottom:5px}
+.login-box .sub{font-size:12.5px;color:#aaa;margin-bottom:22px}
+.login-tabs{display:flex;gap:0;margin-bottom:22px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.ltab{flex:1;padding:9px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:#fff;color:#888;border:none;font-family:inherit;transition:all .2s}
+.ltab.active{background:var(--green);color:#fff}
+.fld{margin-bottom:15px}
+.fld label{display:block;font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.fld input,.fld select{width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:7px;font-size:13.5px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff}
+.fld input:focus,.fld select:focus{border-color:var(--green)}
+.btn-login{width:100%;background:var(--green);color:#fff;border:none;padding:12px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn-login:hover{background:var(--dgreen)}
+.login-note{font-size:11px;color:#ccc;text-align:center;margin-top:11px}
+
+/* stats bar */
+.statsbar{background:#111;display:grid;grid-template-columns:repeat(5,1fr)}
+.sc{padding:22px 16px;text-align:center;border-right:1px solid #252525}
+.sc:last-child{border-right:none}
+.sc-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.sc-l{font-size:11.5px;color:#888;margin-top:3px}
+
+/* leaders */
+.pub-section{padding:52px 40px}
+.pub-section.gray{background:#f5f7f4}
+.sec-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:var(--green);margin-bottom:7px}
+.sec-h{font-family:'Playfair Display',serif;font-size:26px;color:#111;margin-bottom:8px}
+.sec-sub{font-size:13.5px;color:#999;margin-bottom:36px;max-width:520px}
+.leaders-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.lcard{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.lphoto{height:200px;display:flex;align-items:center;justify-content:center}
+.lp1{background:linear-gradient(160deg,#0c4a24,#1a7a3c)}
+.lp2{background:linear-gradient(160deg,#7f0000,#c62828)}
+.lp3{background:linear-gradient(160deg,#1a1a2e,#3a3a5c)}
+.lavatar{width:88px;height:88px;border-radius:50%;border:4px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:700}
+.linfo{padding:16px 18px}
+.lname{font-weight:600;font-size:14.5px;color:#111;margin-bottom:4px}
+.lrole{font-size:12px;color:#999}
+
+/* gallery */
+.gal-g{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:180px 180px;gap:10px}
+.gi{border-radius:9px;display:flex;align-items:flex-end;padding:14px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.88)}
+.g1{grid-row:1/3;background:linear-gradient(160deg,#0c4a24,#1a7a3c)}
+.g2{background:linear-gradient(160deg,#7f0000,#c62828)}
+.g3{background:linear-gradient(160deg,#e65100,#f57f17)}
+.g4{background:linear-gradient(160deg,#1a237e,#3949ab)}
+.g5{background:linear-gradient(160deg,#1a1a2e,#37474f)}
+
+/* about */
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-body p{font-size:14px;color:#666;line-height:1.8;margin-bottom:14px}
+.feat-g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:#fff;border-radius:10px;padding:20px;border:1px solid var(--border)}
+.ficon{width:38px;height:38px;border-radius:8px;background:var(--lgreen);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.ficon svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fname{font-size:13px;font-weight:600;color:#111;margin-bottom:4px}
+.fdesc{font-size:12px;color:#999;line-height:1.5}
+
+/* lga strip */
+.lga-strip{background:var(--green);padding:32px 40px;text-align:center}
+.lga-strip h3{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:18px}
+.lga-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ltag{background:rgba(255,255,255,.12);color:#fff;font-size:11.5px;font-weight:500;padding:5px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.18)}
+
+/* footer */
+.pub-footer{background:#0c1f12;color:#fff;padding:36px 40px 24px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:28px}
+.flogo{font-family:'Playfair Display',serif;font-size:15px;color:#7cc99a;margin-bottom:8px}
+.fdesc2{font-size:12.5px;color:#666;line-height:1.7}
+.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:12px}
+.fc a{display:block;font-size:12.5px;color:#777;text-decoration:none;margin-bottom:7px;cursor:pointer}
+.fc a:hover{color:#7cc99a}
+.foot-bot{border-top:1px solid #1f3025;padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:11.5px;color:#555}
+.fdom{font-size:11.5px;color:#7cc99a}
+
+/* ══════════════════════════════════
+   DASHBOARD SHELL
+══════════════════════════════════ */
+.shell{display:flex;height:100vh;overflow:hidden}
+
+/* sidebar */
+.sidebar{width:240px;background:#0f1f15;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
+.sb-brand{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo{display:flex;align-items:center;gap:10px}
+.sb-lmark{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-lmark span{color:#fff;font-weight:700;font-size:11px}
+.sb-lname{font-family:'Playfair Display',serif;font-size:12px;color:#7cc99a;line-height:1.3}
+.sb-user{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-uid{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+.sb-uname{font-size:13px;font-weight:600;color:#fff}
+.sb-urole{font-size:11px;color:#7cc99a}
+.sb-nav{flex:1;padding:10px 0}
+.sb-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#444;padding:14px 20px 6px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;transition:background .15s;border-left:3px solid transparent}
+.sb-item:hover{background:rgba(255,255,255,.04)}
+.sb-item.active{background:rgba(26,122,60,.2);border-left-color:var(--green)}
+.sb-item svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.sb-item span{font-size:13px;color:#bbb;font-weight:500}
+.sb-item.active span,.sb-item.active svg{color:#7cc99a}
+.sb-logout{padding:16px 20px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-logout-btn{display:flex;align-items:center;gap:8px;cursor:pointer;color:#888;font-size:12.5px;font-weight:500}
+.sb-logout-btn:hover{color:#e57373}
+.sb-logout-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* main content */
+.main{flex:1;overflow-y:auto;background:var(--bg)}
+.topbar{background:#fff;border-bottom:1px solid var(--border);padding:0 28px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar-title{font-family:'Playfair Display',serif;font-size:18px;color:#111;font-weight:600}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.topbar-badge{background:var(--lgreen);color:var(--green);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
+.topbar-time{font-size:12px;color:#aaa}
+
+/* content panels */
+.panel{display:none;padding:24px 28px}
+.panel.active{display:block}
+
+/* ─── DASHBOARD ─── */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.kpi{background:#fff;border-radius:11px;padding:20px;border:1px solid var(--border)}
+.kpi-label{font-size:11.5px;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.kpi-val{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#111;line-height:1}
+.kpi-sub{font-size:11.5px;color:#bbb;margin-top:5px}
+.kpi.green .kpi-val{color:var(--green)}
+.kpi.gold .kpi-val{color:#c47d00}
+.kpi.red .kpi-val{color:var(--red)}
+.kpi.blue .kpi-val{color:#1565c0}
+
+.dash-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-bottom:20px}
+.card{background:#fff;border-radius:11px;border:1px solid var(--border);overflow:hidden}
+.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-head h3{font-size:14px;font-weight:600;color:#111}
+.card-body{padding:20px}
+
+/* table */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#999;padding:10px 12px;text-align:left;background:#f9faf8;border-bottom:1px solid var(--border)}
+td{font-size:13px;color:#333;padding:11px 12px;border-bottom:1px solid #f0f3ef;vertical-align:middle}
+tr:hover td{background:#f9faf8}
+tr:last-child td{border-bottom:none}
+
+/* badges */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11.5px;font-weight:600}
+.badge.green{background:#e3f2e9;color:#1a7a3c}
+.badge.orange{background:#fff3e0;color:#e65100}
+.badge.red{background:#ffebee;color:#c62828}
+.badge.blue{background:#e3f2fd;color:#1565c0}
+.badge.gray{background:#f5f5f5;color:#666}
+
+/* activity */
+.act-list{display:flex;flex-direction:column;gap:0}
+.act-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0f3ef}
+.act-item:last-child{border-bottom:none}
+.act-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.act-dot svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.adc-g{background:#e3f2e9;color:var(--green)}
+.adc-b{background:#e3f2fd;color:#1565c0}
+.adc-r{background:#ffebee;color:#c62828}
+.adc-o{background:#fff3e0;color:#e65100}
+.act-text{flex:1}
+.act-msg{font-size:13px;color:#333;margin-bottom:2px}
+.act-time{font-size:11.5px;color:#bbb}
+
+/* center progress bars */
+.center-bars{display:flex;flex-direction:column;gap:12px}
+.cb-item{}
+.cb-top{display:flex;justify-content:space-between;margin-bottom:5px}
+.cb-name{font-size:13px;font-weight:500;color:#333}
+.cb-count{font-size:12px;color:#999}
+.cb-bar{height:7px;background:#eee;border-radius:4px;overflow:hidden}
+.cb-fill{height:100%;background:var(--green);border-radius:4px;transition:width .6s ease}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--dgreen)}
+.btn-danger{background:#c62828;color:#fff}
+.btn-danger:hover{background:#a31c1c}
+.btn-outline{background:#fff;color:#444;border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:#999}
+.btn-sm{padding:6px 13px;font-size:12px}
+.btn-icon{padding:7px;border-radius:6px;background:#fff;border:1.5px solid var(--border);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;color:#555;transition:all .2s}
+.btn-icon:hover{border-color:#999}
+.btn-icon svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── FORMS ─── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.form-full{grid-column:1/-1}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-size:11.5px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{padding:10px 13px;border:1.5px solid #ddd;border-radius:7px;font-size:13.5px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green)}
+.form-group textarea{min-height:80px;resize:vertical}
+.req{color:var(--red);margin-left:2px}
+
+/* modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;width:100%;max-width:620px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2}
+.modal-head h3{font-family:'Playfair Display',serif;font-size:18px;color:#111}
+.modal-close{background:none;border:none;cursor:pointer;width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#888;transition:background .15s}
+.modal-close:hover{background:#f5f5f5;color:#111}
+.modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal-body{padding:24px}
+.modal-foot{padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:10px;background:#fff;position:sticky;bottom:0}
+
+/* filters */
+.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.filters input,.filters select{padding:9px 13px;border:1.5px solid #ddd;border-radius:7px;font-size:13px;font-family:inherit;outline:none;background:#fff;min-width:160px}
+.filters input:focus,.filters select:focus{border-color:var(--green)}
+
+/* page header */
+.page-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.page-hdr h2{font-family:'Playfair Display',serif;font-size:22px;color:#111}
+.page-hdr p{font-size:13px;color:#999;margin-top:2px}
+
+/* reports */
+.report-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.rcard{background:#fff;border-radius:11px;padding:22px 20px;border:1px solid var(--border);cursor:pointer;transition:all .2s;text-align:center}
+.rcard:hover{border-color:var(--green);transform:translateY(-2px)}
+.rcard-icon{width:48px;height:48px;border-radius:12px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
+.rcard-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rcard h4{font-size:14px;font-weight:600;color:#111;margin-bottom:4px}
+.rcard p{font-size:12px;color:#aaa}
+.ri-green{background:#e3f2e9;color:var(--green)}
+.ri-blue{background:#e3f2fd;color:#1565c0}
+.ri-orange{background:#fff3e0;color:#e65100}
+.ri-purple{background:#f3e5f5;color:#7b1fa2}
+.report-output{background:#fff;border-radius:11px;border:1px solid var(--border);padding:24px}
+.report-title{font-family:'Playfair Display',serif;font-size:20px;color:#111;margin-bottom:6px}
+.report-meta{font-size:12.5px;color:#aaa;margin-bottom:18px}
+.report-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.rs-item{background:#f9faf8;border-radius:8px;padding:14px 16px;text-align:center}
+.rs-n{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--green)}
+.rs-l{font-size:11.5px;color:#999;margin-top:3px}
+
+/* profile card */
+.profile-grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
+.prof-card{background:#fff;border-radius:11px;border:1px solid var(--border);padding:28px 24px;text-align:center}
+.prof-avatar{width:80px;height:80px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:#fff;font-weight:700;margin:0 auto 14px}
+.prof-name{font-family:'Playfair Display',serif;font-size:18px;color:#111;margin-bottom:4px}
+.prof-role{font-size:12px;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.prof-info-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f0f3ef;font-size:13px}
+.prof-info-row .label{color:#aaa}
+.prof-info-row .value{color:#333;font-weight:500;text-align:right}
+
+/* confirm modal */
+.confirm-icon{width:52px;height:52px;border-radius:50%;background:#ffebee;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.confirm-icon svg{width:24px;height:24px;stroke:#c62828;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.confirm-msg{text-align:center;margin-bottom:8px;font-size:15px;font-weight:500;color:#111}
+.confirm-sub{text-align:center;font-size:13px;color:#aaa;margin-bottom:20px}
+
+/* toast */
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1a1a;color:#fff;padding:13px 22px;border-radius:9px;font-size:13.5px;font-weight:500;z-index:9999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.success{border-left:4px solid var(--green)}
+.toast.error{border-left:4px solid var(--red)}
+
+/* user view page */
+.uview-hdr{background:linear-gradient(135deg,#0f5226,#1a7a3c);padding:32px 28px;display:flex;align-items:center;gap:20px}
+.uview-av{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:#fff;font-weight:700;border:3px solid rgba(255,255,255,.3);flex-shrink:0}
+.uview-name{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:4px}
+.uview-meta{font-size:13px;color:rgba(255,255,255,.72)}
+
+/* voter form status visual */
+.status-choice{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sc-opt{border:2px solid #ddd;border-radius:8px;padding:12px;text-align:center;cursor:pointer;transition:all .2s}
+.sc-opt:hover{border-color:var(--green)}
+.sc-opt.selected{border-color:var(--green);background:var(--lgreen)}
+.sc-opt .sc-icon{font-size:20px;margin-bottom:5px}
+.sc-opt .sc-label{font-size:12.5px;font-weight:600;color:#555}
+.sc-opt.selected .sc-label{color:var(--green)}
+
+/* pagination */
+.pagination{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-top:14px}
+.pag-btn{width:32px;height:32px;border:1.5px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;font-weight:500;color:#555;background:#fff;transition:all .2s}
+.pag-btn:hover,.pag-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.pag-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .statsbar{grid-template-columns:repeat(3,1fr)}
+  .leaders-g{grid-template-columns:1fr 1fr}
+  .about-g{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .dash-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .report-cards{grid-template-columns:repeat(2,1fr)}
+  .profile-grid{grid-template-columns:1fr}
+  .sidebar{width:200px}
+  .pub-nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     PAGE: PUBLIC HOMEPAGE
+══════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <nav class="pub-nav">
+    <div class="pub-logo" onclick="showPage('page-home')">
+      <div class="logo-mark"><span>D2D</span></div>
+      <div class="logo-name">Door-to-Door Women Political Network</div>
+    </div>
+    <div class="pub-nav-links">
+      <a>Home</a><a onclick="document.getElementById('leaders-sec').scrollIntoView({behavior:'smooth'})">Leaders</a>
+      <a onclick="document.getElementById('gallery-sec').scrollIntoView({behavior:'smooth'})">Gallery</a>
+      <a onclick="document.getElementById('about-sec').scrollIntoView({behavior:'smooth'})">About</a>
+    </div>
+    <button class="pub-nav-btn" onclick="document.getElementById('login-sec').scrollIntoView({behavior:'smooth'})">Login to Dashboard</button>
+  </nav>
+
+  <!-- Ticker -->
+  <div class="ticker"><div class="ticker-track" id="ticker-track">
+    <span class="ticker-item"><span class="tdot"></span>Total Voters Recorded: 15,320</span>
+    <span class="ticker-item"><span class="tdot"></span>Registered Today: 420</span>
+    <span class="ticker-item"><span class="tdot"></span>Registered This Week: 2,450</span>
+    <span class="ticker-item"><span class="tdot"></span>Total Registered: 9,841</span>
+    <span class="ticker-item"><span class="tdot"></span>In Progress: 3,217</span>
+    <span class="ticker-item"><span class="tdot"></span>Not Yet Registered: 2,262</span>
+    <span class="ticker-item"><span class="tdot"></span>Gwale Center: 35 voters today</span>
+    <span class="ticker-item"><span class="tdot"></span>Tarauni Center: 42 voters today</span>
+    <span class="ticker-item"><span class="tdot"></span>Nasarawa Center: 61 voters today</span>
+    <span class="ticker-item"><span class="tdot"></span>Kumbotso Center: 29 voters today</span>
+    <span class="ticker-item"><span class="tdot"></span>Fagge Center: 47 voters today</span>
+    <span class="ticker-item"><span class="tdot"></span>44 LGAs Coverage Active</span>
+  </div></div>
+
+  <!-- Hero -->
+  <section class="hero" id="login-sec">
+    <div class="hero-l">
+      <span class="hero-badge">Kano State — 44 Local Government Areas</span>
+      <h1 class="hero-title">Voter Data Collection<br>&amp; <em>Monitoring</em> System</h1>
+      <p class="hero-sub">Empowering women to drive civic participation across all 44 LGAs of Kano State through organized voter outreach and real-time registration monitoring.</p>
+      <div class="hero-btns">
+        <button class="btn-w" onclick="document.getElementById('stats-bar').scrollIntoView({behavior:'smooth'})">View Live Statistics</button>
+        <button class="btn-g" onclick="document.getElementById('about-sec').scrollIntoView({behavior:'smooth'})">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="login-box">
+        <h2>Dashboard Login</h2>
+        <p class="sub">Sign in to access the voter registration system</p>
+        <div class="login-tabs">
+          <button class="ltab active" onclick="setLoginRole('admin',this)">Admin Login</button>
+          <button class="ltab" onclick="setLoginRole('user',this)">Field Officer</button>
+        </div>
+        <div class="fld">
+          <label>Username</label>
+          <input type="text" id="login-user" placeholder="Enter username"/>
+        </div>
+        <div class="fld">
+          <label>Password</label>
+          <input type="password" id="login-pass" placeholder="••••••••"/>
+        </div>
+        <button class="btn-login" onclick="doLogin()">Sign In</button>
+        <div class="login-note" id="login-hint">Admin: admin / admin123 &nbsp;|&nbsp; Officer: officer1 / pass123</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="statsbar" id="stats-bar">
+    <div class="sc"><div class="sc-n">15,320</div><div class="sc-l">Total Recorded</div></div>
+    <div class="sc"><div class="sc-n">9,841</div><div class="sc-l">Fully Registered</div></div>
+    <div class="sc"><div class="sc-n">3,217</div><div class="sc-l">In Progress</div></div>
+    <div class="sc"><div class="sc-n">2,262</div><div class="sc-l">Not Registered</div></div>
+    <div class="sc"><div class="sc-n">44</div><div class="sc-l">LGAs Covered</div></div>
+  </div>
+
+  <!-- Leaders -->
+  <section class="pub-section gray" id="leaders-sec">
+    <div class="sec-tag">Leadership</div>
+    <div class="sec-h">Our Principals &amp; Leaders</div>
+    <p class="sec-sub">The network operates under the distinguished patronage of Kano State's senior officials.</p>
+    <div class="leaders-g">
+      <div class="lcard"><div class="lphoto lp1"><div class="lavatar">HE</div></div>
+        <div class="linfo"><div class="lname">His Excellency, The Governor</div><div class="lrole">Executive Governor, Kano State</div></div>
+      </div>
+      <div class="lcard"><div class="lphoto lp2"><div class="lavatar">HC</div></div>
+        <div class="linfo"><div class="lname">Honourable Commissioner</div><div class="lrole">Commissioner for Women Affairs, Kano State</div></div>
+      </div>
+      <div class="lcard"><div class="lphoto lp3"><div class="lavatar">OL</div></div>
+        <div class="linfo"><div class="lname">Network Leadership</div><div class="lrole">Door-to-Door Women Political Network</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="pub-section" id="gallery-sec">
+    <div class="sec-tag">Gallery</div>
+    <div class="sec-h">Field Activities &amp; Campaigns</div>
+    <p class="sec-sub">Our officers in action across all 44 LGAs of Kano State.</p>
+    <div class="gal-g">
+      <div class="gi g1">Door-to-Door Campaign Drive</div>
+      <div class="gi g2">Community Outreach</div>
+      <div class="gi g3">Registration Drive</div>
+      <div class="gi g4">Women Empowerment Forum</div>
+      <div class="gi g5">LGA Coordination</div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="pub-section gray" id="about-sec">
+    <div class="about-g">
+      <div class="about-body">
+        <div class="sec-tag">About the Network</div>
+        <div class="sec-h">Mobilizing Women Across Kano State</div>
+        <p>The Door-to-Door Women Political Network is a civic initiative ensuring every woman in Kano State is registered and ready to participate fully in the democratic process.</p>
+        <p>Field registration officers are deployed across all 44 LGAs to collect voter information, track registration status, and monitor progress in real time through our digital platform.</p>
+        <p>Administrators can generate reports, monitor center-level activity, and ensure no eligible voter is left behind.</p>
+      </div>
+      <div class="feat-g">
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="fname">Field Registration</div><div class="fdesc">Officers collect voter data door to door across all communities.</div></div>
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="fname">Live Monitoring</div><div class="fdesc">Real-time stats and progress tracking per center and LGA.</div></div>
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="fname">44 LGA Coverage</div><div class="fdesc">Full coverage of all Local Government Areas in Kano State.</div></div>
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><div class="fname">Reports</div><div class="fdesc">Daily, weekly and date-range reports for administrators.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LGA Strip -->
+  <div class="lga-strip">
+    <h3>Active Coverage — All 44 LGAs of Kano State</h3>
+    <div class="lga-tags" id="lga-tags-strip"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="pub-footer">
+    <div class="foot-top">
+      <div><div class="flogo">Door-to-Door Women Political Network</div><div class="fdesc2">A civic initiative mobilizing women across all 44 LGAs of Kano State for full voter participation and democratic engagement.</div></div>
+      <div class="fc"><h4>Quick Links</h4><a onclick="document.getElementById('login-sec').scrollIntoView({behavior:'smooth'})">Login</a><a>About</a><a>Gallery</a><a>Leaders</a></div>
+      <div class="fc"><h4>System</h4><a>Admin Dashboard</a><a>Registration Centers</a><a>Reports</a><a>Support</a></div>
+    </div>
+    <div class="foot-bot"><div class="fcopy">© 2025 Door-to-Door Women Political Network. Kano State, Nigeria.</div><div class="fdom">door-to-door.org.ng</div></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: ADMIN DASHBOARD
+══════════════════════════════════ -->
+<div class="page" id="page-admin">
+  <div class="shell">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sb-brand">
+        <div class="sb-logo">
+          <div class="sb-lmark"><span>D2D</span></div>
+          <div class="sb-lname">Voter Data System</div>
+        </div>
+      </div>
+      <div class="sb-user">
+        <div class="sb-uid">Logged in as</div>
+        <div class="sb-uname">Administrator</div>
+        <div class="sb-urole">Full Access</div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Main</div>
+        <div class="sb-item active" onclick="showPanel('panel-dash',this)">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </div>
+        <div class="sb-item" onclick="showPanel('panel-voters',this)">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Voters</span>
+        </div>
+        <div class="sb-item" onclick="showPanel('panel-users',this)">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Field Officers</span>
+        </div>
+        <div class="sb-item" onclick="showPanel('panel-centers',this)">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Centers</span>
+        </div>
+        <div class="sb-section">Reports</div>
+        <div class="sb-item" onclick="showPanel('panel-reports',this)">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Reports</span>
+        </div>
+        <div class="sb-section">Account</div>
+        <div class="sb-item" onclick="showPanel('panel-profile',this)">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>My Profile</span>
+        </div>
+      </nav>
+      <div class="sb-logout">
+        <div class="sb-logout-btn" onclick="doLogout()">
+          <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title" id="admin-panel-title">Dashboard</div>
+        <div class="topbar-right">
+          <span class="topbar-badge">Admin</span>
+          <span class="topbar-time" id="topbar-time"></span>
+        </div>
+      </div>
+
+      <!-- DASHBOARD PANEL -->
+      <div class="panel active" id="panel-dash">
+        <div class="kpi-grid">
+          <div class="kpi green"><div class="kpi-label">Total Voters</div><div class="kpi-val">15,320</div><div class="kpi-sub">All time records</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val">9,841</div><div class="kpi-sub">64.2% of total</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val">3,217</div><div class="kpi-sub">21.0% of total</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val">2,262</div><div class="kpi-sub">14.8% of total</div></div>
+        </div>
+        <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="kpi"><div class="kpi-label">Recorded Today</div><div class="kpi-val" style="color:#111">420</div></div>
+          <div class="kpi"><div class="kpi-label">Recorded This Week</div><div class="kpi-val" style="color:#111">2,450</div></div>
+          <div class="kpi"><div class="kpi-label">Active Field Officers</div><div class="kpi-val" style="color:#111">24</div></div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showPanel('panel-voters',null)">View All</button></div>
+            <div class="card-body" style="padding:0"><div class="tbl-wrap">
+              <table>
+                <thead><tr><th>Name</th><th>LGA</th><th>Center</th><th>Status</th><th>Date</th></tr></thead>
+                <tbody id="dash-recent-voters"></tbody>
+              </table>
+            </div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Recent Activity</h3></div>
+            <div class="card-body" style="padding:0 20px"><div class="act-list" id="dash-activity"></div></div>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>Top Centers Today</h3></div>
+            <div class="card-body"><div class="center-bars" id="center-bars"></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Registration Status Breakdown</h3></div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:14px;padding:8px 0">
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;color:#555">Registered</span><span style="font-size:13px;font-weight:600;color:var(--green)">9,841 (64.2%)</span></div>
+                  <div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:64.2%;background:var(--green);border-radius:5px"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;color:#555">In Progress</span><span style="font-size:13px;font-weight:600;color:#c47d00">3,217 (21.0%)</span></div>
+                  <div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:21%;background:#f5a623;border-radius:5px"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;color:#555">Not Registered</span><span style="font-size:13px;font-weight:600;color:var(--red)">2,262 (14.8%)</span></div>
+                  <div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:14.8%;background:#c62828;border-radius:5px"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOTERS PANEL -->
+      <div class="panel" id="panel-voters">
+        <div class="page-hdr">
+          <div><h2>Voter Records</h2><p>All collected voter data across all centers</p></div>
+          <button class="btn btn-primary" onclick="openVoterModal()">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Register Voter
+          </button>
+        </div>
+        <div class="filters">
+          <input type="text" id="voter-search" placeholder="Search name, VIN, phone..." oninput="renderVotersTable()"/>
+          <select id="voter-lga-filter" onchange="renderVotersTable()"><option value="">All LGAs</option></select>
+          <select id="voter-status-filter" onchange="renderVotersTable()">
+            <option value="">All Status</option>
+            <option>Registered</option><option>In Progress</option><option>Not Registered</option>
+          </select>
+          <select id="voter-center-filter" onchange="renderVotersTable()"><option value="">All Centers</option></select>
+          <button class="btn btn-outline btn-sm" onclick="exportCSV()">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Polling Unit</th><th>Center</th><th>VIN</th><th>Status</th><th>Recorded</th><th>Actions</th></tr></thead>
+              <tbody id="voters-tbody"></tbody>
+            </table>
+          </div>
+          <div style="padding:12px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12.5px;color:#aaa" id="voters-count-label"></span>
+            <div class="pagination" id="voters-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USERS PANEL -->
+      <div class="panel" id="panel-users">
+        <div class="page-hdr">
+          <div><h2>Field Officers</h2><p>Manage field registration officers</p></div>
+          <button class="btn btn-primary" onclick="openUserModal()">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Officer
+          </button>
+        </div>
+        <div class="filters">
+          <input type="text" id="user-search" placeholder="Search officers..." oninput="renderUsersTable()"/>
+          <select id="user-lga-filter" onchange="renderUsersTable()"><option value="">All LGAs</option></select>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Name</th><th>Username</th><th>Phone</th><th>LGA</th><th>Center</th><th>Voters Recorded</th><th>Created</th><th>Actions</th></tr></thead>
+              <tbody id="users-tbody"></tbody>
+            </table>
+          </div>
+          <div style="padding:12px 16px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="users-count-label"></span></div>
+        </div>
+      </div>
+
+      <!-- CENTERS PANEL -->
+      <div class="panel" id="panel-centers">
+        <div class="page-hdr">
+          <div><h2>Registration Centers</h2><p>Manage centers across all 44 LGAs</p></div>
+          <button class="btn btn-primary" onclick="openCenterModal()">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Center
+          </button>
+        </div>
+        <div class="filters">
+          <input type="text" id="center-search" placeholder="Search centers..." oninput="renderCentersTable()"/>
+          <select id="center-lga-filter" onchange="renderCentersTable()"><option value="">All LGAs</option></select>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Voters</th><th>Today</th><th>Officers</th><th>Created</th><th>Actions</th></tr></thead>
+              <tbody id="centers-tbody"></tbody>
+            </table>
+          </div>
+          <div style="padding:12px 16px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="centers-count-label"></span></div>
+        </div>
+      </div>
+
+      <!-- REPORTS PANEL -->
+      <div class="panel" id="panel-reports">
+        <div class="page-hdr"><div><h2>Reports</h2><p>Generate and download registration reports</p></div></div>
+        <div class="report-cards">
+          <div class="rcard" onclick="genReport('daily')">
+            <div class="rcard-icon ri-green"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <h4>Daily Report</h4><p>Today's registrations</p>
+          </div>
+          <div class="rcard" onclick="genReport('weekly')">
+            <div class="rcard-icon ri-blue"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <h4>Weekly Report</h4><p>This week's registrations</p>
+          </div>
+          <div class="rcard" onclick="genReport('range')">
+            <div class="rcard-icon ri-orange"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+            <h4>Date Range</h4><p>Custom date range</p>
+          </div>
+          <div class="rcard" onclick="genReport('center')">
+            <div class="rcard-icon ri-purple"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <h4>Center Report</h4><p>Per-center statistics</p>
+          </div>
+        </div>
+
+        <!-- Range inputs -->
+        <div id="range-inputs" style="display:none;background:#fff;padding:20px;border-radius:11px;border:1px solid var(--border);margin-bottom:16px">
+          <div class="form-grid">
+            <div class="form-group"><label>Start Date</label><input type="date" id="rpt-start"/></div>
+            <div class="form-group"><label>End Date</label><input type="date" id="rpt-end"/></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:12px" onclick="genReport('range-go')">Generate Report</button>
+        </div>
+        <div id="center-inputs" style="display:none;background:#fff;padding:20px;border-radius:11px;border:1px solid var(--border);margin-bottom:16px">
+          <div class="form-grid">
+            <div class="form-group"><label>Select Center</label><select id="rpt-center"><option value="">-- Select Center --</option></select></div>
+            <div class="form-group"><label>Period</label><select id="rpt-period"><option value="today">Today</option><option value="week">This Week</option><option value="all">All Time</option></select></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:12px" onclick="genReport('center-go')">Generate Report</button>
+        </div>
+
+        <div id="report-output-area" style="display:none" class="report-output">
+          <div class="report-title" id="rpt-title">Daily Report</div>
+          <div class="report-meta" id="rpt-meta"></div>
+          <div class="report-sum" id="rpt-sum"></div>
+          <div class="tbl-wrap">
+            <table><thead><tr><th>#</th><th>Name</th><th>Gender</th><th>LGA</th><th>Ward</th><th>Polling Unit</th><th>Center</th><th>Status</th><th>VIN</th><th>Date</th></tr></thead>
+            <tbody id="rpt-tbody"></tbody></table>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px">
+            <button class="btn btn-outline btn-sm" onclick="printReport()">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="exportCSV()">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE PANEL -->
+      <div class="panel" id="panel-profile">
+        <div class="page-hdr"><div><h2>My Profile</h2><p>Administrator account details</p></div></div>
+        <div class="profile-grid">
+          <div class="prof-card">
+            <div class="prof-avatar">AD</div>
+            <div class="prof-name">System Administrator</div>
+            <div class="prof-role">Administrator</div>
+            <div style="width:100%;text-align:left">
+              <div class="prof-info-row"><span class="label">Username</span><span class="value">admin</span></div>
+              <div class="prof-info-row"><span class="label">Phone</span><span class="value">08012345678</span></div>
+              <div class="prof-info-row"><span class="label">Role</span><span class="value">Full Access</span></div>
+              <div class="prof-info-row"><span class="label">Last Login</span><span class="value">Today, 08:30 AM</span></div>
+              <div class="prof-info-row"><span class="label">Domain</span><span class="value">door-to-door.org.ng</span></div>
+            </div>
+          </div>
+          <div class="card"><div class="card-head"><h3>Change Password</h3></div>
+            <div class="card-body">
+              <div class="form-grid">
+                <div class="form-group form-full"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+                <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
+                <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••"/></div>
+              </div>
+              <button class="btn btn-primary" style="margin-top:8px" onclick="showToast('Password updated successfully','success')">Update Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+  </div><!-- /shell -->
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: USER (FIELD OFFICER) DASHBOARD
+══════════════════════════════════ -->
+<div class="page" id="page-user">
+  <div class="shell">
+    <div class="sidebar">
+      <div class="sb-brand">
+        <div class="sb-logo">
+          <div class="sb-lmark"><span>D2D</span></div>
+          <div class="sb-lname">Voter Data System</div>
+        </div>
+      </div>
+      <div class="sb-user">
+        <div class="sb-uid">Logged in as</div>
+        <div class="sb-uname" id="user-sb-name">Officer</div>
+        <div class="sb-urole" id="user-sb-lga">Field Officer</div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Main</div>
+        <div class="sb-item active" onclick="showUserPanel('upanel-dash',this)">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </div>
+        <div class="sb-item" onclick="showUserPanel('upanel-voters',this)">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          <span>My Voters</span>
+        </div>
+        <div class="sb-item" onclick="showUserPanel('upanel-register',this)">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span>Register Voter</span>
+        </div>
+        <div class="sb-section">Account</div>
+        <div class="sb-item" onclick="showUserPanel('upanel-profile',this)">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>My Profile</span>
+        </div>
+      </nav>
+      <div class="sb-logout">
+        <div class="sb-logout-btn" onclick="doLogout()">
+          <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title" id="user-panel-title">Dashboard</div>
+        <div class="topbar-right">
+          <span class="topbar-badge" style="background:#e3f2fd;color:#1565c0">Field Officer</span>
+          <span class="topbar-time" id="topbar-time2"></span>
+        </div>
+      </div>
+
+      <!-- USER DASHBOARD -->
+      <div class="panel active" id="upanel-dash">
+        <div class="uview-hdr">
+          <div class="uview-av" id="user-av">O1</div>
+          <div>
+            <div class="uview-name" id="user-dash-name">Field Officer</div>
+            <div class="uview-meta" id="user-dash-meta">Center · LGA</div>
+          </div>
+        </div>
+        <div style="height:14px"></div>
+        <div class="kpi-grid">
+          <div class="kpi green"><div class="kpi-label">My Total</div><div class="kpi-val" id="u-total">0</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val" id="u-reg">0</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val" id="u-prog">0</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val" id="u-notreg">0</div></div>
+        </div>
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>My Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showUserPanel('upanel-voters',null)">View All</button></div>
+            <div class="card-body" style="padding:0"><div class="tbl-wrap">
+              <table><thead><tr><th>Name</th><th>Ward</th><th>Polling Unit</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="user-recent-tbody"></tbody></table>
+            </div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Quick Actions</h3></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="showUserPanel('upanel-register',null)">
+                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Register New Voter
+              </button>
+              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="showUserPanel('upanel-voters',null)">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                View All My Voters
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER MY VOTERS -->
+      <div class="panel" id="upanel-voters">
+        <div class="page-hdr">
+          <div><h2>My Voters</h2><p>Voters registered by you</p></div>
+          <button class="btn btn-primary" onclick="showUserPanel('upanel-register',null)">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Register Voter
+          </button>
+        </div>
+        <div class="filters">
+          <input type="text" id="u-voter-search" placeholder="Search..." oninput="renderUserVotersTable()"/>
+          <select id="u-voter-status-filter" onchange="renderUserVotersTable()">
+            <option value="">All Status</option>
+            <option>Registered</option><option>In Progress</option><option>Not Registered</option>
+          </select>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>Ward</th><th>Polling Unit</th><th>VIN</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="u-voters-tbody"></tbody></table>
+          </div>
+          <div style="padding:12px 16px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="u-voters-count-label"></span></div>
+        </div>
+      </div>
+
+      <!-- REGISTER VOTER PANEL -->
+      <div class="panel" id="upanel-register">
+        <div class="page-hdr"><div><h2>Register Voter</h2><p>Fill in the voter's information below</p></div></div>
+        <div class="card">
+          <div class="card-head"><h3>Voter Information Form</h3></div>
+          <div class="card-body">
+            <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Personal Information</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="rv-name" placeholder="Enter full name"/></div>
+              <div class="form-group"><label>Gender <span class="req">*</span></label>
+                <select id="rv-gender"><option value="">Select gender</option><option>Female</option><option>Male</option></select>
+              </div>
+              <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="rv-dob"/></div>
+              <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="rv-phone" placeholder="08012345678"/></div>
+              <div class="form-group form-full"><label>Address</label><input type="text" id="rv-address" placeholder="House number, street, area"/></div>
+            </div>
+            <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Location Information</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>Local Government Area <span class="req">*</span></label>
+                <select id="rv-lga" onchange="updateWards('rv-lga','rv-ward');updatePollingUnits()"><option value="">Select LGA</option></select>
+              </div>
+              <div class="form-group"><label>Ward <span class="req">*</span></label>
+                <select id="rv-ward" onchange="updatePollingUnits()"><option value="">Select Ward</option></select>
+              </div>
+              <div class="form-group"><label>Polling Unit <span class="req">*</span></label>
+                <select id="rv-pu"><option value="">Select Polling Unit</option></select>
+              </div>
+              <div class="form-group"><label>Registration Center <span class="req">*</span></label>
+                <select id="rv-center"><option value="">Select Center</option></select>
+              </div>
+            </div>
+            <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Voter Registration Details</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>VIN (Optional)</label><input type="text" id="rv-vin" placeholder="Leave blank if not yet registered"/></div>
+              <div class="form-group"><label>Registration Status <span class="req">*</span></label>
+                <select id="rv-status"><option value="">Select status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:8px">
+              <button class="btn btn-primary" onclick="saveVoter()">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                Save Voter Record
+              </button>
+              <button class="btn btn-outline" onclick="clearVoterForm()">Clear Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER PROFILE -->
+      <div class="panel" id="upanel-profile">
+        <div class="page-hdr"><div><h2>My Profile</h2><p>Your account details</p></div></div>
+        <div class="profile-grid">
+          <div class="prof-card">
+            <div class="prof-avatar" id="u-prof-av">O1</div>
+            <div class="prof-name" id="u-prof-name">Officer</div>
+            <div class="prof-role">Field Registration Officer</div>
+            <div style="width:100%;text-align:left">
+              <div class="prof-info-row"><span class="label">Username</span><span class="value" id="u-prof-uname">officer1</span></div>
+              <div class="prof-info-row"><span class="label">Phone</span><span class="value" id="u-prof-phone">-</span></div>
+              <div class="prof-info-row"><span class="label">LGA</span><span class="value" id="u-prof-lga">-</span></div>
+              <div class="prof-info-row"><span class="label">Center</span><span class="value" id="u-prof-center">-</span></div>
+              <div class="prof-info-row"><span class="label">Total Voters</span><span class="value" id="u-prof-total">-</span></div>
+            </div>
+          </div>
+          <div class="card"><div class="card-head"><h3>Change Password</h3></div>
+            <div class="card-body">
+              <div class="form-grid">
+                <div class="form-group form-full"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+                <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
+                <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••"/></div>
+              </div>
+              <button class="btn btn-primary" style="margin-top:8px" onclick="showToast('Password updated successfully','success')">Update Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     MODALS
+══════════════════════════════════ -->
+
+<!-- Voter Modal -->
+<div class="modal-overlay" id="voter-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="voter-modal-title">Register Voter</h3>
+      <button class="modal-close" onclick="closeModal('voter-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:12px">Personal Information</div>
+      <div class="form-grid" style="margin-bottom:14px">
+        <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="m-name"/></div>
+        <div class="form-group"><label>Gender <span class="req">*</span></label><select id="m-gender"><option value="">Select</option><option>Female</option><option>Male</option></select></div>
+        <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="m-dob"/></div>
+        <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" id="m-phone" placeholder="08012345678"/></div>
+        <div class="form-group form-full"><label>Address</label><input type="text" id="m-address"/></div>
+      </div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:12px">Location</div>
+      <div class="form-grid" style="margin-bottom:14px">
+        <div class="form-group"><label>LGA <span class="req">*</span></label><select id="m-lga" onchange="updateWards('m-lga','m-ward')"><option value="">Select LGA</option></select></div>
+        <div class="form-group"><label>Ward <span class="req">*</span></label><select id="m-ward"><option value="">Select Ward</option></select></div>
+        <div class="form-group"><label>Polling Unit <span class="req">*</span></label><input type="text" id="m-pu" placeholder="e.g. Ungogo Primary School"/></div>
+        <div class="form-group"><label>Center <span class="req">*</span></label><select id="m-center"><option value="">Select Center</option></select></div>
+      </div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:12px">Registration Details</div>
+      <div class="form-grid">
+        <div class="form-group"><label>VIN (Optional)</label><input type="text" id="m-vin" placeholder="Leave blank if not registered"/></div>
+        <div class="form-group"><label>Status <span class="req">*</span></label><select id="m-status"><option value="">Select status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('voter-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveVoterModal()">Save Record</button>
+    </div>
+  </div>
+</div>
+
+<!-- User Modal -->
+<div class="modal-overlay" id="user-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="user-modal-title">Add Field Officer</h3>
+      <button class="modal-close" onclick="closeModal('user-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="u-name"/></div>
+        <div class="form-group"><label>Username <span class="req">*</span></label><input type="text" id="u-uname"/></div>
+        <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" id="u-phone" placeholder="08012345678"/></div>
+        <div class="form-group"><label>Password <span class="req">*</span></label><input type="password" id="u-pass" placeholder="Min 6 characters"/></div>
+        <div class="form-group"><label>LGA <span class="req">*</span></label><select id="u-lga" onchange="updateCentersForUser()"><option value="">Select LGA</option></select></div>
+        <div class="form-group"><label>Center <span class="req">*</span></label><select id="u-center"><option value="">Select Center</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('user-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveUser()">Create Officer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Center Modal -->
+<div class="modal-overlay" id="center-modal">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-head">
+      <h3 id="center-modal-title">Add Registration Center</h3>
+      <button class="modal-close" onclick="closeModal('center-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-full"><label>Center Name <span class="req">*</span></label><input type="text" id="c-name" placeholder="e.g. Gwale Primary School Center"/></div>
+        <div class="form-group form-full"><label>LGA <span class="req">*</span></label><select id="c-lga"><option value="">Select LGA</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('center-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveCenter()">Add Center</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-body" style="padding:32px 28px;text-align:center">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg></div>
+      <div class="confirm-msg" id="confirm-msg">Delete this record?</div>
+      <div class="confirm-sub" id="confirm-sub">This action cannot be undone.</div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:8px">
+        <button class="btn btn-outline" onclick="closeModal('confirm-modal')">Cancel</button>
+        <button class="btn btn-danger" id="confirm-ok-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════
+// DATA LAYER
+// ══════════════════════════════════
+
+const KANO_DATA = {
+  "Ajingi":["Ajingi","Bagaruwa","Bunkure","Dabi","Dan Alhaji","Gano","Gayawa","Gurjiya","Kafi","Kibiya","Kiyawa","Kwakwachi","Lalo","Limawa","Maikum","Riruwai","Turawa"],
+  "Albasu":["Albasu","Butu","Dan Makau","Dankama","Gadon Kaya","Gwandutse","Kwanar Gwari","Maitsidau","Tsakuwa","Tsohuwar Kasuwa","Ungogo"],
+  "Bagwai":["Bagwai","Bunkure","Danja","Dawaki","Gama","Kandawa","Kayarda","Kuyan Bana","Kwachunu","Tsallen Kura","Zawaciki"],
+  "Bebeji":["Bebeji","Dan Buram","Fagoji","Gama","Gwarmai","Kaura","Kofa","Kwanar Rimi","Nakura","Rangi","Rigachikun"],
+  "Bichi":["Bichi","Dan Hausa","Dawaki ta Kudu","Doka","Galadinmawa","Garunmallam","Gora","Kausani","Kebba","Kurmawa","Nahuta","Rarambawa","Shanono"],
+  "Bunkure":["Bunkure","Dan Alhaji","Dangi","Fanisau","Gadon Kaya","Karfi","Kaura Bature","Kerawa","Kofar Gari","Kwachunu","Wurno"],
+  "Dala":["Dala","Dan Ayako","Dawaki","Dorayi","Fagge-D2","Giginyu","Kabuwaya","Koki","Sharada","Sheshe","Zango"],
+  "Dambatta":["Babura","Dambatta Central","Dansoshiya","Girar","Kauyen Mata","Kiyawa","Kwakwachi","Makwaro","Riruwai","Turawa","Yalwan Daura"],
+  "Dawakin Kudu":["Chiromawa","Dawakin Kudu","Gadon Kaya","Galadimawa","Gama","Karfi","Kausani","Kofar Ruwa","Kunci","Kurmawa","Nisar","Waraka"],
+  "Dawakin Tofa":["Dawakin Tofa","Dan Buram","Dan Hausa","Doguwa","Fanisau","Gabasawa","Kauye","Kuyan Bana","Rimin Gado","Wudil","Yan Lemo"],
+  "Doguwa":["Doguwa","Garko","Gaya","Gezawa","Kibiya","Kiru","Kura","Kunchi","Madobi","Tsanyawa","Wudil"],
+  "Fagge":["Fagge A","Fagge B","Fagge C","Fagge D1","Fagge D2","Madabo","Naibawa","Sheka","Tudun Murtala","Tudun Waziri","Zango"],
+  "Gabasawa":["Danda","Gabasawa","Garafuni","Kaura","Kayarda","Kofa","Rimin Gado","Tsalle","Tsangaya","Zakirai","Zongon Bako"],
+  "Garko":["Ajumawa","Badume","Danzaki","Garko","Garun Malam","Gulu","Ja'en","Kiri","Kofar Arewa","Kofa Kudu","Tudunwada"],
+  "Garun Mallam":["Duse","Garun Mallam","Gundutse","Kabomo","Karofi","Kauyen Faru","Kawaji","Kurba","Mahuta","Tamburawa","Tumbau"],
+  "Gaya":["Dawakiji","Gaya","Gwarzo","Kada","Kauyen Yari","Kofa","Lautai","Makoda","Pata","Tsakuwa","Yankaba"],
+  "Gezawa":["Dayen Tara","Gadon Kaya","Gangara","Gezawa","Kadawa","Kambaza","Kausani","Kofa","Kunci","Rahama","Tukuntawa"],
+  "Gwale":["Dalla","Dakata","Dan Agundi","Diso","Fagge-D1","Gwagwarwa","Gwale","Kofar Ruwa","Kofar Wambai","Rijiyar Lemo","Shamaki"],
+  "Gwarzo":["Dan Mahe","Danyaro","Gwarzo","Karaura","Kausani","Kawaji","Maimako","Makoda","Rimin Gado","Tarauni","Tsangaya"],
+  "Kabo":["Bichi","Doka","Gadon Kaya","Gama","Kandawa","Kabo","Kayarda","Kerawa","Kibiya","Kiru","Makoda"],
+  "Kano Municipal":["Bompai","Dala","Dan Alhaji","Dan Ladi","Diso","Fagge","Gwale","Kabuga","Kofar Mata","Kofar Naisa","Kofar Wambai","Kumbotso","Kurna","Nasarawa","Panshekara","Rijiyar Lemo","Sharada","Sheka","Tarauni","Zango"],
+  "Karaye":["Dangora","Gazama","Gimi","Karaye","Kausani","Kawaji","Maimako","Makoda","Rimin Gado","Tsangaya","Wasai"],
+  "Kibiya":["Barde","Dakata","Dan Kudi","Fanisau","Gadon Kaya","Kausani","Kibiya","Kofar Gari","Kurmawa","Makoda","Tsatsaye"],
+  "Kiru":["Banye","Dankama","Dan Ladi","Kausani","Kiru","Kofa","Kurmi","Makoda","Rogo","Tofa","Tsangaya"],
+  "Kumbotso":["Chiranchi","Danbare","Dawakin Tofa","Dorayi","Kumbotso","Kurna","Kwakwachi","Naibawa","Panshekara","Sharada","Tsakuwa","Unguwar Rimi"],
+  "Kunchi":["Dabi","Dan Marna","Danjibga","Gadon Kaya","Gunduwawa","Kahuta","Kofar Gari","Kunchi","Kwarbai","Mashi","Tuge"],
+  "Kura":["Dan Makau","Dangi","Gama","Gundutse","Kura","Kwachunu","Nakura","Rogo","Tarauni","Tuge","Wudil"],
+  "Madobi":["Bunkure","Danmaliki","Dauda","Gadon Kaya","Kadawa","Kaura","Kofar Ruwa","Kuyan Bana","Madobi","Nakura","Tsallen Kura"],
+  "Makoda":["Dabi","Fanisau","Gadon Kaya","Garafuni","Kausani","Makoda","Matsari","Rimin Gado","Sabuwar Gandu","Tsangaya","Yolawa"],
+  "Minjibir":["Galadima","Garun Malam","Kandawa","Karofi","Kawaji","Kofar Gari","Kunci","Minjibir","Nakura","Shanono","Zugachi"],
+  "Nasarawa":["Abakpa","Dan Agundi","Diso","Farm Centre","Kabuga","Kawaji","Nasarawa Timbo","Nasarawa Gida","Rijiyar Zaki","Sabuwar Gandu","Tudun Murtala","Unguwar Kanawa"],
+  "Rano":["Banki","Barde","Dankama","Dan Ladi","Gadon Kaya","Rano","Rurum","Sanka","Sudawa","Tsangaya","Waginan"],
+  "Rimin Gado":["Dabi","Dan Hausa","Dankama","Gabasawa","Gadon Kaya","Kadawa","Kausani","Kofar Gari","Nahuta","Rimin Gado","Tsalle"],
+  "Rogo":["Baranda","Dankama","Fanisau","Gadon Kaya","Kadawa","Kausani","Kofa","Kunci","Mashi","Rogo","Tsangaya"],
+  "Shanono":["Bichi","Doka","Dorayi","Galadinmawa","Garun Malam","Gora","Kausani","Kofa","Nasarawa","Shanono","Tsalle"],
+  "Sumaila":["Dankama","Gadon Kaya","Garafuni","Kausani","Kawaji","Kofa","Minjibir","Rimin Gado","Sumaila","Tsangaya","Wudil"],
+  "Takai":["Barde","Dan Kudi","Dankama","Fanisau","Gadon Kaya","Kausani","Kofa","Kunci","Mashi","Takai","Tsangaya"],
+  "Tarauni":["Bachirawa","Diso","Fagge D1","Galadimawa","Giginyu","Gobirawa","Kabuga","Kawaji","Kofar Kaura","Kofar Mata","Kofar Wambai","Sheka","Tarauni"],
+  "Tofa":["Bunkure","Dabi","Dan Marna","Fanisau","Gadon Kaya","Kandawa","Kausani","Kofa","Kunci","Tofa","Tsangaya"],
+  "Tsanyawa":["Bichi","Dan Hausa","Gabasawa","Gadon Kaya","Kadawa","Kausani","Kofa","Kunci","Mashi","Tsanyawa","Yolawa"],
+  "Tudun Wada":["Barde","Dankama","Fanisau","Gadon Kaya","Kaura","Kofar Gari","Kunci","Makoda","Rimin Gado","Tudun Wada","Wudil"],
+  "Ungogo":["Bagwai","Dan Hausa","Doka","Fanisau","Gadon Kaya","Garun Malam","Kausani","Kofar Gari","Kofa","Ungogo","Yanzu"],
+  "Warawa":["Barde","Dan Kudi","Fanisau","Gadon Kaya","Kausani","Kofa","Kunci","Makoda","Rimin Gado","Tsangaya","Warawa"],
+  "Wudil":["Barde","Dan Kudi","Dangi","Fanisau","Gadon Kaya","Kausani","Kofa","Kunci","Makoda","Tsangaya","Wudil"]
+};
+
+const LGAS = Object.keys(KANO_DATA).sort();
+
+// Mock users
+let USERS = [
+  {id:1,name:"Hajiya Amina Sani",username:"officer1",phone:"08034567890",password:"pass123",lga:"Gwale",center:"Gwale Main Center",created:"2025-01-10"},
+  {id:2,name:"Hajiya Fatima Musa",username:"officer2",phone:"08045678901",password:"pass123",lga:"Tarauni",center:"Tarauni Central",created:"2025-01-11"},
+  {id:3,name:"Aisha Bello",username:"officer3",phone:"08056789012",password:"pass123",lga:"Nasarawa",center:"Nasarawa Govt School",created:"2025-01-12"},
+  {id:4,name:"Maryam Yusuf",username:"officer4",phone:"08067890123",password:"pass123",lga:"Kumbotso",center:"Kumbotso Center",created:"2025-01-13"},
+  {id:5,name:"Zainab Ibrahim",username:"officer5",phone:"08078901234",password:"pass123",lga:"Fagge",center:"Fagge Community Hall",created:"2025-01-14"},
+  {id:6,name:"Hauwa Garba",username:"officer6",phone:"08089012345",password:"pass123",lga:"Dala",center:"Dala Town Center",created:"2025-01-15"},
+  {id:7,name:"Rukayya Abdullahi",username:"officer7",phone:"08090123456",password:"pass123",lga:"Kano Municipal",center:"Kano Municipal HQ",created:"2025-01-16"},
+  {id:8,name:"Safiya Umar",username:"officer8",phone:"08001234567",password:"pass123",lga:"Ungogo",center:"Ungogo Center",created:"2025-01-17"}
+];
+
+// Mock centers
+let CENTERS = [
+  {id:1,name:"Gwale Main Center",lga:"Gwale",created:"2025-01-05"},
+  {id:2,name:"Tarauni Central",lga:"Tarauni",created:"2025-01-05"},
+  {id:3,name:"Nasarawa Govt School",lga:"Nasarawa",created:"2025-01-06"},
+  {id:4,name:"Kumbotso Center",lga:"Kumbotso",created:"2025-01-06"},
+  {id:5,name:"Fagge Community Hall",lga:"Fagge",created:"2025-01-07"},
+  {id:6,name:"Dala Town Center",lga:"Dala",created:"2025-01-07"},
+  {id:7,name:"Kano Municipal HQ",lga:"Kano Municipal",created:"2025-01-08"},
+  {id:8,name:"Ungogo Center",lga:"Ungogo",created:"2025-01-08"},
+  {id:9,name:"Bebeji Community Hall",lga:"Bebeji",created:"2025-01-09"},
+  {id:10,name:"Karaye Registration Point",lga:"Karaye",created:"2025-01-09"},
+  {id:11,name:"Gwarzo Town Hall",lga:"Gwarzo",created:"2025-01-10"},
+  {id:12,name:"Rano Primary School",lga:"Rano",created:"2025-01-10"}
+];
+
+const STATUSES = ["Registered","In Progress","Not Registered"];
+const FEMALE_NAMES = ["Amina","Fatima","Aisha","Maryam","Zainab","Hauwa","Rukayya","Safiya","Ramlatu","Bilkisu","Hadiza","Khadija","Asma'u","Ramatu","Nana","Yetunde","Falmata","Jamila","Binta","Ladidi"];
+const MALE_NAMES = ["Usman","Ibrahim","Musa","Suleiman","Abdullahi","Kabiru","Haruna","Lawal","Bello","Ahmad","Yusuf","Rabiu","Sani","Nasiru","Tahir","Idris","Bashir","Auwal","Isa","Hamza"];
+const SURNAMES = ["Sani","Musa","Ibrahim","Abdullahi","Garba","Umar","Bello","Yusuf","Lawal","Danjuma","Aliyu","Haruna","Kabiru","Idris","Abubakar","Isa","Suleiman","Aminu","Rabiu","Nasiru"];
+
+function randItem(arr){return arr[Math.floor(Math.random()*arr.length)]}
+function randInt(a,b){return Math.floor(Math.random()*(b-a+1))+a}
+function pad(n){return String(n).padStart(2,'0')}
+function fmtDate(d){return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}
+function daysAgo(n){const d=new Date();d.setDate(d.getDate()-n);return d}
+
+// Generate 80 voters
+let VOTERS = [];
+let vid = 1;
+for(let i=0;i<80;i++){
+  const gender = Math.random()>.3?'Female':'Male';
+  const fname = gender==='Female'?randItem(FEMALE_NAMES):randItem(MALE_NAMES);
+  const lga = randItem(LGAS);
+  const wards = KANO_DATA[lga];
+  const ward = randItem(wards);
+  const center = randItem(CENTERS.filter(c=>c.lga===lga)||CENTERS);
+  const status = randItem(STATUSES);
+  const officer = randItem(USERS);
+  const dob = new Date(randInt(1960,2000),randInt(0,11),randInt(1,28));
+  const recordedDate = daysAgo(randInt(0,60));
+  VOTERS.push({
+    id: vid++,
+    name: fname+' '+randItem(SURNAMES),
+    gender,
+    dob: dob.toISOString().split('T')[0],
+    phone: '080'+randInt(10000000,99999999),
+    address: 'No '+randInt(1,200)+', '+ward+' Area',
+    lga, ward,
+    pu: ward+' Primary School',
+    center: center?center.name:CENTERS[0].name,
+    vin: status==='Registered'?'KN'+randInt(100000,999999)+'A':'',
+    status,
+    officerId: officer.id,
+    recorded: recordedDate.toISOString().split('T')[0]
+  });
+}
+
+let currentUser = null;
+let currentRole = 'admin';
+let editingVoterId = null;
+let editingUserId = null;
+let editingCenterId = null;
+let voterPage = 1;
+const PER_PAGE = 15;
+
+// ══════════════════════════════════
+// AUTH
+// ══════════════════════════════════
+let loginRole = 'admin';
+function setLoginRole(role,btn){
+  loginRole=role;
+  document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('login-hint').textContent = role==='admin'?'Admin: admin / admin123':'Officer: officer1 / pass123';
+}
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value.trim();
+  if(!u||!p){showToast('Enter username and password','error');return}
+  if(loginRole==='admin'){
+    if(u==='admin'&&p==='admin123'){currentRole='admin';loadAdminDash();showPage('page-admin');showToast('Welcome, Administrator','success')}
+    else{showToast('Invalid admin credentials','error')}
+  } else {
+    const officer=USERS.find(x=>x.username===u&&x.password===p);
+    if(officer){currentUser=officer;currentRole='user';loadUserDash();showPage('page-user');showToast('Welcome, '+officer.name,'success')}
+    else{showToast('Invalid credentials','error')}
+  }
+}
+function doLogout(){showPage('page-home');currentUser=null;document.getElementById('login-user').value='';document.getElementById('login-pass').value='';showToast('Logged out successfully','success')}
+
+// ══════════════════════════════════
+// PAGE / PANEL NAVIGATION
+// ══════════════════════════════════
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function showPanel(id,el){
+  document.querySelectorAll('#page-admin .panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('#page-admin .sb-item').forEach(i=>i.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const titles={
+    'panel-dash':'Dashboard','panel-voters':'Voter Records','panel-users':'Field Officers',
+    'panel-centers':'Registration Centers','panel-reports':'Reports','panel-profile':'My Profile'
+  };
+  document.getElementById('admin-panel-title').textContent=titles[id]||'Dashboard';
+  if(id==='panel-voters')renderVotersTable();
+  if(id==='panel-users')renderUsersTable();
+  if(id==='panel-centers')renderCentersTable();
+}
+function showUserPanel(id,el){
+  document.querySelectorAll('#page-user .panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('#page-user .sb-item').forEach(i=>i.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const titles={'upanel-dash':'Dashboard','upanel-voters':'My Voters','upanel-register':'Register Voter','upanel-profile':'My Profile'};
+  document.getElementById('user-panel-title').textContent=titles[id]||'';
+  if(id==='upanel-voters')renderUserVotersTable();
+  if(id==='upanel-register')populateRegisterForm();
+}
+
+// ══════════════════════════════════
+// LOAD DASHBOARDS
+// ══════════════════════════════════
+function loadAdminDash(){
+  // Recent voters
+  const tbody=document.getElementById('dash-recent-voters');
+  const recent=VOTERS.slice(-8).reverse();
+  tbody.innerHTML=recent.map(v=>`<tr>
+    <td style="font-weight:500">${v.name}</td>
+    <td>${v.lga}</td><td>${v.center}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td>${v.recorded}</td>
+  </tr>`).join('');
+
+  // Activity
+  const acts=[
+    {type:'g',msg:'Fatima Musa registered voter Aisha Ibrahim',time:'2 min ago'},
+    {type:'b',msg:'New officer Zainab Abdullahi created',time:'15 min ago'},
+    {type:'g',msg:'Nasarawa Govt School center updated',time:'32 min ago'},
+    {type:'o',msg:'Voter record Usman Garba edited',time:'1 hr ago'},
+    {type:'g',msg:'Maryam Yusuf registered 5 voters today',time:'2 hrs ago'},
+    {type:'r',msg:'Voter record deleted by officer1',time:'3 hrs ago'},
+    {type:'b',msg:'New center Rano Primary School added',time:'5 hrs ago'},
+  ];
+  const actHtml=acts.map(a=>`<div class="act-item">
+    <div class="act-dot adc-${a.type}">${a.type==='g'?svgCheck():a.type==='b'?svgUser():a.type==='r'?svgTrash():svgEdit()}</div>
+    <div class="act-text"><div class="act-msg">${a.msg}</div><div class="act-time">${a.time}</div></div>
+  </div>`).join('');
+  document.getElementById('dash-activity').innerHTML=actHtml;
+
+  // Center bars
+  const cdata=[
+    {name:'Nasarawa Govt School',count:61,max:80},
+    {name:'Tarauni Central',count:42,max:80},
+    {name:'Fagge Community Hall',count:47,max:80},
+    {name:'Gwale Main Center',count:35,max:80},
+    {name:'Kumbotso Center',count:29,max:80},
+  ];
+  document.getElementById('center-bars').innerHTML=cdata.map(c=>`<div class="cb-item">
+    <div class="cb-top"><span class="cb-name">${c.name}</span><span class="cb-count">${c.count} today</span></div>
+    <div class="cb-bar"><div class="cb-fill" style="width:${(c.count/c.max*100).toFixed(0)}%"></div></div>
+  </div>`).join('');
+}
+
+function loadUserDash(){
+  if(!currentUser)return;
+  const myVoters=VOTERS.filter(v=>v.officerId===currentUser.id);
+  document.getElementById('user-sb-name').textContent=currentUser.name;
+  document.getElementById('user-sb-lga').textContent=currentUser.lga+' — '+currentUser.center;
+  document.getElementById('user-av').textContent=currentUser.name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('user-dash-name').textContent=currentUser.name;
+  document.getElementById('user-dash-meta').textContent=currentUser.center+' · '+currentUser.lga;
+  document.getElementById('u-total').textContent=myVoters.length;
+  document.getElementById('u-reg').textContent=myVoters.filter(v=>v.status==='Registered').length;
+  document.getElementById('u-prog').textContent=myVoters.filter(v=>v.status==='In Progress').length;
+  document.getElementById('u-notreg').textContent=myVoters.filter(v=>v.status==='Not Registered').length;
+  document.getElementById('u-prof-av').textContent=currentUser.name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('u-prof-name').textContent=currentUser.name;
+  document.getElementById('u-prof-uname').textContent=currentUser.username;
+  document.getElementById('u-prof-phone').textContent=currentUser.phone;
+  document.getElementById('u-prof-lga').textContent=currentUser.lga;
+  document.getElementById('u-prof-center').textContent=currentUser.center;
+  document.getElementById('u-prof-total').textContent=myVoters.length;
+
+  const recent=myVoters.slice(-6).reverse();
+  document.getElementById('user-recent-tbody').innerHTML=recent.map(v=>`<tr>
+    <td style="font-weight:500">${v.name}</td>
+    <td>${v.ward}</td><td>${v.pu}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td>${v.recorded}</td>
+  </tr>`).join('');
+}
+
+// ══════════════════════════════════
+// TABLES
+// ══════════════════════════════════
+function statusBadge(s){
+  if(s==='Registered')return`<span class="badge green">Registered</span>`;
+  if(s==='In Progress')return`<span class="badge orange">In Progress</span>`;
+  return`<span class="badge red">Not Registered</span>`;
+}
+function svgEdit(){return`<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`}
+function svgTrash(){return`<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>`}
+function svgCheck(){return`<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`}
+function svgUser(){return`<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`}
+
+function filterVoters(){
+  const s=(document.getElementById('voter-search')||{}).value||'';
+  const lga=(document.getElementById('voter-lga-filter')||{}).value||'';
+  const st=(document.getElementById('voter-status-filter')||{}).value||'';
+  const ct=(document.getElementById('voter-center-filter')||{}).value||'';
+  return VOTERS.filter(v=>{
+    const ms=!s||v.name.toLowerCase().includes(s.toLowerCase())||v.vin.includes(s)||v.phone.includes(s);
+    const ml=!lga||v.lga===lga;
+    const mst=!st||v.status===st;
+    const mc=!ct||v.center===ct;
+    return ms&&ml&&mst&&mc;
+  });
+}
+function renderVotersTable(){
+  populateLgaFilter('voter-lga-filter');
+  populateCenterFilter('voter-center-filter');
+  const filtered=filterVoters();
+  const total=filtered.length;
+  const pages=Math.ceil(total/PER_PAGE);
+  if(voterPage>pages)voterPage=1;
+  const slice=filtered.slice((voterPage-1)*PER_PAGE,voterPage*PER_PAGE);
+  document.getElementById('voters-count-label').textContent=`Showing ${slice.length} of ${total} records`;
+  document.getElementById('voters-tbody').innerHTML=slice.map((v,i)=>`<tr>
+    <td style="color:#aaa">${(voterPage-1)*PER_PAGE+i+1}</td>
+    <td style="font-weight:500">${v.name}</td>
+    <td>${v.gender}</td><td>${v.dob}</td><td>${v.phone}</td>
+    <td>${v.lga}</td><td>${v.ward}</td><td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${v.pu}</td>
+    <td>${v.center}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="color:#aaa;font-size:12px">${v.recorded}</td>
+    <td>
+      <div style="display:flex;gap:5px">
+        <button class="btn-icon" title="Edit" onclick="editVoter(${v.id})">${svgEdit()}</button>
+        <button class="btn-icon" style="color:#c62828" title="Delete" onclick="confirmDelete('voter',${v.id})">${svgTrash()}</button>
+      </div>
+    </td>
+  </tr>`).join('');
+  // Pagination
+  const pag=document.getElementById('voters-pagination');
+  let html='';
+  if(voterPage>1)html+=`<div class="pag-btn" onclick="voterPage--;renderVotersTable()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div>`;
+  for(let p=1;p<=pages;p++){
+    if(pages<=7||p===1||p===pages||Math.abs(p-voterPage)<=1)
+      html+=`<div class="pag-btn ${p===voterPage?'active':''}" onclick="voterPage=${p};renderVotersTable()">${p}</div>`;
+    else if(Math.abs(p-voterPage)===2)html+=`<div class="pag-btn" style="pointer-events:none;border:none;color:#ccc">…</div>`;
+  }
+  if(voterPage<pages)html+=`<div class="pag-btn" onclick="voterPage++;renderVotersTable()"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>`;
+  pag.innerHTML=html;
+}
+
+function renderUsersTable(){
+  populateLgaFilter('user-lga-filter');
+  const s=(document.getElementById('user-search')||{}).value||'';
+  const lga=(document.getElementById('user-lga-filter')||{}).value||'';
+  const filtered=USERS.filter(u=>(!s||u.name.toLowerCase().includes(s.toLowerCase())||u.username.toLowerCase().includes(s.toLowerCase()))&&(!lga||u.lga===lga));
+  document.getElementById('users-count-label').textContent=`${filtered.length} officer(s) found`;
+  const myVoterCount=(uid)=>VOTERS.filter(v=>v.officerId===uid).length;
+  document.getElementById('users-tbody').innerHTML=filtered.map((u,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td>
+    <td style="font-weight:500">${u.name}</td>
+    <td style="font-family:monospace;font-size:12.5px">${u.username}</td>
+    <td>${u.phone}</td><td>${u.lga}</td><td>${u.center}</td>
+    <td><span class="badge green">${myVoterCount(u.id)}</span></td>
+    <td style="color:#aaa;font-size:12px">${u.created}</td>
+    <td>
+      <div style="display:flex;gap:5px">
+        <button class="btn-icon" title="Edit" onclick="editUser(${u.id})">${svgEdit()}</button>
+        <button class="btn-icon" style="color:#c62828" title="Delete" onclick="confirmDelete('user',${u.id})">${svgTrash()}</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+function renderCentersTable(){
+  populateLgaFilter('center-lga-filter');
+  const s=(document.getElementById('center-search')||{}).value||'';
+  const lga=(document.getElementById('center-lga-filter')||{}).value||'';
+  const filtered=CENTERS.filter(c=>(!s||c.name.toLowerCase().includes(s.toLowerCase()))&&(!lga||c.lga===lga));
+  document.getElementById('centers-count-label').textContent=`${filtered.length} center(s) found`;
+  const voterCount=(cn)=>VOTERS.filter(v=>v.center===cn).length;
+  const todayCount=(cn)=>{const t=new Date().toISOString().split('T')[0];return VOTERS.filter(v=>v.center===cn&&v.recorded===t).length};
+  const officerCount=(cn)=>USERS.filter(u=>u.center===cn).length;
+  document.getElementById('centers-tbody').innerHTML=filtered.map((c,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td>
+    <td style="font-weight:500">${c.name}</td>
+    <td>${c.lga}</td>
+    <td><span class="badge blue">${voterCount(c.name)}</span></td>
+    <td><span class="badge green">${todayCount(c.name)}</span></td>
+    <td><span class="badge gray">${officerCount(c.name)}</span></td>
+    <td style="color:#aaa;font-size:12px">${c.created}</td>
+    <td>
+      <div style="display:flex;gap:5px">
+        <button class="btn-icon" title="Edit" onclick="editCenter(${c.id})">${svgEdit()}</button>
+        <button class="btn-icon" style="color:#c62828" title="Delete" onclick="confirmDelete('center',${c.id})">${svgTrash()}</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+function renderUserVotersTable(){
+  if(!currentUser)return;
+  const s=(document.getElementById('u-voter-search')||{}).value||'';
+  const st=(document.getElementById('u-voter-status-filter')||{}).value||'';
+  const filtered=VOTERS.filter(v=>v.officerId===currentUser.id&&(!s||v.name.toLowerCase().includes(s.toLowerCase()))&&(!st||v.status===st));
+  document.getElementById('u-voters-count-label').textContent=`${filtered.length} voter(s)`;
+  document.getElementById('u-voters-tbody').innerHTML=filtered.map((v,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td>
+    <td style="font-weight:500">${v.name}</td>
+    <td>${v.gender}</td><td>${v.dob}</td><td>${v.phone}</td>
+    <td>${v.ward}</td><td style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${v.pu}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="color:#aaa;font-size:12px">${v.recorded}</td>
+    <td>
+      <div style="display:flex;gap:5px">
+        <button class="btn-icon" title="Edit" onclick="editVoterUser(${v.id})">${svgEdit()}</button>
+        <button class="btn-icon" style="color:#c62828" title="Delete" onclick="confirmDeleteUser('voter',${v.id})">${svgTrash()}</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+// ══════════════════════════════════
+// DROPDOWNS POPULATION
+// ══════════════════════════════════
+function populateLgaDropdown(selId){
+  const sel=document.getElementById(selId);
+  if(!sel)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">Select LGA</option>'+LGAS.map(l=>`<option value="${l}">${l}</option>`).join('');
+  sel.value=cur;
+}
+function populateLgaFilter(selId){
+  const sel=document.getElementById(selId);
+  if(!sel)return;
+  const cur=sel.value;
+  const used=[...new Set(selId.includes('user')?USERS.map(u=>u.lga):selId.includes('center')?CENTERS.map(c=>c.lga):VOTERS.map(v=>v.lga))].sort();
+  sel.innerHTML='<option value="">All LGAs</option>'+used.map(l=>`<option value="${l}">${l}</option>`).join('');
+  sel.value=cur;
+}
+function populateCenterFilter(selId){
+  const sel=document.getElementById(selId);
+  if(!sel)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">All Centers</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  sel.value=cur;
+}
+function updateWards(lgaSel,wardSel){
+  const lga=document.getElementById(lgaSel).value;
+  const wsel=document.getElementById(wardSel);
+  const wards=lga&&KANO_DATA[lga]?KANO_DATA[lga]:[];
+  wsel.innerHTML='<option value="">Select Ward</option>'+wards.map(w=>`<option value="${w}">${w}</option>`).join('');
+}
+function updateCentersForUser(){
+  const lga=document.getElementById('u-lga').value;
+  const csel=document.getElementById('u-center');
+  const centers=CENTERS.filter(c=>c.lga===lga);
+  csel.innerHTML='<option value="">Select Center</option>'+centers.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+}
+function updatePollingUnits(){
+  const ward=document.getElementById('rv-ward').value;
+  const psel=document.getElementById('rv-pu');
+  const pus=ward?[ward+' Primary School',ward+' Secondary School',ward+' Community Centre',ward+' Voting Point A',ward+' Voting Point B']:[];
+  psel.innerHTML='<option value="">Select Polling Unit</option>'+pus.map(p=>`<option value="${p}">${p}</option>`).join('');
+}
+function populateCentersForUser(centerId){
+  const lga=currentUser?currentUser.lga:'';
+  const csel=document.getElementById('rv-center');
+  const centers=lga?CENTERS.filter(c=>c.lga===lga):CENTERS;
+  csel.innerHTML='<option value="">Select Center</option>'+centers.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  if(currentUser)csel.value=currentUser.center;
+}
+function populateRegisterForm(){
+  populateLgaDropdown('rv-lga');
+  if(currentUser){
+    document.getElementById('rv-lga').value=currentUser.lga;
+    updateWards('rv-lga','rv-ward');
+  }
+  populateCentersForUser();
+}
+
+// ══════════════════════════════════
+// MODALS
+// ══════════════════════════════════
+function openVoterModal(voter){
+  populateLgaDropdown('m-lga');
+  CENTERS.forEach(c=>{
+    const opt=document.createElement('option');
+    opt.value=c.name;opt.textContent=c.name;
+    document.getElementById('m-center').appendChild(opt);
+  });
+  if(voter){
+    document.getElementById('voter-modal-title').textContent='Edit Voter';
+    editingVoterId=voter.id;
+    document.getElementById('m-name').value=voter.name;
+    document.getElementById('m-gender').value=voter.gender;
+    document.getElementById('m-dob').value=voter.dob;
+    document.getElementById('m-phone').value=voter.phone;
+    document.getElementById('m-address').value=voter.address||'';
+    document.getElementById('m-lga').value=voter.lga;
+    updateWards('m-lga','m-ward');
+    document.getElementById('m-ward').value=voter.ward;
+    document.getElementById('m-pu').value=voter.pu;
+    document.getElementById('m-center').value=voter.center;
+    document.getElementById('m-vin').value=voter.vin;
+    document.getElementById('m-status').value=voter.status;
+  } else {
+    document.getElementById('voter-modal-title').textContent='Register Voter';
+    editingVoterId=null;
+    ['m-name','m-dob','m-phone','m-address','m-pu','m-vin'].forEach(id=>document.getElementById(id).value='');
+    ['m-gender','m-lga','m-ward','m-center','m-status'].forEach(id=>document.getElementById(id).value='');
+  }
+  document.getElementById('voter-modal').classList.add('open');
+}
+function editVoter(id){const v=VOTERS.find(x=>x.id===id);if(v)openVoterModal(v)}
+function saveVoterModal(){
+  const name=document.getElementById('m-name').value.trim();
+  const gender=document.getElementById('m-gender').value;
+  const dob=document.getElementById('m-dob').value;
+  const phone=document.getElementById('m-phone').value.trim();
+  const lga=document.getElementById('m-lga').value;
+  const ward=document.getElementById('m-ward').value;
+  const pu=document.getElementById('m-pu').value.trim();
+  const center=document.getElementById('m-center').value;
+  const status=document.getElementById('m-status').value;
+  if(!name||!gender||!dob||!phone||!lga||!ward||!pu||!center||!status){showToast('Please fill all required fields','error');return}
+  const vin=document.getElementById('m-vin').value.trim();
+  if(editingVoterId){
+    const v=VOTERS.find(x=>x.id===editingVoterId);
+    Object.assign(v,{name,gender,dob,phone,lga,ward,pu,center,vin,status,address:document.getElementById('m-address').value.trim()});
+    showToast('Voter record updated','success');
+  } else {
+    VOTERS.push({id:vid++,name,gender,dob,phone,lga,ward,pu,center,vin,status,address:document.getElementById('m-address').value.trim(),officerId:1,recorded:new Date().toISOString().split('T')[0]});
+    showToast('Voter registered successfully','success');
+  }
+  closeModal('voter-modal');
+  renderVotersTable();
+}
+
+function openUserModal(user){
+  populateLgaDropdown('u-lga');
+  if(user){
+    document.getElementById('user-modal-title').textContent='Edit Field Officer';
+    editingUserId=user.id;
+    document.getElementById('u-name').value=user.name;
+    document.getElementById('u-uname').value=user.username;
+    document.getElementById('u-phone').value=user.phone;
+    document.getElementById('u-pass').value='';
+    document.getElementById('u-lga').value=user.lga;
+    updateCentersForUser();
+    document.getElementById('u-center').value=user.center;
+  } else {
+    document.getElementById('user-modal-title').textContent='Add Field Officer';
+    editingUserId=null;
+    ['u-name','u-uname','u-phone','u-pass'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('u-lga').value='';
+    document.getElementById('u-center').innerHTML='<option value="">Select Center</option>';
+  }
+  document.getElementById('user-modal').classList.add('open');
+}
+function editUser(id){const u=USERS.find(x=>x.id===id);if(u)openUserModal(u)}
+function saveUser(){
+  const name=document.getElementById('u-name').value.trim();
+  const username=document.getElementById('u-uname').value.trim();
+  const phone=document.getElementById('u-phone').value.trim();
+  const password=document.getElementById('u-pass').value.trim();
+  const lga=document.getElementById('u-lga').value;
+  const center=document.getElementById('u-center').value;
+  if(!name||!username||!phone||!lga||!center){showToast('Please fill all required fields','error');return}
+  if(editingUserId){
+    const u=USERS.find(x=>x.id===editingUserId);
+    Object.assign(u,{name,username,phone,lga,center});
+    if(password)u.password=password;
+    showToast('Officer updated','success');
+  } else {
+    if(!password){showToast('Password is required','error');return}
+    USERS.push({id:USERS.length+1,name,username,phone,password,lga,center,created:new Date().toISOString().split('T')[0]});
+    showToast('Field officer created','success');
+  }
+  closeModal('user-modal');renderUsersTable();
+}
+
+function openCenterModal(center){
+  ['c-name','c-lga'].forEach(id=>{
+    if(document.getElementById(id))document.getElementById(id).value='';
+  });
+  const csel=document.getElementById('c-lga');
+  csel.innerHTML='<option value="">Select LGA</option>'+LGAS.map(l=>`<option value="${l}">${l}</option>`).join('');
+  if(center){
+    document.getElementById('center-modal-title').textContent='Edit Center';
+    editingCenterId=center.id;
+    document.getElementById('c-name').value=center.name;
+    document.getElementById('c-lga').value=center.lga;
+  } else {
+    document.getElementById('center-modal-title').textContent='Add Registration Center';
+    editingCenterId=null;
+  }
+  document.getElementById('center-modal').classList.add('open');
+}
+function editCenter(id){const c=CENTERS.find(x=>x.id===id);if(c)openCenterModal(c)}
+function saveCenter(){
+  const name=document.getElementById('c-name').value.trim();
+  const lga=document.getElementById('c-lga').value;
+  if(!name||!lga){showToast('Please fill all required fields','error');return}
+  if(editingCenterId){
+    const c=CENTERS.find(x=>x.id===editingCenterId);
+    Object.assign(c,{name,lga});showToast('Center updated','success');
+  } else {
+    CENTERS.push({id:CENTERS.length+1,name,lga,created:new Date().toISOString().split('T')[0]});
+    showToast('Center added','success');
+  }
+  closeModal('center-modal');renderCentersTable();
+}
+
+let deleteTarget={};
+function confirmDelete(type,id){
+  const names={voter:'voter record',user:'field officer',center:'registration center'};
+  document.getElementById('confirm-msg').textContent=`Delete this ${names[type]}?`;
+  document.getElementById('confirm-sub').textContent='This action cannot be undone.';
+  document.getElementById('confirm-ok-btn').onclick=()=>{
+    if(type==='voter')VOTERS=VOTERS.filter(v=>v.id!==id);
+    if(type==='user')USERS=USERS.filter(u=>u.id!==id);
+    if(type==='center')CENTERS=CENTERS.filter(c=>c.id!==id);
+    closeModal('confirm-modal');
+    if(type==='voter')renderVotersTable();
+    if(type==='user')renderUsersTable();
+    if(type==='center')renderCentersTable();
+    showToast(`${names[type]} deleted`,'success');
+  };
+  document.getElementById('confirm-modal').classList.add('open');
+}
+function confirmDeleteUser(type,id){
+  document.getElementById('confirm-msg').textContent='Delete this voter record?';
+  document.getElementById('confirm-sub').textContent='This action cannot be undone.';
+  document.getElementById('confirm-ok-btn').onclick=()=>{
+    VOTERS=VOTERS.filter(v=>v.id!==id);
+    closeModal('confirm-modal');renderUserVotersTable();loadUserDash();
+    showToast('Voter record deleted','success');
+  };
+  document.getElementById('confirm-modal').classList.add('open');
+}
+function editVoterUser(id){
+  const v=VOTERS.find(x=>x.id===id);
+  if(!v)return;
+  // fill the register form
+  showUserPanel('upanel-register',null);
+  document.getElementById('rv-name').value=v.name;
+  document.getElementById('rv-gender').value=v.gender;
+  document.getElementById('rv-dob').value=v.dob;
+  document.getElementById('rv-phone').value=v.phone;
+  document.getElementById('rv-address').value=v.address||'';
+  populateLgaDropdown('rv-lga');
+  document.getElementById('rv-lga').value=v.lga;
+  updateWards('rv-lga','rv-ward');
+  document.getElementById('rv-ward').value=v.ward;
+  document.getElementById('rv-pu').innerHTML=`<option value="${v.pu}">${v.pu}</option>`;
+  populateCentersForUser();
+  document.getElementById('rv-center').value=v.center;
+  document.getElementById('rv-vin').value=v.vin;
+  document.getElementById('rv-status').value=v.status;
+  editingVoterId=id;
+}
+
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open')});
+});
+
+// ══════════════════════════════════
+// VOTER FORM (USER SIDE)
+// ══════════════════════════════════
+function saveVoter(){
+  const name=document.getElementById('rv-name').value.trim();
+  const gender=document.getElementById('rv-gender').value;
+  const dob=document.getElementById('rv-dob').value;
+  const phone=document.getElementById('rv-phone').value.trim();
+  const lga=document.getElementById('rv-lga').value;
+  const ward=document.getElementById('rv-ward').value;
+  const pu=document.getElementById('rv-pu').value;
+  const center=document.getElementById('rv-center').value;
+  const status=document.getElementById('rv-status').value;
+  if(!name||!gender||!dob||!phone||!lga||!ward||!pu||!center||!status){showToast('Please fill all required fields','error');return}
+  const vin=document.getElementById('rv-vin').value.trim();
+  const address=document.getElementById('rv-address').value.trim();
+  if(editingVoterId){
+    const v=VOTERS.find(x=>x.id===editingVoterId);
+    if(v)Object.assign(v,{name,gender,dob,phone,address,lga,ward,pu,center,vin,status});
+    editingVoterId=null;
+    showToast('Voter record updated','success');
+  } else {
+    VOTERS.push({id:vid++,name,gender,dob,phone,address,lga,ward,pu,center,vin,status,officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});
+    showToast('Voter registered successfully','success');
+  }
+  clearVoterForm();loadUserDash();
+  showUserPanel('upanel-voters',null);
+}
+function clearVoterForm(){
+  ['rv-name','rv-dob','rv-phone','rv-address','rv-vin'].forEach(id=>document.getElementById(id).value='');
+  ['rv-gender','rv-lga','rv-ward','rv-pu','rv-center','rv-status'].forEach(id=>document.getElementById(id).value='');
+  editingVoterId=null;
+}
+
+// ══════════════════════════════════
+// REPORTS
+// ══════════════════════════════════
+function genReport(type){
+  document.getElementById('range-inputs').style.display='none';
+  document.getElementById('center-inputs').style.display='none';
+  document.getElementById('report-output-area').style.display='none';
+  if(type==='range'){document.getElementById('range-inputs').style.display='block';return}
+  if(type==='center'){
+    const csel=document.getElementById('rpt-center');
+    csel.innerHTML='<option value="">-- Select Center --</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+    document.getElementById('center-inputs').style.display='block';return;
+  }
+  let filtered=VOTERS,title='',meta='';
+  const today=new Date().toISOString().split('T')[0];
+  if(type==='daily'){
+    filtered=VOTERS.filter(v=>v.recorded===today);
+    title='Daily Report';meta='Date: '+today;
+  } else if(type==='weekly'){
+    const w=new Date();w.setDate(w.getDate()-7);
+    filtered=VOTERS.filter(v=>v.recorded>=w.toISOString().split('T')[0]);
+    title='Weekly Report';meta='Last 7 days';
+  } else if(type==='range-go'){
+    const s=document.getElementById('rpt-start').value,e=document.getElementById('rpt-end').value;
+    if(!s||!e){showToast('Select both dates','error');return}
+    filtered=VOTERS.filter(v=>v.recorded>=s&&v.recorded<=e);
+    title='Date Range Report';meta=`${s} to ${e}`;
+    document.getElementById('range-inputs').style.display='none';
+  } else if(type==='center-go'){
+    const cn=document.getElementById('rpt-center').value;
+    const period=document.getElementById('rpt-period').value;
+    if(!cn){showToast('Select a center','error');return}
+    filtered=VOTERS.filter(v=>v.center===cn);
+    if(period==='today')filtered=filtered.filter(v=>v.recorded===today);
+    else if(period==='week'){const w=new Date();w.setDate(w.getDate()-7);filtered=filtered.filter(v=>v.recorded>=w.toISOString().split('T')[0])}
+    title=`Center Report — ${cn}`;meta=period==='today'?'Today':period==='week'?'This Week':'All Time';
+    document.getElementById('center-inputs').style.display='none';
+  }
+  const reg=filtered.filter(v=>v.status==='Registered').length;
+  const prog=filtered.filter(v=>v.status==='In Progress').length;
+  const notreg=filtered.filter(v=>v.status==='Not Registered').length;
+  document.getElementById('rpt-title').textContent=title;
+  document.getElementById('rpt-meta').textContent=meta;
+  document.getElementById('rpt-sum').innerHTML=`
+    <div class="rs-item"><div class="rs-n">${filtered.length}</div><div class="rs-l">Total Records</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:var(--green)">${reg}</div><div class="rs-l">Registered</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:#c47d00">${prog}</div><div class="rs-l">In Progress</div></div>
+  `;
+  document.getElementById('rpt-tbody').innerHTML=filtered.map((v,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td>
+    <td style="font-weight:500">${v.name}</td>
+    <td>${v.gender}</td><td>${v.lga}</td><td>${v.ward}</td>
+    <td style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${v.pu}</td>
+    <td>${v.center}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'—'}</td>
+    <td>${v.recorded}</td>
+  </tr>`).join('');
+  document.getElementById('report-output-area').style.display='block';
+}
+function printReport(){window.print()}
+function exportCSV(){
+  const headers=['Name','Gender','DOB','Phone','LGA','Ward','Polling Unit','Center','VIN','Status','Recorded'];
+  const rows=VOTERS.map(v=>[v.name,v.gender,v.dob,v.phone,v.lga,v.ward,v.pu,v.center,v.vin,v.status,v.recorded]);
+  const csv=[headers,...rows].map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent(csv);a.download='voters.csv';a.click();
+  showToast('CSV exported','success');
+}
+
+// ══════════════════════════════════
+// UTILITIES
+// ══════════════════════════════════
+function showToast(msg,type='success'){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+type;
+  setTimeout(()=>t.classList.add('show'),10);
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+function updateTime(){
+  const now=new Date();
+  const s=now.toLocaleString('en-GB',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+  ['topbar-time','topbar-time2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=s});
+}
+
+// ══════════════════════════════════
+// INIT
+// ══════════════════════════════════
+(function init(){
+  // Ticker duplicate
+  const tt=document.getElementById('ticker-track');
+  if(tt)tt.innerHTML+=tt.innerHTML;
+
+  // LGA strip
+  const strip=document.getElementById('lga-tags-strip');
+  if(strip)strip.innerHTML=LGAS.map(l=>`<span class="ltag">${l}</span>`).join('');
+
+  // Clock
+  updateTime();setInterval(updateTime,30000);
+})();
+</script>
+</body>
+</html>
