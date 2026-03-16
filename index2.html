@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Door-to-Door Women Political Network | Voter Data System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f5f7f4;color:#111;font-size:14px}
+:root{
+  --green:#1a7a3c;--dgreen:#0f5226;--lgreen:#e3f2e9;
+  --red:#c62828;--dred:#8b0000;--lred:#ffebee;
+  --gold:#f5c518;--dark:#111;--gray:#888;
+  --border:#e0e8dd;--bg:#f5f7f4;--white:#fff
+}
+.page{display:none}.page.active{display:block}
+
+/* ══ HOMEPAGE NAV ══ */
+.pub-nav{display:flex;align-items:center;justify-content:space-between;padding:13px 36px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.pub-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark span{color:#fff;font-weight:700;font-size:12px}
+.logo-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--green);line-height:1.25;max-width:190px}
+.pub-nav-links{display:flex;gap:28px}
+.pub-nav-links a{font-size:13px;font-weight:500;color:#555;text-decoration:none;cursor:pointer}
+.pub-nav-links a:hover{color:var(--green)}
+.pub-nav-btn{background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+.pub-nav-btn:hover{background:var(--dred)}
+
+/* ══ TICKER ══ */
+.ticker{background:var(--dgreen);overflow:hidden;padding:9px 0;cursor:default}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 55s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-size:12.5px;font-weight:500;color:#fff;padding:0 28px;border-right:1px solid rgba(255,255,255,.2);display:flex;align-items:center;gap:9px;flex-shrink:0}
+.tdot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ══ HERO ══ */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:470px}
+.hero-l{background:linear-gradient(145deg,#0c4a24 0%,#1a7a3c 55%,#2fa855 100%);padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.13);color:#fff;font-size:11px;font-weight:600;padding:5px 15px;border-radius:20px;text-transform:uppercase;letter-spacing:.9px;margin-bottom:20px;border:1px solid rgba(255,255,255,.2)}
+.hero-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.22;margin-bottom:16px}
+.hero-title em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:32px;max-width:420px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--green);border:none;padding:12px 28px;border-radius:7px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-w:hover{background:#f0f0f0}
+.btn-r{background:var(--red);color:#fff;border:none;padding:12px 28px;border-radius:7px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-r:hover{background:var(--dred)}
+.hero-r{background:#f3f7f1;display:flex;align-items:stretch}
+.login-box{background:#fff;margin:24px;border-radius:14px;padding:32px 28px;flex:1;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--border);box-shadow:0 4px 22px rgba(0,0,0,.06)}
+.login-box h2{font-family:'Playfair Display',serif;font-size:20px;color:#111;margin-bottom:5px}
+.login-box .sub{font-size:12.5px;color:#aaa;margin-bottom:20px}
+.login-tabs{display:flex;margin-bottom:20px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.ltab{flex:1;padding:9px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:#fff;color:#888;border:none;font-family:inherit;transition:all .2s}
+.ltab.active{background:var(--green);color:#fff}
+.ltab.red-tab.active{background:var(--red);color:#fff}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.fld input,.fld select{width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:7px;font-size:13.5px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff}
+.fld input:focus,.fld select:focus{border-color:var(--green)}
+.btn-login{width:100%;background:var(--green);color:#fff;border:none;padding:12px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn-login:hover{background:var(--dgreen)}
+.login-note{font-size:11px;color:#ccc;text-align:center;margin-top:11px}
+.login-err{font-size:12px;color:var(--red);text-align:center;margin-top:8px;display:none}
+
+/* ══ STATS BAR ══ */
+.statsbar{background:#111;display:grid;grid-template-columns:repeat(5,1fr)}
+.sc{padding:22px 16px;text-align:center;border-right:1px solid #252525;cursor:pointer;transition:background .2s}
+.sc:hover{background:#1a1a1a}
+.sc:last-child{border-right:none}
+.sc-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.sc-l{font-size:11.5px;color:#888;margin-top:3px}
+.sc-hint{font-size:10px;color:#555;margin-top:2px}
+
+/* Stats popup overlay */
+.stats-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;align-items:center;justify-content:center}
+.stats-popup-overlay.open{display:flex}
+.stats-popup{background:#fff;border-radius:16px;width:92%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.stats-popup-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2}
+.stats-popup-head h3{font-family:'Playfair Display',serif;font-size:20px;color:#111}
+.stats-popup-body{padding:24px}
+.sp-kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:22px}
+.sp-kpi{background:var(--bg);border-radius:10px;padding:16px 18px;border:1px solid var(--border)}
+.sp-kpi-label{font-size:11.5px;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.sp-kpi-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700}
+.sp-kpi-val.green{color:var(--green)}.sp-kpi-val.red{color:var(--red)}.sp-kpi-val.gold{color:#c47d00}.sp-kpi-val.blue{color:#1565c0}
+.sp-section-title{font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+.sp-progress-list{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.sp-prog-item .sp-prog-top{display:flex;justify-content:space-between;margin-bottom:5px}
+.sp-prog-name{font-size:13px;font-weight:500;color:#333}
+.sp-prog-count{font-size:12px;color:#999}
+.sp-prog-bar{height:8px;background:#eee;border-radius:4px;overflow:hidden}
+.sp-prog-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.sp-prog-fill.green{background:var(--green)}.sp-prog-fill.red{background:var(--red)}
+
+/* ══ SECTIONS ══ */
+.pub-section{padding:52px 40px}
+.pub-section.gray{background:#f5f7f4}
+.pub-section.dark-section{background:#111;color:#fff}
+.sec-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:var(--red);margin-bottom:7px}
+.sec-h{font-family:'Playfair Display',serif;font-size:26px;color:#111;margin-bottom:8px}
+.sec-sub{font-size:13.5px;color:#999;margin-bottom:36px;max-width:520px}
+.dark-section .sec-tag{color:var(--gold)}
+.dark-section .sec-h{color:#fff}
+.dark-section .sec-sub{color:#888}
+
+/* leaders */
+.leaders-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.lcard{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.lphoto{height:200px;display:flex;align-items:center;justify-content:center}
+.lp1{background:linear-gradient(160deg,#0c4a24,#1a7a3c)}
+.lp2{background:linear-gradient(160deg,var(--dred),var(--red))}
+.lp3{background:linear-gradient(160deg,#1a1a2e,#3a3a5c)}
+.lavatar{width:88px;height:88px;border-radius:50%;border:4px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:700}
+.linfo{padding:16px 18px}
+.lname{font-weight:600;font-size:14.5px;color:#111;margin-bottom:4px}
+.lrole{font-size:12px;color:#999}
+
+/* gallery */
+.gal-g{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:180px 180px;gap:10px}
+.gi{border-radius:9px;display:flex;align-items:flex-end;padding:14px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.9)}
+.g1{grid-row:1/3;background:linear-gradient(160deg,#0c4a24,#1a7a3c)}
+.g2{background:linear-gradient(160deg,var(--dred),var(--red))}
+.g3{background:linear-gradient(160deg,#c47d00,#f5a623)}
+.g4{background:linear-gradient(160deg,#1a237e,#3949ab)}
+.g5{background:linear-gradient(160deg,#1a1a2e,#37474f)}
+
+/* about */
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-body p{font-size:14px;color:#666;line-height:1.8;margin-bottom:14px}
+.feat-g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:#fff;border-radius:10px;padding:20px;border:1px solid var(--border)}
+.ficon{width:38px;height:38px;border-radius:8px;background:var(--lgreen);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.ficon.red{background:var(--lred)}
+.ficon svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ficon.red svg{stroke:var(--red)}
+.fname{font-size:13px;font-weight:600;color:#111;margin-bottom:4px}
+.fdesc{font-size:12px;color:#999;line-height:1.5}
+
+/* lga strip */
+.lga-strip{background:var(--red);padding:32px 40px;text-align:center}
+.lga-strip h3{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:18px}
+.lga-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ltag{background:rgba(255,255,255,.14);color:#fff;font-size:11.5px;font-weight:500;padding:5px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.2)}
+
+/* footer */
+.pub-footer{background:#0c1f12;color:#fff;padding:36px 40px 24px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:28px}
+.flogo{font-family:'Playfair Display',serif;font-size:15px;color:#7cc99a;margin-bottom:8px}
+.fdesc2{font-size:12.5px;color:#666;line-height:1.7}
+.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:12px}
+.fc a{display:block;font-size:12.5px;color:#777;text-decoration:none;margin-bottom:7px;cursor:pointer}
+.fc a:hover{color:#7cc99a}
+.foot-bot{border-top:1px solid #1f3025;padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:11.5px;color:#555}
+.fdom{font-size:11.5px;color:#7cc99a}
+
+/* ══ DASHBOARD SHELL ══ */
+.shell{display:flex;height:100vh;overflow:hidden}
+.sidebar{width:240px;background:#111;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;transition:transform .3s;z-index:150}
+.sidebar.collapsed{transform:translateX(-100%);position:fixed;height:100vh}
+.main{flex:1;overflow-y:auto;background:var(--bg);transition:margin-left .3s;min-width:0}
+.main.expanded{margin-left:0}
+
+.sb-brand{padding:18px 18px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo{display:flex;align-items:center;gap:10px}
+.sb-lmark{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-lmark span{color:#fff;font-weight:700;font-size:11px}
+.sb-lname{font-family:'Playfair Display',serif;font-size:12px;color:#7cc99a;line-height:1.3}
+.sb-user{padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-uid{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+.sb-uname{font-size:13px;font-weight:600;color:#fff}
+.sb-urole{font-size:11px;color:#7cc99a}
+.sb-nav{flex:1;padding:8px 0}
+.sb-section{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#444;padding:12px 18px 5px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:10px 18px;cursor:pointer;transition:background .15s;border-left:3px solid transparent;position:relative}
+.sb-item:hover{background:rgba(255,255,255,.04)}
+.sb-item.active{background:rgba(26,122,60,.18);border-left-color:var(--green)}
+.sb-item.red-active{background:rgba(198,40,40,.18);border-left-color:var(--red)}
+.sb-item svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.sb-item span{font-size:13px;color:#bbb;font-weight:500}
+.sb-item.active span,.sb-item.active svg{color:#7cc99a}
+.sb-item.red-active span,.sb-item.red-active svg{color:#ef9a9a}
+.sb-badge{background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;position:absolute;right:14px;top:50%;transform:translateY(-50%)}
+.sb-logout{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-logout-btn{display:flex;align-items:center;gap:8px;cursor:pointer;color:#888;font-size:12.5px;font-weight:500}
+.sb-logout-btn:hover{color:#ef9a9a}
+.sb-logout-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Topbar */
+.topbar{background:#fff;border-bottom:1px solid var(--border);padding:0 22px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.menu-toggle{background:none;border:none;cursor:pointer;padding:7px;border-radius:6px;color:#555;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.menu-toggle:hover{background:#f0f0f0}
+.menu-toggle svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.topbar-title{font-family:'Playfair Display',serif;font-size:17px;color:#111;font-weight:600}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-badge{background:var(--lgreen);color:var(--green);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
+.topbar-badge.red{background:var(--lred);color:var(--red)}
+.topbar-time{font-size:12px;color:#aaa}
+.notif-btn{position:relative;background:none;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;padding:7px;display:flex;align-items:center;color:#555;transition:all .2s}
+.notif-btn:hover{border-color:#999}
+.notif-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.notif-dot{position:absolute;top:-3px;right:-3px;width:9px;height:9px;background:var(--red);border-radius:50%;border:2px solid #fff}
+
+/* content panels */
+.panel{display:none;padding:22px 24px}
+.panel.active{display:block}
+
+/* kpi */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:#fff;border-radius:11px;padding:18px;border:1px solid var(--border)}
+.kpi-label{font-size:11.5px;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+.kpi-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#111;line-height:1}
+.kpi-sub{font-size:11.5px;color:#bbb;margin-top:4px}
+.kpi.green .kpi-val{color:var(--green)}.kpi.red .kpi-val{color:var(--red)}.kpi.gold .kpi-val{color:#c47d00}.kpi.blue .kpi-val{color:#1565c0}
+
+.dash-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-bottom:16px}
+.card{background:#fff;border-radius:11px;border:1px solid var(--border);overflow:hidden}
+.card-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-head h3{font-size:14px;font-weight:600;color:#111}
+.card-body{padding:18px}
+
+/* table */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#999;padding:10px 12px;text-align:left;background:#f9faf8;border-bottom:1px solid var(--border);white-space:nowrap}
+td{font-size:13px;color:#333;padding:10px 12px;border-bottom:1px solid #f0f3ef;vertical-align:middle}
+tr:hover td{background:#f9faf8}
+tr:last-child td{border-bottom:none}
+
+/* badges */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11.5px;font-weight:600}
+.badge.green{background:#e3f2e9;color:var(--green)}
+.badge.orange{background:#fff3e0;color:#e65100}
+.badge.red{background:var(--lred);color:var(--red)}
+.badge.blue{background:#e3f2fd;color:#1565c0}
+.badge.gray{background:#f5f5f5;color:#666}
+
+/* activity */
+.act-item{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid #f0f3ef}
+.act-item:last-child{border-bottom:none}
+.act-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.act-dot svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.adc-g{background:#e3f2e9;color:var(--green)}.adc-b{background:#e3f2fd;color:#1565c0}
+.adc-r{background:var(--lred);color:var(--red)}.adc-o{background:#fff3e0;color:#e65100}
+.act-msg{font-size:13px;color:#333;margin-bottom:2px}
+.act-time{font-size:11.5px;color:#bbb}
+
+.center-bars{display:flex;flex-direction:column;gap:11px}
+.cb-top{display:flex;justify-content:space-between;margin-bottom:5px}
+.cb-name{font-size:13px;font-weight:500;color:#333}
+.cb-count{font-size:12px;color:#999}
+.cb-bar{height:7px;background:#eee;border-radius:4px;overflow:hidden}
+.cb-fill{height:100%;border-radius:4px}
+.cb-fill.green{background:var(--green)}.cb-fill.red{background:var(--red)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .2s;white-space:nowrap}
+.btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--dgreen)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--dred)}
+.btn-danger{background:var(--red);color:#fff}.btn-danger:hover{background:var(--dred)}
+.btn-outline{background:#fff;color:#444;border:1.5px solid var(--border)}.btn-outline:hover{border-color:#999}
+.btn-sm{padding:6px 12px;font-size:12px}
+.btn-icon{padding:6px;border-radius:6px;background:#fff;border:1.5px solid var(--border);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;color:#555;transition:all .2s}
+.btn-icon:hover{border-color:#999}
+.btn-icon svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-icon.red{color:var(--red);border-color:#fcc}
+.btn-icon.red:hover{background:var(--lred)}
+
+/* forms */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-full{grid-column:1/-1}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-size:11.5px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{padding:10px 13px;border:1.5px solid #ddd;border-radius:7px;font-size:13.5px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green)}
+.form-group textarea{min-height:90px;resize:vertical}
+.req{color:var(--red);margin-left:2px}
+.form-section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--green);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.form-section-label.red{color:var(--red)}
+
+/* modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;width:92%;max-width:620px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal-sm{max-width:440px}
+.modal-head{padding:18px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2}
+.modal-head h3{font-family:'Playfair Display',serif;font-size:18px;color:#111}
+.modal-head.red-head{background:var(--red)}
+.modal-head.red-head h3{color:#fff}
+.modal-close{background:none;border:none;cursor:pointer;width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#888;transition:background .15s}
+.modal-close:hover{background:#f5f5f5;color:#111}
+.modal-close.white{color:rgba(255,255,255,.7)}.modal-close.white:hover{background:rgba(255,255,255,.15);color:#fff}
+.modal-close svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal-body{padding:22px}
+.modal-foot{padding:14px 22px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:10px;background:#fff;position:sticky;bottom:0}
+
+/* filters */
+.filters{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.filters input,.filters select{padding:9px 12px;border:1.5px solid #ddd;border-radius:7px;font-size:13px;font-family:inherit;outline:none;background:#fff;min-width:150px}
+.filters input:focus,.filters select:focus{border-color:var(--green)}
+
+/* page header */
+.page-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
+.page-hdr h2{font-family:'Playfair Display',serif;font-size:20px;color:#111}
+.page-hdr p{font-size:13px;color:#999;margin-top:2px}
+
+/* reports */
+.report-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.rcard{background:#fff;border-radius:11px;padding:20px 18px;border:1px solid var(--border);cursor:pointer;transition:all .2s;text-align:center}
+.rcard:hover{border-color:var(--green);transform:translateY(-2px)}
+.rcard-icon{width:46px;height:46px;border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.rcard-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rcard h4{font-size:13.5px;font-weight:600;color:#111;margin-bottom:3px}
+.rcard p{font-size:12px;color:#aaa}
+.ri-green{background:var(--lgreen);color:var(--green)}.ri-red{background:var(--lred);color:var(--red)}
+.ri-blue{background:#e3f2fd;color:#1565c0}.ri-purple{background:#f3e5f5;color:#7b1fa2}
+.report-output{background:#fff;border-radius:11px;border:1px solid var(--border);padding:22px}
+.report-sum{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.rs-item{background:#f9faf8;border-radius:8px;padding:13px 15px;text-align:center}
+.rs-n{font-family:'Playfair Display',serif;font-size:22px;font-weight:700}
+.rs-l{font-size:11.5px;color:#999;margin-top:3px}
+
+/* profile */
+.profile-grid{display:grid;grid-template-columns:260px 1fr;gap:18px}
+.prof-card{background:#fff;border-radius:11px;border:1px solid var(--border);padding:26px 22px;text-align:center}
+.prof-avatar{width:76px;height:76px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:700;margin:0 auto 12px}
+.prof-avatar.red{background:var(--red)}
+.prof-name{font-family:'Playfair Display',serif;font-size:17px;color:#111;margin-bottom:4px}
+.prof-role{font-size:12px;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.prof-role.red{color:var(--red)}
+.prof-info-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f0f3ef;font-size:13px}
+.prof-info-row .label{color:#aaa}
+.prof-info-row .value{color:#333;font-weight:500;text-align:right}
+
+/* messaging */
+.msg-layout{display:grid;grid-template-columns:280px 1fr;gap:14px;height:calc(100vh - 140px);min-height:400px}
+.msg-list{background:#fff;border-radius:11px;border:1px solid var(--border);overflow-y:auto;display:flex;flex-direction:column}
+.msg-list-head{padding:14px 16px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:#111;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.msg-item{padding:13px 15px;border-bottom:1px solid #f4f4f4;cursor:pointer;transition:background .15s}
+.msg-item:hover{background:#f9faf8}
+.msg-item.active{background:var(--lgreen);border-left:3px solid var(--green)}
+.msg-item.active.unread{background:var(--lgreen)}
+.msg-item.unread{background:#fff9e6}
+.msg-item-name{font-size:13px;font-weight:600;color:#111;margin-bottom:2px;display:flex;align-items:center;justify-content:space-between}
+.msg-item-meta{font-size:11.5px;color:#aaa;margin-bottom:4px}
+.msg-item-preview{font-size:12.5px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.msg-unread-dot{width:8px;height:8px;background:var(--red);border-radius:50%;flex-shrink:0}
+.msg-detail{background:#fff;border-radius:11px;border:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.msg-detail-head{padding:16px 20px;border-bottom:1px solid var(--border);flex-shrink:0;background:#fff}
+.msg-detail-name{font-size:15px;font-weight:600;color:#111;margin-bottom:3px}
+.msg-detail-meta{font-size:12px;color:#aaa;display:flex;gap:10px;flex-wrap:wrap}
+.msg-status-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11.5px;font-weight:600}
+.msg-status-badge.open{background:var(--lred);color:var(--red)}
+.msg-status-badge.resolved{background:var(--lgreen);color:var(--green)}
+.msg-thread{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.msg-bubble{max-width:75%;padding:12px 15px;border-radius:12px;font-size:13.5px;line-height:1.6}
+.msg-bubble.from-user{background:#f0f3ef;color:#222;border-bottom-left-radius:3px;align-self:flex-start}
+.msg-bubble.from-admin{background:var(--green);color:#fff;border-bottom-right-radius:3px;align-self:flex-end}
+.msg-bubble-time{font-size:11px;opacity:.6;margin-top:5px}
+.msg-compose{padding:14px 18px;border-top:1px solid var(--border);display:flex;gap:10px;flex-shrink:0;background:#fff}
+.msg-compose textarea{flex:1;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:13.5px;font-family:inherit;outline:none;resize:none;height:44px;transition:border-color .2s}
+.msg-compose textarea:focus{border-color:var(--green)}
+.msg-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#ccc;gap:10px}
+.msg-empty svg{width:40px;height:40px;stroke:#ddd;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.msg-empty p{font-size:13px}
+
+/* user message compose */
+.compose-card{background:#fff;border-radius:11px;border:1px solid var(--border);padding:24px}
+.compose-sent-list{background:#fff;border-radius:11px;border:1px solid var(--border);overflow:hidden}
+.compose-sent-item{padding:14px 18px;border-bottom:1px solid #f0f3ef}
+.compose-sent-item:last-child{border-bottom:none}
+.csi-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.csi-subject{font-size:13.5px;font-weight:600;color:#111}
+.csi-meta{font-size:12px;color:#aaa}
+.csi-body{font-size:13px;color:#666;margin-bottom:8px}
+.csi-reply{background:#f0f3ef;border-radius:8px;padding:10px 12px;margin-top:8px}
+.csi-reply-label{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.csi-reply-text{font-size:13px;color:#333}
+
+/* confirm */
+.confirm-icon{width:50px;height:50px;border-radius:50%;background:var(--lred);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.confirm-icon svg{width:22px;height:22px;stroke:var(--red);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* pagination */
+.pagination{display:flex;align-items:center;gap:5px;justify-content:flex-end;margin-top:12px}
+.pag-btn{width:30px;height:30px;border:1.5px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12.5px;font-weight:500;color:#555;background:#fff;transition:all .2s}
+.pag-btn:hover,.pag-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.pag-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* user header strip */
+.uview-hdr{background:linear-gradient(135deg,#0f5226,#1a7a3c);padding:28px 24px;display:flex;align-items:center;gap:18px;border-radius:0}
+.uview-av{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;border:3px solid rgba(255,255,255,.3);flex-shrink:0}
+.uview-name{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:3px}
+.uview-meta{font-size:13px;color:rgba(255,255,255,.7)}
+
+/* toast */
+.toast{position:fixed;bottom:22px;right:22px;background:#1a1a1a;color:#fff;padding:12px 20px;border-radius:9px;font-size:13.5px;font-weight:500;z-index:9999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.success{border-left:4px solid var(--green)}
+.toast.error{border-left:4px solid var(--red)}
+.toast.info{border-left:4px solid #1565c0}
+
+/* sidebar overlay for mobile */
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:140}
+.sidebar-overlay.open{display:block}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-r{background:#f3f7f1}
+  .statsbar{grid-template-columns:repeat(3,1fr)}
+  .leaders-g{grid-template-columns:1fr 1fr}
+  .about-g{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .dash-grid{grid-template-columns:1fr}
+  .report-cards{grid-template-columns:repeat(2,1fr)}
+  .report-sum{grid-template-columns:repeat(2,1fr)}
+  .profile-grid{grid-template-columns:1fr}
+  .msg-layout{grid-template-columns:1fr;height:auto}
+  .pub-nav-links{display:none}
+  .panel{padding:16px}
+  .gal-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .g1{grid-row:auto}
+}
+@media(max-width:600px){
+  .statsbar{grid-template-columns:repeat(2,1fr)}
+  .hero-title{font-size:28px}
+  .feat-g{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+  .sp-kpi-grid{grid-template-columns:1fr 1fr}
+  .pub-section{padding:40px 20px}
+  .lga-strip{padding:24px 20px}
+  .pub-footer{padding:28px 20px 18px}
+}
+@media print{.sidebar,.topbar,.btn,.filters{display:none!important}.panel{display:block!important;padding:0}}
+.stats-period-btn{padding:9px 20px;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:#888;border:none;font-family:inherit;transition:all .2s;border-right:1px solid var(--border)}
+.stats-period-btn:last-child{border-right:none}
+.stats-period-btn.active{background:var(--green);color:#fff}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+     PUBLIC HOMEPAGE
+═══════════════════════════════ -->
+<div class="page active" id="page-home">
+  <nav class="pub-nav">
+    <a class="pub-logo" onclick="showPage('page-home')">
+      <div class="logo-mark"><span>D2D</span></div>
+      <div class="logo-name">Door-to-Door Women Political Network</div>
+    </a>
+    <div class="pub-nav-links">
+      <a onclick="scrollTo('leaders-sec')">Leaders</a>
+      <a onclick="scrollTo('gallery-sec')">Gallery</a>
+      <a onclick="scrollTo('about-sec')">About</a>
+    </div>
+    <button class="pub-nav-btn" onclick="scrollTo('login-sec')">Login to Dashboard</button>
+  </nav>
+
+  <div class="ticker"><div class="ticker-track" id="ticker-track">
+    <span class="ticker-item"><span class="tdot"></span>Total Voters Recorded: 15,320</span>
+    <span class="ticker-item"><span class="tdot"></span>Registered Today: 420</span>
+    <span class="ticker-item"><span class="tdot"></span>This Week: 2,450</span>
+    <span class="ticker-item"><span class="tdot"></span>Registered: 9,841</span>
+    <span class="ticker-item"><span class="tdot"></span>In Progress: 3,217</span>
+    <span class="ticker-item"><span class="tdot"></span>Not Registered: 2,262</span>
+    <span class="ticker-item"><span class="tdot"></span>Gwale Center: 35 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Tarauni Central: 42 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Nasarawa School: 61 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Kumbotso Center: 29 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Fagge Hall: 47 today</span>
+    <span class="ticker-item"><span class="tdot"></span>44 LGAs Active</span>
+  </div></div>
+
+  <!-- Hero -->
+  <section class="hero" id="login-sec">
+    <div class="hero-l">
+      <span class="hero-badge">Kano State — 44 Local Government Areas</span>
+      <h1 class="hero-title">Voter Data Collection<br>&amp; <em>Monitoring</em> System</h1>
+      <p class="hero-sub">Empowering women to drive civic participation across all 44 LGAs of Kano State through organized voter outreach and real-time registration monitoring.</p>
+      <div class="hero-btns">
+        <button class="btn-w" onclick="openStatsPopup('total')">View Live Statistics</button>
+        <button class="btn-r" onclick="scrollTo('about-sec')">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="login-box">
+        <h2>Dashboard Login</h2>
+        <p class="sub">Sign in to access the voter registration system</p>
+        <div class="login-tabs">
+          <button class="ltab active" onclick="setLoginRole('admin',this)">Admin</button>
+          <button class="ltab" onclick="setLoginRole('user',this)">Field Officer</button>
+        </div>
+        <div class="fld"><label>Username</label><input type="text" id="login-user" placeholder="Enter username"/></div>
+        <div class="fld"><label>Password</label><input type="password" id="login-pass" placeholder="••••••••"/></div>
+        <div class="login-err" id="login-err">Invalid username or password</div>
+        <button class="btn-login" onclick="doLogin()">Sign In</button>
+        <div class="login-note" id="login-hint">Admin: admin / admin123 &nbsp;|&nbsp; Officer: officer1 / pass123</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="statsbar" id="stats-bar">
+    <div class="sc" onclick="openStatsPopup('total')"><div class="sc-n">15,320</div><div class="sc-l">Total Recorded</div><div class="sc-hint">Click to explore ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('registered')"><div class="sc-n">9,841</div><div class="sc-l">Registered</div><div class="sc-hint">Click for breakdown ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('today')"><div class="sc-n">420</div><div class="sc-l">Recorded Today</div><div class="sc-hint">Click for center detail ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('week')"><div class="sc-n">2,450</div><div class="sc-l">This Week</div><div class="sc-hint">Click for weekly view ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('lgas')"><div class="sc-n">44</div><div class="sc-l">LGAs Covered</div><div class="sc-hint">Click for LGA view ↗</div></div>
+  </div>
+
+  <!-- Leaders -->
+  <section class="pub-section gray" id="leaders-sec">
+    <div class="sec-tag">Leadership</div>
+    <div class="sec-h">Our Principals &amp; Leaders</div>
+    <p class="sec-sub">The network operates under the distinguished patronage of Kano State's senior officials.</p>
+    <div class="leaders-g">
+      <div class="lcard"><div class="lphoto lp1"><div class="lavatar">HE</div></div>
+        <div class="linfo"><div class="lname">His Excellency, The Governor</div><div class="lrole">Executive Governor, Kano State</div></div>
+      </div>
+      <div class="lcard"><div class="lphoto lp2"><div class="lavatar">HC</div></div>
+        <div class="linfo"><div class="lname">Honourable Commissioner</div><div class="lrole">Commissioner for Women Affairs</div></div>
+      </div>
+      <div class="lcard"><div class="lphoto lp3"><div class="lavatar">OL</div></div>
+        <div class="linfo"><div class="lname">Network Leadership</div><div class="lrole">Door-to-Door Women Political Network</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="pub-section" id="gallery-sec">
+    <div class="sec-tag">Gallery</div>
+    <div class="sec-h">Field Activities &amp; Campaigns</div>
+    <p class="sec-sub">Our officers in action across all 44 LGAs of Kano State.</p>
+    <div class="gal-g">
+      <div class="gi g1">Door-to-Door Campaign Drive</div>
+      <div class="gi g2">Community Outreach</div>
+      <div class="gi g3">Registration Drive</div>
+      <div class="gi g4">Women Empowerment Forum</div>
+      <div class="gi g5">LGA Coordination</div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="pub-section gray" id="about-sec">
+    <div class="about-g">
+      <div class="about-body">
+        <div class="sec-tag">About the Network</div>
+        <div class="sec-h">Mobilizing Women Across Kano State</div>
+        <p>The Door-to-Door Women Political Network is a civic initiative ensuring every woman in Kano State is registered and ready to participate fully in the democratic process.</p>
+        <p>Field registration officers are deployed across all 44 LGAs to collect voter information, track registration status, and monitor progress in real time through our digital platform.</p>
+        <p>Administrators generate reports, monitor center-level activity, and ensure no eligible voter is left behind.</p>
+      </div>
+      <div class="feat-g">
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="fname">Field Registration</div><div class="fdesc">Officers collect voter data door to door across all communities.</div></div>
+        <div class="fcard"><div class="ficon red"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="fname">Live Monitoring</div><div class="fdesc">Real-time statistics and progress tracking per center and LGA.</div></div>
+        <div class="fcard"><div class="ficon red"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="fname">44 LGA Coverage</div><div class="fdesc">Full coverage of all Local Government Areas in Kano State.</div></div>
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><div class="fname">Reports</div><div class="fdesc">Daily, weekly and date-range reports for administrators.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lga-strip">
+    <h3>Active Coverage — All 44 LGAs of Kano State</h3>
+    <div class="lga-tags" id="lga-tags-strip"></div>
+  </div>
+
+  <footer class="pub-footer">
+    <div class="foot-top">
+      <div><div class="flogo">Door-to-Door Women Political Network</div><div class="fdesc2">A civic initiative mobilizing women across all 44 LGAs of Kano State for full voter participation and democratic engagement.</div></div>
+      <div class="fc"><h4>Quick Links</h4><a onclick="scrollTo('login-sec')">Login</a><a onclick="scrollTo('about-sec')">About</a><a onclick="scrollTo('gallery-sec')">Gallery</a><a onclick="scrollTo('leaders-sec')">Leaders</a></div>
+      <div class="fc"><h4>System</h4><a>Admin Dashboard</a><a>Registration Centers</a><a>Reports</a><a>Support</a></div>
+    </div>
+    <div class="foot-bot"><div class="fcopy">© 2025 Door-to-Door Women Political Network. Kano State, Nigeria.</div><div class="fdom">door-to-door.org.ng</div></div>
+  </footer>
+</div>
+
+<!-- Stats Popup -->
+<div class="stats-popup-overlay" id="stats-popup">
+  <div class="stats-popup">
+    <div class="stats-popup-head">
+      <h3 id="sp-title">Live Statistics</h3>
+      <button class="modal-close" onclick="closeStatsPopup()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="stats-popup-body" id="sp-body"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     ADMIN DASHBOARD
+═══════════════════════════════ -->
+<div class="page" id="page-admin">
+  <div class="sidebar-overlay" id="admin-overlay" onclick="toggleSidebar('admin')"></div>
+  <div class="shell">
+    <div class="sidebar" id="admin-sidebar">
+      <div class="sb-brand">
+        <div class="sb-logo">
+          <div class="sb-lmark"><span>D2D</span></div>
+          <div class="sb-lname">Voter Data System</div>
+        </div>
+      </div>
+      <div class="sb-user">
+        <div class="sb-uid">Logged in as</div>
+        <div class="sb-uname">System Administrator</div>
+        <div class="sb-urole">Full Access</div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Main</div>
+        <div class="sb-item active" id="a-nav-dash" onclick="showPanel('panel-dash','a-nav-dash')">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Dashboard</span>
+        </div>
+        <div class="sb-item" id="a-nav-voters" onclick="showPanel('panel-voters','a-nav-voters')">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Voters</span>
+        </div>
+        <div class="sb-item" id="a-nav-users" onclick="showPanel('panel-users','a-nav-users')">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Field Officers</span>
+        </div>
+        <div class="sb-item" id="a-nav-centers" onclick="showPanel('panel-centers','a-nav-centers')">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Centers</span>
+        </div>
+        <div class="sb-item" id="a-nav-statistics" onclick="showPanel('panel-statistics','a-nav-statistics')">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg><span>Statistics</span>
+        </div>
+        <div class="sb-section">Reports &amp; Comms</div>
+        <div class="sb-item" id="a-nav-reports" onclick="showPanel('panel-reports','a-nav-reports')">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Reports</span>
+        </div>
+        <div class="sb-item" id="a-nav-messages" onclick="showPanel('panel-messages','a-nav-messages')">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Messages</span>
+          <span class="sb-badge" id="admin-msg-badge">3</span>
+        </div>
+        <div class="sb-section">Account</div>
+        <div class="sb-item" id="a-nav-profile" onclick="showPanel('panel-profile','a-nav-profile')">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>My Profile</span>
+        </div>
+      </nav>
+      <div class="sb-logout"><div class="sb-logout-btn" onclick="doLogout()">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout
+      </div></div>
+    </div>
+
+    <div class="main" id="admin-main">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" onclick="toggleSidebar('admin')">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="topbar-title" id="admin-panel-title">Dashboard</div>
+        </div>
+        <div class="topbar-right">
+          <button class="notif-btn" id="admin-notif-btn" onclick="showPanel('panel-messages','a-nav-messages')">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-dot" id="admin-notif-dot"></span>
+          </button>
+          <span class="topbar-badge">Admin</span>
+          <span class="topbar-time" id="topbar-time"></span>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="panel active" id="panel-dash">
+        <div class="kpi-grid">
+          <div class="kpi green"><div class="kpi-label">Total Voters</div><div class="kpi-val">15,320</div><div class="kpi-sub">All time</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val">9,841</div><div class="kpi-sub">64.2% of total</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val">3,217</div><div class="kpi-sub">21.0% of total</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val">2,262</div><div class="kpi-sub">14.8% of total</div></div>
+        </div>
+        <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="kpi"><div class="kpi-label">Recorded Today</div><div class="kpi-val">420</div></div>
+          <div class="kpi"><div class="kpi-label">This Week</div><div class="kpi-val">2,450</div></div>
+          <div class="kpi"><div class="kpi-label">Active Officers</div><div class="kpi-val">24</div></div>
+        </div>
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showPanel('panel-voters','a-nav-voters')">View All</button></div>
+            <div class="card-body" style="padding:0"><div class="tbl-wrap">
+              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Center</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="dash-recent-voters"></tbody></table>
+            </div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Recent Activity</h3></div>
+            <div class="card-body" style="padding:0 18px"><div id="dash-activity"></div></div>
+          </div>
+        </div>
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>Today's Records by Center</h3></div>
+            <div class="card-body"><div class="center-bars" id="center-bars"></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Status Breakdown</h3></div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:14px;padding:4px 0">
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Registered</span><span style="font-size:13px;font-weight:600;color:var(--green)">9,841 (64.2%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:64.2%;background:var(--green);border-radius:5px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">In Progress</span><span style="font-size:13px;font-weight:600;color:#c47d00">3,217 (21.0%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:21%;background:#f5a623;border-radius:5px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Not Registered</span><span style="font-size:13px;font-weight:600;color:var(--red)">2,262 (14.8%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:14.8%;background:var(--red);border-radius:5px"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOTERS -->
+      <div class="panel" id="panel-voters">
+        <div class="page-hdr"><div><h2>Voter Records</h2><p>All collected voter data</p></div>
+          <button class="btn btn-primary" onclick="openVoterModal()"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Register Voter</button>
+        </div>
+        <div class="filters">
+          <input type="text" id="voter-search" placeholder="Search name, VIN, phone..." oninput="renderVotersTable()"/>
+          <select id="voter-lga-filter" onchange="renderVotersTable()"><option value="">All LGAs</option></select>
+          <select id="voter-status-filter" onchange="renderVotersTable()"><option value="">All Status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select>
+          <select id="voter-center-filter" onchange="renderVotersTable()"><option value="">All Centers</option></select>
+          <button class="btn btn-outline btn-sm" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+        </div>
+        <div class="card"><div class="tbl-wrap">
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Center</th><th>VIN</th><th>Status</th><th>Recorded</th><th>Actions</th></tr></thead>
+          <tbody id="voters-tbody"></tbody></table>
+        </div>
+        <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12.5px;color:#aaa" id="voters-count-label"></span>
+          <div class="pagination" id="voters-pagination"></div>
+        </div></div>
+      </div>
+
+      <!-- FIELD OFFICERS -->
+      <div class="panel" id="panel-users">
+        <div class="page-hdr"><div><h2>Field Officers</h2><p>Manage registration officers</p></div>
+          <button class="btn btn-primary" onclick="openUserModal()"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Officer</button>
+        </div>
+        <div class="filters">
+          <input type="text" id="user-search" placeholder="Search officers..." oninput="renderUsersTable()"/>
+          <select id="user-lga-filter" onchange="renderUsersTable()"><option value="">All LGAs</option></select>
+        </div>
+        <div class="card"><div class="tbl-wrap">
+          <table><thead><tr><th>#</th><th>Name</th><th>Username</th><th>Phone</th><th>LGA</th><th>Center</th><th>Voters</th><th>Created</th><th>Actions</th></tr></thead>
+          <tbody id="users-tbody"></tbody></table>
+        </div>
+        <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="users-count-label"></span></div></div>
+      </div>
+
+      <!-- CENTERS -->
+      <div class="panel" id="panel-centers">
+        <div class="page-hdr"><div><h2>Registration Centers</h2><p>Manage centers across 44 LGAs</p></div>
+          <button class="btn btn-primary" onclick="openCenterModal()"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Center</button>
+        </div>
+        <div class="filters">
+          <input type="text" id="center-search" placeholder="Search centers..." oninput="renderCentersTable()"/>
+          <select id="center-lga-filter" onchange="renderCentersTable()"><option value="">All LGAs</option></select>
+        </div>
+        <div class="card"><div class="tbl-wrap">
+          <table><thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Voters</th><th>Today</th><th>Officers</th><th>Created</th><th>Actions</th></tr></thead>
+          <tbody id="centers-tbody"></tbody></table>
+        </div>
+        <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="centers-count-label"></span></div></div>
+      </div>
+
+      <!-- STATISTICS -->
+      <div class="panel" id="panel-statistics">
+        <div class="page-hdr"><div><h2>Registration Statistics</h2><p>Today's and all-time records per registration center</p></div>
+          <button class="btn btn-outline btn-sm" onclick="renderStatisticsPanel()"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>Refresh</button>
+        </div>
+
+        <!-- Summary KPIs -->
+        <div class="kpi-grid" style="margin-bottom:20px" id="stats-kpi-row"></div>
+
+        <!-- Period tabs -->
+        <div style="display:flex;gap:0;margin-bottom:18px;background:#fff;border:1px solid var(--border);border-radius:9px;overflow:hidden;width:fit-content">
+          <button class="stats-period-btn active" id="sp-btn-today" onclick="setStatsPeriod('today')">Today</button>
+          <button class="stats-period-btn" id="sp-btn-week" onclick="setStatsPeriod('week')">This Week</button>
+          <button class="stats-period-btn" id="sp-btn-all" onclick="setStatsPeriod('all')">All Time</button>
+        </div>
+
+        <!-- Center stats table -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-head"><h3 id="stats-table-title">Today's Registration by Center</h3><span style="font-size:12px;color:#aaa" id="stats-table-date"></span></div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Recorded</th><th>Registered</th><th>In Progress</th><th>Not Registered</th><th>Officers</th></tr></thead>
+              <tbody id="stats-centers-tbody"></tbody>
+            </table>
+          </div>
+          <div style="padding:10px 16px;border-top:1px solid var(--border)">
+            <span style="font-size:12.5px;color:#aaa" id="stats-table-summary"></span>
+          </div>
+        </div>
+
+        <!-- Visual bars -->
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3 id="stats-bar-title">Records per Center</h3></div>
+            <div class="card-body"><div id="stats-center-bars" style="display:flex;flex-direction:column;gap:12px"></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Status Breakdown</h3></div>
+            <div class="card-body"><div id="stats-status-breakdown" style="display:flex;flex-direction:column;gap:14px;padding:4px 0"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTS -->
+      <div class="panel" id="panel-reports">
+        <div class="page-hdr"><div><h2>Reports</h2><p>Generate and download registration reports</p></div></div>
+        <div class="report-cards">
+          <div class="rcard" onclick="genReport('daily')"><div class="rcard-icon ri-green"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Daily Report</h4><p>Today's registrations</p></div>
+          <div class="rcard" onclick="genReport('weekly')"><div class="rcard-icon ri-blue"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h4>Weekly Report</h4><p>This week</p></div>
+          <div class="rcard" onclick="genReport('range')"><div class="rcard-icon ri-red"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><h4>Date Range</h4><p>Custom period</p></div>
+          <div class="rcard" onclick="genReport('center')"><div class="rcard-icon ri-purple"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Center Report</h4><p>Per-center stats</p></div>
+        </div>
+        <div id="range-inputs" style="display:none;background:#fff;padding:18px;border-radius:11px;border:1px solid var(--border);margin-bottom:14px">
+          <div class="form-grid"><div class="form-group"><label>Start Date</label><input type="date" id="rpt-start"/></div><div class="form-group"><label>End Date</label><input type="date" id="rpt-end"/></div></div>
+          <button class="btn btn-primary" style="margin-top:10px" onclick="genReport('range-go')">Generate</button>
+        </div>
+        <div id="center-inputs" style="display:none;background:#fff;padding:18px;border-radius:11px;border:1px solid var(--border);margin-bottom:14px">
+          <div class="form-grid"><div class="form-group"><label>Select Center</label><select id="rpt-center"><option value="">-- Select --</option></select></div><div class="form-group"><label>Period</label><select id="rpt-period"><option value="today">Today</option><option value="week">This Week</option><option value="all">All Time</option></select></div></div>
+          <button class="btn btn-primary" style="margin-top:10px" onclick="genReport('center-go')">Generate</button>
+        </div>
+        <div id="report-output-area" style="display:none" class="report-output">
+          <div style="font-family:'Playfair Display',serif;font-size:19px;color:#111;margin-bottom:4px" id="rpt-title"></div>
+          <div style="font-size:12.5px;color:#aaa;margin-bottom:16px" id="rpt-meta"></div>
+          <div class="report-sum" id="rpt-sum"></div>
+          <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Gender</th><th>LGA</th><th>Ward</th><th>Center</th><th>Status</th><th>VIN</th><th>Date</th></tr></thead><tbody id="rpt-tbody"></tbody></table></div>
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <button class="btn btn-outline btn-sm" onclick="window.print()"><svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Print</button>
+            <button class="btn btn-outline btn-sm" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MESSAGES (ADMIN) -->
+      <div class="panel" id="panel-messages">
+        <div class="page-hdr"><div><h2>Messages</h2><p>Communications from field officers</p></div></div>
+        <div class="msg-layout">
+          <div class="msg-list">
+            <div class="msg-list-head">
+              <span>Inbox</span>
+              <span style="font-size:11.5px;font-weight:600;color:var(--red)" id="unread-count-label"></span>
+            </div>
+            <div id="admin-msg-list"></div>
+          </div>
+          <div class="msg-detail" id="admin-msg-detail">
+            <div class="msg-empty">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <p>Select a message to view</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE -->
+      <div class="panel" id="panel-profile">
+        <div class="page-hdr"><div><h2>My Profile</h2><p>Administrator account</p></div></div>
+        <div class="profile-grid">
+          <div class="prof-card">
+            <div class="prof-avatar">AD</div>
+            <div class="prof-name">System Administrator</div>
+            <div class="prof-role">Full Access</div>
+            <div style="width:100%;text-align:left">
+              <div class="prof-info-row"><span class="label">Username</span><span class="value">admin</span></div>
+              <div class="prof-info-row"><span class="label">Phone</span><span class="value">08012345678</span></div>
+              <div class="prof-info-row"><span class="label">Role</span><span class="value">Administrator</span></div>
+              <div class="prof-info-row"><span class="label">Domain</span><span class="value">door-to-door.org.ng</span></div>
+            </div>
+          </div>
+          <div class="card"><div class="card-head"><h3>Change Password</h3></div>
+            <div class="card-body"><div class="form-grid">
+              <div class="form-group form-full"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+              <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
+              <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••"/></div>
+            </div><button class="btn btn-primary" style="margin-top:10px" onclick="showToast('Password updated','success')">Update Password</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     FIELD OFFICER DASHBOARD
+═══════════════════════════════ -->
+<div class="page" id="page-user">
+  <div class="sidebar-overlay" id="user-overlay" onclick="toggleSidebar('user')"></div>
+  <div class="shell">
+    <div class="sidebar" id="user-sidebar">
+      <div class="sb-brand"><div class="sb-logo"><div class="sb-lmark"><span>D2D</span></div><div class="sb-lname">Voter Data System</div></div></div>
+      <div class="sb-user">
+        <div class="sb-uid">Logged in as</div>
+        <div class="sb-uname" id="user-sb-name">Officer</div>
+        <div class="sb-urole" id="user-sb-lga">Field Officer</div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Main</div>
+        <div class="sb-item active" id="u-nav-dash" onclick="showUserPanel('upanel-dash','u-nav-dash')">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Dashboard</span>
+        </div>
+        <div class="sb-item" id="u-nav-voters" onclick="showUserPanel('upanel-voters','u-nav-voters')">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>My Voters</span>
+        </div>
+        <div class="sb-item" id="u-nav-register" onclick="showUserPanel('upanel-register','u-nav-register')">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span>Register Voter</span>
+        </div>
+        <div class="sb-section">Communication</div>
+        <div class="sb-item" id="u-nav-messages" onclick="showUserPanel('upanel-messages','u-nav-messages')">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Messages</span>
+          <span class="sb-badge" id="user-msg-badge" style="display:none">!</span>
+        </div>
+        <div class="sb-section">Account</div>
+        <div class="sb-item" id="u-nav-profile" onclick="showUserPanel('upanel-profile','u-nav-profile')">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>My Profile</span>
+        </div>
+      </nav>
+      <div class="sb-logout"><div class="sb-logout-btn" onclick="doLogout()">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout
+      </div></div>
+    </div>
+
+    <div class="main" id="user-main">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" onclick="toggleSidebar('user')">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="topbar-title" id="user-panel-title">Dashboard</div>
+        </div>
+        <div class="topbar-right">
+          <button class="notif-btn" id="user-notif-btn" onclick="showUserPanel('upanel-messages','u-nav-messages')">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-dot" id="user-notif-dot" style="display:none"></span>
+          </button>
+          <span class="topbar-badge red">Field Officer</span>
+          <span class="topbar-time" id="topbar-time2"></span>
+        </div>
+      </div>
+
+      <!-- USER DASHBOARD -->
+      <div class="panel active" id="upanel-dash">
+        <div class="uview-hdr">
+          <div class="uview-av" id="user-av">O1</div>
+          <div><div class="uview-name" id="user-dash-name">Field Officer</div><div class="uview-meta" id="user-dash-meta">Center · LGA</div></div>
+        </div>
+        <div style="height:14px"></div>
+        <div class="kpi-grid">
+          <div class="kpi green"><div class="kpi-label">My Total</div><div class="kpi-val" id="u-total">0</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val" id="u-reg">0</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val" id="u-prog">0</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val" id="u-notreg">0</div></div>
+        </div>
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-head"><h3>My Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showUserPanel('upanel-voters','u-nav-voters')">View All</button></div>
+            <div class="card-body" style="padding:0"><div class="tbl-wrap">
+              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="user-recent-tbody"></tbody></table>
+            </div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Quick Actions</h3></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="showUserPanel('upanel-register','u-nav-register')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Register New Voter</button>
+              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="showUserPanel('upanel-voters','u-nav-voters')"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>View All My Voters</button>
+              <button class="btn btn-red" style="width:100%;justify-content:center" onclick="showUserPanel('upanel-messages','u-nav-messages')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Send Message to Admin</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER VOTERS -->
+      <div class="panel" id="upanel-voters">
+        <div class="page-hdr"><div><h2>My Voters</h2><p>Voters registered by you</p></div>
+          <button class="btn btn-primary" onclick="showUserPanel('upanel-register','u-nav-register')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Register Voter</button>
+        </div>
+        <div class="filters">
+          <input type="text" id="u-voter-search" placeholder="Search..." oninput="renderUserVotersTable()"/>
+          <select id="u-voter-status-filter" onchange="renderUserVotersTable()"><option value="">All Status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select>
+        </div>
+        <div class="card"><div class="tbl-wrap">
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>VIN</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+          <tbody id="u-voters-tbody"></tbody></table>
+        </div>
+        <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="u-voters-count-label"></span></div></div>
+      </div>
+
+      <!-- REGISTER VOTER -->
+      <div class="panel" id="upanel-register">
+        <div class="page-hdr"><div><h2 id="reg-form-title">Register Voter</h2><p>Fill in the voter's information below</p></div></div>
+        <div class="card"><div class="card-head"><h3>Voter Information Form</h3></div>
+          <div class="card-body">
+            <div class="form-section-label">Personal Information</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="rv-name" placeholder="Enter full name"/></div>
+              <div class="form-group"><label>Gender <span class="req">*</span></label><select id="rv-gender"><option value="">Select gender</option><option>Female</option><option>Male</option></select></div>
+              <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="rv-dob"/></div>
+              <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="rv-phone" placeholder="08012345678"/></div>
+              <div class="form-group form-full"><label>Address</label><input type="text" id="rv-address" placeholder="House number, street, area"/></div>
+            </div>
+            <div class="form-section-label">Location Information</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>Local Government Area <span class="req">*</span></label><select id="rv-lga" onchange="updateWards('rv-lga','rv-ward')"><option value="">Select LGA</option></select></div>
+              <div class="form-group"><label>Ward <span class="req">*</span></label><select id="rv-ward"><option value="">Select Ward</option></select></div>
+              <div class="form-group form-full"><label>Registration Center <span class="req">*</span></label><select id="rv-center"><option value="">Select Center</option></select></div>
+            </div>
+            <div class="form-section-label red">Voter Registration Details</div>
+            <div class="form-grid" style="margin-bottom:16px">
+              <div class="form-group"><label>VIN (Optional)</label><input type="text" id="rv-vin" placeholder="Leave blank if not yet registered"/></div>
+              <div class="form-group"><label>Registration Status <span class="req">*</span></label><select id="rv-status"><option value="">Select status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select></div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <button class="btn btn-primary" onclick="saveVoter()"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Save Voter Record</button>
+              <button class="btn btn-outline" onclick="clearVoterForm()">Clear Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER MESSAGES -->
+      <div class="panel" id="upanel-messages">
+        <div class="page-hdr"><div><h2>Messages</h2><p>Send messages or complaints to administrator</p></div>
+          <button class="btn btn-red" onclick="document.getElementById('new-msg-modal').classList.add('open')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>New Message</button>
+        </div>
+        <div class="compose-sent-list" id="user-sent-list">
+          <div style="padding:40px;text-align:center;color:#ccc">
+            <svg viewBox="0 0 24 24" style="width:36px;height:36px;stroke:#ddd;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block;margin:0 auto 10px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <p style="font-size:13px">No messages yet. Send your first message.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER PROFILE -->
+      <div class="panel" id="upanel-profile">
+        <div class="page-hdr"><div><h2>My Profile</h2><p>Your account details</p></div></div>
+        <div class="profile-grid">
+          <div class="prof-card">
+            <div class="prof-avatar red" id="u-prof-av">O1</div>
+            <div class="prof-name" id="u-prof-name">Officer</div>
+            <div class="prof-role red">Field Officer</div>
+            <div style="width:100%;text-align:left">
+              <div class="prof-info-row"><span class="label">Username</span><span class="value" id="u-prof-uname">-</span></div>
+              <div class="prof-info-row"><span class="label">Phone</span><span class="value" id="u-prof-phone">-</span></div>
+              <div class="prof-info-row"><span class="label">LGA</span><span class="value" id="u-prof-lga">-</span></div>
+              <div class="prof-info-row"><span class="label">Center</span><span class="value" id="u-prof-center">-</span></div>
+              <div class="prof-info-row"><span class="label">Total Voters</span><span class="value" id="u-prof-total">-</span></div>
+            </div>
+          </div>
+          <div class="card"><div class="card-head"><h3>Change Password</h3></div>
+            <div class="card-body"><div class="form-grid">
+              <div class="form-group form-full"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+              <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
+              <div class="form-group"><label>Confirm Password</label><input type="password" placeholder="••••••••"/></div>
+            </div><button class="btn btn-primary" style="margin-top:10px" onclick="showToast('Password updated','success')">Update Password</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- Voter Modal (Admin) -->
+<div class="modal-overlay" id="voter-modal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="voter-modal-title">Register Voter</h3><button class="modal-close" onclick="closeModal('voter-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="modal-body">
+      <div class="form-section-label" style="margin-bottom:12px">Personal Information</div>
+      <div class="form-grid" style="margin-bottom:14px">
+        <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="m-name"/></div>
+        <div class="form-group"><label>Gender <span class="req">*</span></label><select id="m-gender"><option value="">Select</option><option>Female</option><option>Male</option></select></div>
+        <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="m-dob"/></div>
+        <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" id="m-phone" placeholder="08012345678"/></div>
+        <div class="form-group form-full"><label>Address</label><input type="text" id="m-address"/></div>
+      </div>
+      <div class="form-section-label" style="margin-bottom:12px">Location</div>
+      <div class="form-grid" style="margin-bottom:14px">
+        <div class="form-group"><label>LGA <span class="req">*</span></label><select id="m-lga" onchange="updateWards('m-lga','m-ward')"><option value="">Select LGA</option></select></div>
+        <div class="form-group"><label>Ward <span class="req">*</span></label><select id="m-ward"><option value="">Select Ward</option></select></div>
+        <div class="form-group form-full"><label>Center <span class="req">*</span></label><select id="m-center"><option value="">Select Center</option></select></div>
+      </div>
+      <div class="form-section-label red" style="margin-bottom:12px">Registration Details</div>
+      <div class="form-grid">
+        <div class="form-group"><label>VIN (Optional)</label><input type="text" id="m-vin" placeholder="Blank if not registered"/></div>
+        <div class="form-group"><label>Status <span class="req">*</span></label><select id="m-status"><option value="">Select</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('voter-modal')">Cancel</button><button class="btn btn-primary" onclick="saveVoterModal()">Save Record</button></div>
+  </div>
+</div>
+
+<!-- User Modal -->
+<div class="modal-overlay" id="user-modal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="user-modal-title">Add Field Officer</h3><button class="modal-close" onclick="closeModal('user-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="u-name"/></div>
+        <div class="form-group"><label>Username <span class="req">*</span></label><input type="text" id="u-uname"/></div>
+        <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" id="u-phone" placeholder="08012345678"/></div>
+        <div class="form-group"><label>Password <span class="req">*</span></label><input type="password" id="u-pass" placeholder="Min 6 characters"/></div>
+        <div class="form-group"><label>LGA <span class="req">*</span></label><select id="u-lga" onchange="updateCentersForUser()"><option value="">Select LGA</option></select></div>
+        <div class="form-group"><label>Center <span class="req">*</span></label><select id="u-center"><option value="">Select Center</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('user-modal')">Cancel</button><button class="btn btn-primary" onclick="saveUser()">Create Officer</button></div>
+  </div>
+</div>
+
+<!-- Center Modal -->
+<div class="modal-overlay" id="center-modal">
+  <div class="modal modal-sm">
+    <div class="modal-head"><h3 id="center-modal-title">Add Center</h3><button class="modal-close" onclick="closeModal('center-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-full"><label>Center Name <span class="req">*</span></label><input type="text" id="c-name" placeholder="e.g. Gwale Primary School Center"/></div>
+        <div class="form-group form-full"><label>LGA <span class="req">*</span></label><select id="c-lga"><option value="">Select LGA</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('center-modal')">Cancel</button><button class="btn btn-primary" onclick="saveCenter()">Add Center</button></div>
+  </div>
+</div>
+
+<!-- New Message Modal (User) -->
+<div class="modal-overlay" id="new-msg-modal">
+  <div class="modal modal-sm">
+    <div class="modal-head red-head"><h3>Send Message to Admin</h3><button class="modal-close white" onclick="closeModal('new-msg-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="modal-body">
+      <div style="background:var(--lred);border-radius:8px;padding:10px 13px;margin-bottom:16px;font-size:12.5px;color:var(--red)">Your LGA and center will be automatically included with your message.</div>
+      <div class="form-grid">
+        <div class="form-group form-full"><label>Subject / Category <span class="req">*</span></label>
+          <select id="msg-category"><option value="">Select category</option><option>Technical Issue</option><option>Data Entry Problem</option><option>Voter Registration Question</option><option>Equipment Issue</option><option>Security Concern</option><option>General Complaint</option><option>Other</option></select>
+        </div>
+        <div class="form-group form-full"><label>Message <span class="req">*</span></label><textarea id="msg-body" placeholder="Describe your issue or question in detail..." style="min-height:110px"></textarea></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('new-msg-modal')">Cancel</button><button class="btn btn-red" onclick="sendMessage()">Send Message</button></div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal modal-sm">
+    <div class="modal-body" style="padding:30px 26px;text-align:center">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></svg></div>
+      <div style="font-size:15px;font-weight:500;color:#111;margin-bottom:6px" id="confirm-msg">Delete this record?</div>
+      <div style="font-size:13px;color:#aaa;margin-bottom:20px">This action cannot be undone.</div>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-outline" onclick="closeModal('confirm-modal')">Cancel</button>
+        <button class="btn btn-danger" id="confirm-ok-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+// KANO LGA + WARD DATA (from soluap.com)
+// ══════════════════════════════════════
+const KANO_DATA = {
+  "Ajingi":["Ajingi","Balare","Chula","Dabin Kanawa","Dundun","Gafasa","Gurduba","Kunkurawa","Toranke","Ungawar Bai"],
+  "Albasu":["Albasu Central","Bataiya","Chamarana","Daho","Fanda","Faragai","Gagarame","Hungu","Saya-Saya","Tsangaya"],
+  "Bagwai":["Bagwai","Dangada","Gadanya","Gogori","Kiyawa","Kwajali","Rimin Dako","Romo","Sare-Sare","Wuro Bagga"],
+  "Bebeji":["Anadariya","Baguda","Bebeji","Damau","Durmawa","Gargai","Gwarmai","Kofa","Kuki","Rahama","Ranka","Rantan","Tariwa","Wak"],
+  "Bichi":["Badume","Bichi","Danzabuwa","Fagolo","Kaukau","Kwamarawa","Kyalli","Muntsira","Saye","Waire","Yallami"],
+  "Bunkure":["Barkum","Bono","Bunkure","Chirin","Gafan","Gurjiya","Gwamma","Kulluwa","Kumurya","Sanda"],
+  "Dala":["Adakawa","Bakin Ruwa","Dala","Dogon Nama","Gobirawa","Gwammaja","Kabuwaya","Kantudu","Kofar Mazugal","Kofar Ruwa","Madigawa","Yalwa"],
+  "Danbatta":["Ajumawa","Danbatta East","Danbatta West","Fagwalawa","Goron Maje","Gwanda","Gwarabjawa","Kore","Saidawa","Sansan"],
+  "Dawaki Kudu":["Dabar Kwari","Danbagiwa","Dawaki","Dawakiji","Dosan","Gano","Gurjiya","Jido","Tamburawa","Tsakuwa","Unguwar Duniya","Yanbarau","Yankatsari","Yargaya","Zogarawa"],
+  "Dawaki Tofa":["Dan Guguwa","Dawaki East","Dawaki West","Dawanau","Ganduje","Gargari","Jalli","Kwa","Marke","Tattarawa","Tumfafi"],
+  "Doguwa":["Dariya","Dogon Kawo","Duguwa","Falgore","Maraku","Ragada","Ririwai","Tagwaye","Unguwar Natsohuwa","Zainabi"],
+  "Fagge":["Fagge A","Fagge B","Fagge C","Fagge D","Fagge E","Kwachiri","Rijiyar Lemo","Sabongari East","Sabongari West","Yammata"],
+  "Gabasawa":["Gabasawa","Garun Danga","Joda","Karmaki","Mekiya","Tarauni","Yantar Arewwa","Yautar Kudu","Yumbu","Zakirai","Zugachi"],
+  "Garko":["Dal","Garin Ali","Garko","Gurjiya","Kafin Malamai","Katumari","Kwas","Raba","Sarina","Zakarawa"],
+  "Garun Malam":["Chiromawa","Dorawar-Sallau","Fankurun","Garun Babba","Garun Malam","Jobawa","Kadawa","Makwaro","Yad Akwari","Yalwan Yadakwari"],
+  "Gaya":["Balan","Gamarya","Gamoji","Gaya Arewa","Gaya Kudu","Kademi","Kazurawa","Maimakawa","Shagogo","Wudilawa"],
+  "Gezawa":["Babawa","Gawo","Gezawa","Jogana","Ketawa","Mesar-Tudu","Sararin-Gezawa","Tsamiya-Babba","Tumbau","Wangara","Zango"],
+  "Gwale":["Dandago","Diso","Dorayi","Galadanchi","Goron Dutse","Gwale","Gyaranya","Kabuga","Mandawari","Sani Mai Magge"],
+  "Gwarzo":["Getso","Gwarzo","Jama'a","Kara","Kutama","Lakwaya","Madadi","Mainika","Sabon Birni","Unguwar Tudu"],
+  "Kabo":["Dugabau","Durun","Gammo","Garo","Godiya","Gude","Hauwade","Kabo","Kanwa","Masanawa"],
+  "Kano Municipal":["Chedi","Dan'agundi","Gandun Albasa","Jakara","Kankarofi","Shahuchi","Sharada","Sheshe","Tudun Nufawa","Tudun Wazirchi","Yakasai","Zaitawa","Zango"],
+  "Karaye":["Daura","Kafin Dafga","Karaye","Kurugu","Kwanyawa","Tudun Kaya","Turawa","Unguwar Hajji","Yammedi","Yola"],
+  "Kibiya":["Durba","Fammar","Fassi","Kadigawa","Kahu","Kibiya I","Kibiya II","Nariya","Tarai","Unguwar Gai"],
+  "Kiru":["Ba'awa","Badafi","Bargoni","Bauda","Dangora","Dansohiya","Dashi","Galadimawa","Kiru","Kogo","Maraku","Tsaudawa","Yako","Yalwa","Zuwo"],
+  "Kumbotso":["Challawa","Chiranchi","Danbare","Danmaliki","Guringawa","Kumbotso","Kureken Sani","Mariri","Na'ibawa","Panshekara","Unguwar Rimi"],
+  "Kunchi":["Bumai","Garin Sheme","Gwarmai","Kasuwar Kuka","Kunchi","Matan Fada","Ridawa","Shamakawa","Shuwaki","Yandadi"],
+  "Kura":["Dalili","Dan Hassan","Dukawa","Gundutse","Karfi","Kosawa","Kura","Kurunsumau","Rigar Duka","Tanawa"],
+  "Madobi":["Burji","Cinkoso","Galinja","Gora","Kafin Agur","Kanwa","Kaura Mata","Kubaraci","Kwankwaso","Madobi","Rikadawa"],
+  "Makoda":["Babbar Riga","Durma","Jibga","Kadandani","Koguna","Koren Tatso","Maitsidau","Makoda","Satame","Tangaji","Wailare"],
+  "Minjibir":["Azore","Gandurwawa","Kantama","Kunya","Kuru","Kwarkiya","Minjibir","Sarbi","Tsakiya","Tsakuwa","Wasai"],
+  "Nasarawa":["Dakata","Gama","Gawuna","Giginyu","Gwagwarwa","Hotoro North","Hotoro South","Kaura Goje","Kawaji","Tudun Murtala","Tudun Wada"],
+  "Rano":["Dawaki","Lausu","Madachi","Rano","Rurum Sabon-Gari","Rurum Tsohon-Gari","Saji","Yalwa","Zinyau","Zurgu"],
+  "Rimin Gado":["Butu-Butu","Dawaki Gulu","Doka Dawa","Dugurawa","Gulu","Jili","Karofin Yashi","Rimin Gado","Sakaratsa","Tamawa","Yalwan Danziyal","Zango Dan Abdu"],
+  "Rogo":["Beli","Falgore","Fulatan","Gwangwan","Jajaye","Rogo Ruma","Rogo Sabon Gari","Ruwan Bago","Zarewa","Zoza"],
+  "Shanono":["Alajawa","Dutsen-Bakoshi","Faruruwa","Goron Dutse","Kadamu","Kokiya","Leni","Shakogi","Shanono","Tsaure"],
+  "Sumaila":["Gala","Gani","Garfa","Gediya","Kanawa","Magami","Masu","Rimi","Rumo","Sitti","Sumaila"],
+  "Takai":["Bagwaro","Durbunde","Fajewa","Falali","Faruruwa","Kachako","Karfi","Kuka","Takai","Zuga"],
+  "Tarauni":["Babban Giji","Darmanawa","Daurawa","Gyadi-Gyadi Arewa","Gyadi-Gyadi Kudu","Hotoro (NNPC)","Kauyen Alu","Tarauni","Unguwa Uku","Unguwar Gano"],
+  "Tofa":["Dindere","Doka","Gajida","Ginsawa","Janguza","Jauben Kudu","Kwami","Lambu","Langel","Tofa","Unguwar Rimi","Wangara","Yalwa Karama","Yanoko","Yarimawa"],
+  "Tsanyawa":["Daddarawa","Dunbulun","Gozaki","Gurun","Kabagiwa","Tatsan","Tsanyawa","Yanganau","Yankamaye","Zarogi"],
+  "Tudun Wada":["Baburi","Burumburum","Dalawa","Jandutse","Jita","Karefa","Nata'ala","Sabon Gari","Shuwaki","Tsohogari"],
+  "Ungogo":["Bachirawa","Gayawa","Kadawa","Karo","Panisau","Rangaza","Rijiyar Zaki","Tudun Fulani","Ungogo","Yadakunya","Zango"],
+  "Warawa":["Amarawa","Danlasan","Garin Dau","Gogel","Imawa","J/Galadima","Jemagu","Jigawa","Katarkawa","Madari Mata","Tamburawar Gabas","Tangar","Warawa","'Yan Dalla","'Yangizo"],
+  "Wudil":["Achika","Dagumawa","Dankaza","Darki","Indabo","Kausani","Lajawa","Sabon Gari","Utai","Wudil"]
+};
+const LGAS = Object.keys(KANO_DATA).sort();
+
+// Mock data
+let USERS = [
+  {id:1,name:"Hajiya Amina Sani",username:"officer1",phone:"08034567890",password:"pass123",lga:"Gwale",center:"Gwale Main Center",created:"2025-01-10"},
+  {id:2,name:"Hajiya Fatima Musa",username:"officer2",phone:"08045678901",password:"pass123",lga:"Tarauni",center:"Tarauni Central",created:"2025-01-11"},
+  {id:3,name:"Aisha Bello",username:"officer3",phone:"08056789012",password:"pass123",lga:"Nasarawa",center:"Nasarawa Govt School",created:"2025-01-12"},
+  {id:4,name:"Maryam Yusuf",username:"officer4",phone:"08067890123",password:"pass123",lga:"Kumbotso",center:"Kumbotso Center",created:"2025-01-13"},
+  {id:5,name:"Zainab Ibrahim",username:"officer5",phone:"08078901234",password:"pass123",lga:"Fagge",center:"Fagge Community Hall",created:"2025-01-14"},
+  {id:6,name:"Hauwa Garba",username:"officer6",phone:"08089012345",password:"pass123",lga:"Dala",center:"Dala Town Center",created:"2025-01-15"},
+  {id:7,name:"Rukayya Abdullahi",username:"officer7",phone:"08090123456",password:"pass123",lga:"Kano Municipal",center:"Kano Municipal HQ",created:"2025-01-16"},
+  {id:8,name:"Safiya Umar",username:"officer8",phone:"08001234567",password:"pass123",lga:"Ungogo",center:"Ungogo Center",created:"2025-01-17"}
+];
+let CENTERS = [
+  {id:1,name:"Gwale Main Center",lga:"Gwale",created:"2025-01-05"},
+  {id:2,name:"Tarauni Central",lga:"Tarauni",created:"2025-01-05"},
+  {id:3,name:"Nasarawa Govt School",lga:"Nasarawa",created:"2025-01-06"},
+  {id:4,name:"Kumbotso Center",lga:"Kumbotso",created:"2025-01-06"},
+  {id:5,name:"Fagge Community Hall",lga:"Fagge",created:"2025-01-07"},
+  {id:6,name:"Dala Town Center",lga:"Dala",created:"2025-01-07"},
+  {id:7,name:"Kano Municipal HQ",lga:"Kano Municipal",created:"2025-01-08"},
+  {id:8,name:"Ungogo Center",lga:"Ungogo",created:"2025-01-08"},
+  {id:9,name:"Bebeji Community Hall",lga:"Bebeji",created:"2025-01-09"},
+  {id:10,name:"Karaye Registration Point",lga:"Karaye",created:"2025-01-09"},
+  {id:11,name:"Gwarzo Town Hall",lga:"Gwarzo",created:"2025-01-10"},
+  {id:12,name:"Rano Primary School",lga:"Rano",created:"2025-01-10"}
+];
+
+const FN=["Amina","Fatima","Aisha","Maryam","Zainab","Hauwa","Rukayya","Safiya","Ramlatu","Bilkisu","Hadiza","Khadija","Asma'u","Ramatu","Nana","Falmata","Jamila","Binta","Ladidi","Hafsat"];
+const MN=["Usman","Ibrahim","Musa","Suleiman","Abdullahi","Kabiru","Haruna","Lawal","Bello","Ahmad","Yusuf","Rabiu","Sani","Nasiru","Tahir","Idris","Bashir","Auwal","Isa","Hamza"];
+const SN=["Sani","Musa","Ibrahim","Abdullahi","Garba","Umar","Bello","Yusuf","Lawal","Danjuma","Aliyu","Haruna","Kabiru","Idris","Abubakar","Isa","Suleiman","Aminu","Rabiu","Nasiru"];
+const STATUSES=["Registered","In Progress","Not Registered"];
+const ri=(a)=>a[Math.floor(Math.random()*a.length)];
+const rn=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+
+let VOTERS=[];
+let vid=1;
+for(let i=0;i<80;i++){
+  const g=Math.random()>.3?'Female':'Male';
+  const fn=g==='Female'?ri(FN):ri(MN);
+  const lga=ri(LGAS);
+  const wards=KANO_DATA[lga];
+  const ward=ri(wards);
+  const cs=CENTERS.filter(c=>c.lga===lga);
+  const center=cs.length?ri(cs):CENTERS[0];
+  const status=ri(STATUSES);
+  const officer=ri(USERS);
+  const dob=new Date(rn(1960,2005),rn(0,11),rn(1,28));
+  const daysBack=rn(0,60);
+  const rec=new Date();rec.setDate(rec.getDate()-daysBack);
+  VOTERS.push({
+    id:vid++,name:fn+' '+ri(SN),gender:g,
+    dob:dob.toISOString().split('T')[0],
+    phone:'080'+rn(10000000,99999999),
+    address:'No '+rn(1,200)+', '+ward+' Area',
+    lga,ward,center:center.name,
+    vin:status==='Registered'?'KN'+rn(100000,999999)+'A':'',
+    status,officerId:officer.id,
+    recorded:rec.toISOString().split('T')[0]
+  });
+}
+
+// Messages
+let MESSAGES=[
+  {id:1,officerId:2,subject:"Technical Issue",body:"The registration system is very slow at Tarauni center. Tablets are freezing when saving records.",lga:"Tarauni",center:"Tarauni Central",status:"open",date:"2025-06-01",time:"09:15",read:false,replies:[{from:"admin",text:"We are aware of this issue. Please try clearing the browser cache. IT team has been notified.",time:"2025-06-01 11:30"}]},
+  {id:2,officerId:3,subject:"Data Entry Problem",body:"Some voters don't have their ward information. How should I handle cases where ward is unknown?",lga:"Nasarawa",center:"Nasarawa Govt School",status:"resolved",date:"2025-05-30",time:"14:22",read:true,replies:[{from:"admin",text:"For unknown wards, please select the nearest known ward and add a note in the address field. We will update the data later.",time:"2025-05-30 16:00"}]},
+  {id:3,officerId:5,subject:"Voter Registration Question",body:"A voter claims she has a VIN but cannot remember it. Should I mark her as Registered or In Progress?",lga:"Fagge",center:"Fagge Community Hall",status:"open",date:"2025-06-02",time:"08:45",read:false,replies:[]},
+];
+let msgIdCounter=4;
+let currentUser=null;
+let currentRole='admin';
+let loginRole='admin';
+let editingVoterId=null;
+let editingUserId=null;
+let editingCenterId=null;
+let voterPage=1;
+const PER_PAGE=15;
+let activeAdminMsgId=null;
+let activeSidebarState={admin:true,user:true};
+
+// ═══ AUTH ═══
+function setLoginRole(role,btn){
+  loginRole=role;
+  document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('login-err').style.display='none';
+}
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value.trim();
+  const err=document.getElementById('login-err');
+  err.style.display='none';
+  if(!u||!p){err.textContent='Please enter username and password';err.style.display='block';return}
+  if(loginRole==='admin'){
+    if(u==='admin'&&p==='admin123'){currentRole='admin';loadAdminDash();showPage('page-admin');showToast('Welcome, Administrator','success')}
+    else{err.textContent='Invalid admin credentials';err.style.display='block'}
+  } else {
+    const off=USERS.find(x=>x.username===u&&x.password===p);
+    if(off){currentUser=off;currentRole='user';loadUserDash();showPage('page-user');showToast('Welcome, '+off.name,'success')}
+    else{err.textContent='Invalid credentials';err.style.display='block'}
+  }
+}
+function doLogout(){
+  showPage('page-home');currentUser=null;
+  document.getElementById('login-user').value='';
+  document.getElementById('login-pass').value='';
+  showToast('Logged out successfully','success');
+}
+
+// ═══ NAVIGATION ═══
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function scrollTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
+
+function showPanel(id,navId){
+  document.querySelectorAll('#page-admin .panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('#page-admin .sb-item').forEach(i=>i.classList.remove('active','red-active'));
+  if(navId){const el=document.getElementById(navId);if(el)el.classList.add(id==='panel-messages'?'red-active':'active')}
+  const T={'panel-dash':'Dashboard','panel-voters':'Voter Records','panel-users':'Field Officers','panel-centers':'Registration Centers','panel-statistics':'Statistics','panel-reports':'Reports','panel-messages':'Messages','panel-profile':'My Profile'};
+  document.getElementById('admin-panel-title').textContent=T[id]||'';
+  if(id==='panel-voters'){populateLgaFilter('voter-lga-filter',VOTERS.map(v=>v.lga));populateCenterFilter();renderVotersTable()}
+  if(id==='panel-users'){populateLgaFilter('user-lga-filter',USERS.map(u=>u.lga));renderUsersTable()}
+  if(id==='panel-centers'){populateLgaFilter('center-lga-filter',CENTERS.map(c=>c.lga));renderCentersTable()}
+  if(id==='panel-statistics')renderStatisticsPanel();
+  if(id==='panel-messages')renderAdminMessages();
+  // close sidebar on mobile
+  if(window.innerWidth<700)closeSidebar('admin');
+}
+function showUserPanel(id,navId){
+  document.querySelectorAll('#page-user .panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('#page-user .sb-item').forEach(i=>i.classList.remove('active','red-active'));
+  if(navId){const el=document.getElementById(navId);if(el)el.classList.add(id==='upanel-messages'?'red-active':'active')}
+  const T={'upanel-dash':'Dashboard','upanel-voters':'My Voters','upanel-register':'Register Voter','upanel-messages':'Messages','upanel-profile':'My Profile'};
+  document.getElementById('user-panel-title').textContent=T[id]||'';
+  if(id==='upanel-voters')renderUserVotersTable();
+  if(id==='upanel-register')populateRegisterForm();
+  if(id==='upanel-messages')renderUserMessages();
+  if(window.innerWidth<700)closeSidebar('user');
+}
+
+// ═══ SIDEBAR TOGGLE ═══
+function toggleSidebar(who){
+  const sb=document.getElementById(who+'-sidebar');
+  const ov=document.getElementById(who+'-overlay');
+  const isCollapsed=sb.classList.contains('collapsed');
+  if(isCollapsed){sb.classList.remove('collapsed');if(window.innerWidth<768)ov.classList.add('open')}
+  else{sb.classList.add('collapsed');ov.classList.remove('open')}
+}
+function closeSidebar(who){
+  const sb=document.getElementById(who+'-sidebar');
+  const ov=document.getElementById(who+'-overlay');
+  if(window.innerWidth<768){sb.classList.add('collapsed');ov.classList.remove('open')}
+}
+// auto-collapse on small screens
+function checkMobileLayout(){
+  ['admin','user'].forEach(who=>{
+    const sb=document.getElementById(who+'-sidebar');
+    if(!sb)return;
+    if(window.innerWidth<768)sb.classList.add('collapsed');
+    else sb.classList.remove('collapsed');
+  });
+}
+window.addEventListener('resize',checkMobileLayout);
+
+// ═══ LOAD DASHBOARDS ═══
+function loadAdminDash(){
+  const tbody=document.getElementById('dash-recent-voters');
+  const recent=VOTERS.slice(-8).reverse();
+  tbody.innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td><td>${statusBadge(v.status)}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
+
+  const acts=[
+    {t:'g',msg:'Fatima Musa registered voter Aisha Ibrahim',time:'2 min ago'},
+    {t:'b',msg:'New officer Zainab Abdullahi created',time:'15 min ago'},
+    {t:'g',msg:'Nasarawa Govt School center updated',time:'32 min ago'},
+    {t:'o',msg:'Voter record Usman Garba edited',time:'1 hr ago'},
+    {t:'g',msg:'Maryam Yusuf registered 5 voters today',time:'2 hrs ago'},
+    {t:'r',msg:'Voter record deleted by officer1',time:'3 hrs ago'},
+  ];
+  document.getElementById('dash-activity').innerHTML=acts.map(a=>`<div class="act-item"><div class="act-dot adc-${a.t}">${svgForAct(a.t)}</div><div><div class="act-msg">${a.msg}</div><div class="act-time">${a.time}</div></div></div>`).join('');
+
+  const cdata=[{n:"Nasarawa Govt School",v:61,c:'green'},{n:"Fagge Community Hall",v:47,c:'green'},{n:"Tarauni Central",v:42,c:'green'},{n:"Gwale Main Center",v:35,c:'red'},{n:"Kumbotso Center",v:29,c:'red'},{n:"Dala Town Center",v:24,c:'red'}];
+  document.getElementById('center-bars').innerHTML=cdata.map(c=>`<div><div class="cb-top"><span class="cb-name">${c.n}</span><span class="cb-count">${c.v} today</span></div><div class="cb-bar"><div class="cb-fill ${c.c}" style="width:${(c.v/80*100).toFixed(0)}%"></div></div></div>`).join('');
+
+  updateMsgBadge();
+}
+
+function loadUserDash(){
+  if(!currentUser)return;
+  const my=VOTERS.filter(v=>v.officerId===currentUser.id);
+  document.getElementById('user-sb-name').textContent=currentUser.name;
+  document.getElementById('user-sb-lga').textContent=currentUser.lga+' — '+currentUser.center;
+  const initials=currentUser.name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('user-av').textContent=initials;
+  document.getElementById('user-dash-name').textContent=currentUser.name;
+  document.getElementById('user-dash-meta').textContent=currentUser.center+' · '+currentUser.lga;
+  document.getElementById('u-total').textContent=my.length;
+  document.getElementById('u-reg').textContent=my.filter(v=>v.status==='Registered').length;
+  document.getElementById('u-prog').textContent=my.filter(v=>v.status==='In Progress').length;
+  document.getElementById('u-notreg').textContent=my.filter(v=>v.status==='Not Registered').length;
+  document.getElementById('u-prof-av').textContent=initials;
+  document.getElementById('u-prof-name').textContent=currentUser.name;
+  document.getElementById('u-prof-uname').textContent=currentUser.username;
+  document.getElementById('u-prof-phone').textContent=currentUser.phone;
+  document.getElementById('u-prof-lga').textContent=currentUser.lga;
+  document.getElementById('u-prof-center').textContent=currentUser.center;
+  document.getElementById('u-prof-total').textContent=my.length;
+  const recent=my.slice(-6).reverse();
+  document.getElementById('user-recent-tbody').innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td>${statusBadge(v.status)}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
+}
+
+function svgForAct(t){
+  if(t==='g')return`<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+  if(t==='b')return`<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+  if(t==='r')return`<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>`;
+  return`<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`;
+}
+
+// ═══ TABLES ═══
+function statusBadge(s){
+  if(s==='Registered')return`<span class="badge green">Registered</span>`;
+  if(s==='In Progress')return`<span class="badge orange">In Progress</span>`;
+  return`<span class="badge red">Not Registered</span>`;
+}
+const svgEdit=()=>`<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`;
+const svgTrash=()=>`<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></svg>`;
+
+function populateLgaFilter(selId,lgaArray){
+  const sel=document.getElementById(selId);if(!sel)return;
+  const cur=sel.value;
+  const used=[...new Set(lgaArray)].sort();
+  sel.innerHTML='<option value="">All LGAs</option>'+used.map(l=>`<option value="${l}">${l}</option>`).join('');
+  sel.value=cur;
+}
+function populateCenterFilter(){
+  const sel=document.getElementById('voter-center-filter');if(!sel)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">All Centers</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  sel.value=cur;
+}
+function populateLgaDropdown(selId){
+  const sel=document.getElementById(selId);if(!sel)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">Select LGA</option>'+LGAS.map(l=>`<option value="${l}">${l}</option>`).join('');
+  sel.value=cur;
+}
+function updateWards(lgaSel,wardSel){
+  const lga=document.getElementById(lgaSel).value;
+  const ws=document.getElementById(wardSel);
+  const wards=lga&&KANO_DATA[lga]?KANO_DATA[lga]:[];
+  ws.innerHTML='<option value="">Select Ward</option>'+wards.map(w=>`<option value="${w}">${w}</option>`).join('');
+}
+function updateCentersForUser(){
+  const lga=document.getElementById('u-lga').value;
+  const cs=CENTERS.filter(c=>c.lga===lga);
+  document.getElementById('u-center').innerHTML='<option value="">Select Center</option>'+cs.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+}
+
+function renderVotersTable(){
+  const s=(document.getElementById('voter-search')||{}).value||'';
+  const lga=(document.getElementById('voter-lga-filter')||{}).value||'';
+  const st=(document.getElementById('voter-status-filter')||{}).value||'';
+  const ct=(document.getElementById('voter-center-filter')||{}).value||'';
+  const filt=VOTERS.filter(v=>(!s||v.name.toLowerCase().includes(s.toLowerCase())||v.vin.includes(s)||v.phone.includes(s))&&(!lga||v.lga===lga)&&(!st||v.status===st)&&(!ct||v.center===ct));
+  const pages=Math.ceil(filt.length/PER_PAGE)||1;
+  if(voterPage>pages)voterPage=1;
+  const slice=filt.slice((voterPage-1)*PER_PAGE,voterPage*PER_PAGE);
+  document.getElementById('voters-count-label').textContent=`Showing ${slice.length} of ${filt.length} records`;
+  document.getElementById('voters-tbody').innerHTML=slice.map((v,i)=>`<tr>
+    <td style="color:#aaa">${(voterPage-1)*PER_PAGE+i+1}</td>
+    <td style="font-weight:500">${v.name}</td><td>${v.gender}</td><td>${v.dob}</td><td>${v.phone}</td>
+    <td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="color:#aaa;font-size:12px">${v.recorded}</td>
+    <td><div style="display:flex;gap:4px">
+      <button class="btn-icon" title="Edit" onclick="editVoter(${v.id})">${svgEdit()}</button>
+      <button class="btn-icon red" title="Delete" onclick="confirmDelete('voter',${v.id})">${svgTrash()}</button>
+    </div></td>
+  </tr>`).join('');
+  // pagination
+  let ph='';
+  if(voterPage>1)ph+=`<div class="pag-btn" onclick="voterPage--;renderVotersTable()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></div>`;
+  for(let p=1;p<=pages;p++){
+    if(pages<=6||p===1||p===pages||Math.abs(p-voterPage)<=1)ph+=`<div class="pag-btn ${p===voterPage?'active':''}" onclick="voterPage=${p};renderVotersTable()">${p}</div>`;
+    else if(Math.abs(p-voterPage)===2)ph+=`<div class="pag-btn" style="pointer-events:none;border:none;color:#ccc">…</div>`;
+  }
+  if(voterPage<pages)ph+=`<div class="pag-btn" onclick="voterPage++;renderVotersTable()"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>`;
+  document.getElementById('voters-pagination').innerHTML=ph;
+}
+
+function renderUsersTable(){
+  const s=(document.getElementById('user-search')||{}).value||'';
+  const lga=(document.getElementById('user-lga-filter')||{}).value||'';
+  const filt=USERS.filter(u=>(!s||u.name.toLowerCase().includes(s.toLowerCase())||u.username.toLowerCase().includes(s.toLowerCase()))&&(!lga||u.lga===lga));
+  document.getElementById('users-count-label').textContent=`${filt.length} officer(s) found`;
+  document.getElementById('users-tbody').innerHTML=filt.map((u,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${u.name}</td>
+    <td style="font-family:monospace;font-size:12.5px">${u.username}</td>
+    <td>${u.phone}</td><td>${u.lga}</td><td>${u.center}</td>
+    <td><span class="badge green">${VOTERS.filter(v=>v.officerId===u.id).length}</span></td>
+    <td style="color:#aaa;font-size:12px">${u.created}</td>
+    <td><div style="display:flex;gap:4px">
+      <button class="btn-icon" onclick="editUser(${u.id})">${svgEdit()}</button>
+      <button class="btn-icon red" onclick="confirmDelete('user',${u.id})">${svgTrash()}</button>
+    </div></td>
+  </tr>`).join('');
+}
+
+function renderCentersTable(){
+  const s=(document.getElementById('center-search')||{}).value||'';
+  const lga=(document.getElementById('center-lga-filter')||{}).value||'';
+  const filt=CENTERS.filter(c=>(!s||c.name.toLowerCase().includes(s.toLowerCase()))&&(!lga||c.lga===lga));
+  document.getElementById('centers-count-label').textContent=`${filt.length} center(s) found`;
+  const today=new Date().toISOString().split('T')[0];
+  document.getElementById('centers-tbody').innerHTML=filt.map((c,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${c.name}</td><td>${c.lga}</td>
+    <td><span class="badge blue">${VOTERS.filter(v=>v.center===c.name).length}</span></td>
+    <td><span class="badge green">${VOTERS.filter(v=>v.center===c.name&&v.recorded===today).length}</span></td>
+    <td><span class="badge gray">${USERS.filter(u=>u.center===c.name).length}</span></td>
+    <td style="color:#aaa;font-size:12px">${c.created}</td>
+    <td><div style="display:flex;gap:4px">
+      <button class="btn-icon" onclick="editCenter(${c.id})">${svgEdit()}</button>
+      <button class="btn-icon red" onclick="confirmDelete('center',${c.id})">${svgTrash()}</button>
+    </div></td>
+  </tr>`).join('');
+}
+
+function renderUserVotersTable(){
+  if(!currentUser)return;
+  const s=(document.getElementById('u-voter-search')||{}).value||'';
+  const st=(document.getElementById('u-voter-status-filter')||{}).value||'';
+  const filt=VOTERS.filter(v=>v.officerId===currentUser.id&&(!s||v.name.toLowerCase().includes(s.toLowerCase()))&&(!st||v.status===st));
+  document.getElementById('u-voters-count-label').textContent=`${filt.length} voter(s)`;
+  document.getElementById('u-voters-tbody').innerHTML=filt.map((v,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${v.name}</td><td>${v.gender}</td>
+    <td>${v.dob}</td><td>${v.phone}</td><td>${v.lga}</td><td>${v.ward}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="color:#aaa;font-size:12px">${v.recorded}</td>
+    <td><div style="display:flex;gap:4px">
+      <button class="btn-icon" onclick="editVoterUser(${v.id})">${svgEdit()}</button>
+      <button class="btn-icon red" onclick="confirmDeleteUser(${v.id})">${svgTrash()}</button>
+    </div></td>
+  </tr>`).join('');
+}
+
+// ═══ VOTER MODAL ═══
+function openVoterModal(voter){
+  populateLgaDropdown('m-lga');
+  const csel=document.getElementById('m-center');
+  csel.innerHTML='<option value="">Select Center</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  if(voter){
+    document.getElementById('voter-modal-title').textContent='Edit Voter';editingVoterId=voter.id;
+    document.getElementById('m-name').value=voter.name;document.getElementById('m-gender').value=voter.gender;
+    document.getElementById('m-dob').value=voter.dob;document.getElementById('m-phone').value=voter.phone;
+    document.getElementById('m-address').value=voter.address||'';document.getElementById('m-lga').value=voter.lga;
+    updateWards('m-lga','m-ward');document.getElementById('m-ward').value=voter.ward;
+    document.getElementById('m-center').value=voter.center;document.getElementById('m-vin').value=voter.vin;
+    document.getElementById('m-status').value=voter.status;
+  } else {
+    document.getElementById('voter-modal-title').textContent='Register Voter';editingVoterId=null;
+    ['m-name','m-dob','m-phone','m-address','m-vin'].forEach(id=>document.getElementById(id).value='');
+    ['m-gender','m-lga','m-ward','m-center','m-status'].forEach(id=>document.getElementById(id).value='');
+  }
+  document.getElementById('voter-modal').classList.add('open');
+}
+function editVoter(id){openVoterModal(VOTERS.find(x=>x.id===id))}
+function saveVoterModal(){
+  const f={name:document.getElementById('m-name').value.trim(),gender:document.getElementById('m-gender').value,dob:document.getElementById('m-dob').value,phone:document.getElementById('m-phone').value.trim(),lga:document.getElementById('m-lga').value,ward:document.getElementById('m-ward').value,center:document.getElementById('m-center').value,status:document.getElementById('m-status').value};
+  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!f.status){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,vin:document.getElementById('m-vin').value.trim(),address:document.getElementById('m-address').value.trim()});showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,vin:document.getElementById('m-vin').value.trim(),address:document.getElementById('m-address').value.trim(),officerId:1,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  closeModal('voter-modal');renderVotersTable();
+}
+
+// ═══ USER MODAL ═══
+function openUserModal(user){
+  populateLgaDropdown('u-lga');
+  if(user){
+    document.getElementById('user-modal-title').textContent='Edit Officer';editingUserId=user.id;
+    document.getElementById('u-name').value=user.name;document.getElementById('u-uname').value=user.username;
+    document.getElementById('u-phone').value=user.phone;document.getElementById('u-pass').value='';
+    document.getElementById('u-lga').value=user.lga;updateCentersForUser();document.getElementById('u-center').value=user.center;
+  } else {
+    document.getElementById('user-modal-title').textContent='Add Field Officer';editingUserId=null;
+    ['u-name','u-uname','u-phone','u-pass'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('u-lga').value='';document.getElementById('u-center').innerHTML='<option value="">Select Center</option>';
+  }
+  document.getElementById('user-modal').classList.add('open');
+}
+function editUser(id){openUserModal(USERS.find(x=>x.id===id))}
+function saveUser(){
+  const name=document.getElementById('u-name').value.trim();
+  const username=document.getElementById('u-uname').value.trim();
+  const phone=document.getElementById('u-phone').value.trim();
+  const lga=document.getElementById('u-lga').value;
+  const center=document.getElementById('u-center').value;
+  if(!name||!username||!phone||!lga||!center){showToast('Fill all required fields','error');return}
+  const pass=document.getElementById('u-pass').value.trim();
+  if(editingUserId){
+    const u=USERS.find(x=>x.id===editingUserId);Object.assign(u,{name,username,phone,lga,center});if(pass)u.password=pass;showToast('Officer updated','success');
+  } else {if(!pass){showToast('Password required','error');return}USERS.push({id:USERS.length+1,name,username,phone,password:pass,lga,center,created:new Date().toISOString().split('T')[0]});showToast('Officer created','success')}
+  closeModal('user-modal');renderUsersTable();
+}
+
+// ═══ CENTER MODAL ═══
+function openCenterModal(center){
+  const csel=document.getElementById('c-lga');
+  csel.innerHTML='<option value="">Select LGA</option>'+LGAS.map(l=>`<option value="${l}">${l}</option>`).join('');
+  if(center){document.getElementById('center-modal-title').textContent='Edit Center';editingCenterId=center.id;document.getElementById('c-name').value=center.name;csel.value=center.lga}
+  else{document.getElementById('center-modal-title').textContent='Add Center';editingCenterId=null;document.getElementById('c-name').value='';csel.value=''}
+  document.getElementById('center-modal').classList.add('open');
+}
+function editCenter(id){openCenterModal(CENTERS.find(x=>x.id===id))}
+function saveCenter(){
+  const name=document.getElementById('c-name').value.trim();
+  const lga=document.getElementById('c-lga').value;
+  if(!name||!lga){showToast('Fill all required fields','error');return}
+  if(editingCenterId){Object.assign(CENTERS.find(x=>x.id===editingCenterId),{name,lga});showToast('Center updated','success')}
+  else{CENTERS.push({id:CENTERS.length+1,name,lga,created:new Date().toISOString().split('T')[0]});showToast('Center added','success')}
+  closeModal('center-modal');renderCentersTable();
+}
+
+// ═══ DELETE ═══
+function confirmDelete(type,id){
+  const n={voter:'voter record',user:'field officer',center:'registration center'};
+  document.getElementById('confirm-msg').textContent=`Delete this ${n[type]}?`;
+  document.getElementById('confirm-ok-btn').onclick=()=>{
+    if(type==='voter')VOTERS=VOTERS.filter(v=>v.id!==id);
+    if(type==='user')USERS=USERS.filter(u=>u.id!==id);
+    if(type==='center')CENTERS=CENTERS.filter(c=>c.id!==id);
+    closeModal('confirm-modal');
+    if(type==='voter')renderVotersTable();
+    if(type==='user')renderUsersTable();
+    if(type==='center')renderCentersTable();
+    showToast(`${n[type]} deleted`,'success');
+  };
+  document.getElementById('confirm-modal').classList.add('open');
+}
+function confirmDeleteUser(id){
+  document.getElementById('confirm-msg').textContent='Delete this voter record?';
+  document.getElementById('confirm-ok-btn').onclick=()=>{VOTERS=VOTERS.filter(v=>v.id!==id);closeModal('confirm-modal');renderUserVotersTable();loadUserDash();showToast('Voter deleted','success')};
+  document.getElementById('confirm-modal').classList.add('open');
+}
+
+// ═══ VOTER FORM (USER SIDE) ═══
+function populateRegisterForm(){
+  populateLgaDropdown('rv-lga');
+  if(currentUser){document.getElementById('rv-lga').value=currentUser.lga;updateWards('rv-lga','rv-ward')}
+  const csel=document.getElementById('rv-center');
+  const cs=currentUser?CENTERS.filter(c=>c.lga===currentUser.lga):CENTERS;
+  csel.innerHTML='<option value="">Select Center</option>'+cs.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  if(currentUser)csel.value=currentUser.center;
+}
+function saveVoter(){
+  const f={name:document.getElementById('rv-name').value.trim(),gender:document.getElementById('rv-gender').value,dob:document.getElementById('rv-dob').value,phone:document.getElementById('rv-phone').value.trim(),lga:document.getElementById('rv-lga').value,ward:document.getElementById('rv-ward').value,center:document.getElementById('rv-center').value,status:document.getElementById('rv-status').value};
+  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!f.status){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,vin:document.getElementById('rv-vin').value.trim(),address:document.getElementById('rv-address').value.trim()});editingVoterId=null;showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,vin:document.getElementById('rv-vin').value.trim(),address:document.getElementById('rv-address').value.trim(),officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  clearVoterForm();loadUserDash();showUserPanel('upanel-voters','u-nav-voters');
+}
+function clearVoterForm(){
+  ['rv-name','rv-dob','rv-phone','rv-address','rv-vin'].forEach(id=>document.getElementById(id).value='');
+  ['rv-gender','rv-lga','rv-ward','rv-center','rv-status'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('reg-form-title').textContent='Register Voter';editingVoterId=null;
+}
+function editVoterUser(id){
+  const v=VOTERS.find(x=>x.id===id);if(!v)return;
+  showUserPanel('upanel-register','u-nav-register');
+  document.getElementById('reg-form-title').textContent='Edit Voter';editingVoterId=id;
+  document.getElementById('rv-name').value=v.name;document.getElementById('rv-gender').value=v.gender;
+  document.getElementById('rv-dob').value=v.dob;document.getElementById('rv-phone').value=v.phone;
+  document.getElementById('rv-address').value=v.address||'';
+  populateLgaDropdown('rv-lga');document.getElementById('rv-lga').value=v.lga;
+  updateWards('rv-lga','rv-ward');document.getElementById('rv-ward').value=v.ward;
+  const csel=document.getElementById('rv-center');
+  csel.innerHTML='<option value="">Select Center</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+  csel.value=v.center;document.getElementById('rv-vin').value=v.vin;document.getElementById('rv-status').value=v.status;
+}
+
+// ═══ MESSAGING ═══
+function updateMsgBadge(){
+  const unread=MESSAGES.filter(m=>!m.read).length;
+  const badge=document.getElementById('admin-msg-badge');
+  const dot=document.getElementById('admin-notif-dot');
+  if(unread>0){badge.textContent=unread;badge.style.display='block';dot.style.display='block'}
+  else{badge.style.display='none';dot.style.display='none'}
+  const unreadCount=document.getElementById('unread-count-label');
+  if(unreadCount)unreadCount.textContent=unread>0?`${unread} unread`:'';
+}
+function renderAdminMessages(){
+  updateMsgBadge();
+  const list=document.getElementById('admin-msg-list');
+  if(!MESSAGES.length){list.innerHTML='<div style="padding:30px;text-align:center;color:#ccc;font-size:13px">No messages</div>';return}
+  list.innerHTML=MESSAGES.map(m=>{
+    const off=USERS.find(u=>u.id===m.officerId)||{name:'Unknown Officer'};
+    return`<div class="msg-item ${!m.read?'unread':''} ${activeAdminMsgId===m.id?'active':''}" onclick="viewAdminMsg(${m.id})">
+      <div class="msg-item-name">${off.name}${!m.read?'<span class="msg-unread-dot"></span>':''}</div>
+      <div class="msg-item-meta">${m.lga} · ${m.center}</div>
+      <div class="msg-item-preview">${m.subject}: ${m.body}</div>
+      <div style="font-size:11px;color:#ccc;margin-top:3px">${m.date} ${m.time}</div>
+    </div>`;
+  }).join('');
+  if(activeAdminMsgId){viewAdminMsg(activeAdminMsgId,true)}
+}
+function viewAdminMsg(id,noRender){
+  activeAdminMsgId=id;
+  const m=MESSAGES.find(x=>x.id===id);if(!m)return;
+  m.read=true;
+  const off=USERS.find(u=>u.id===m.officerId)||{name:'Unknown',lga:'?',center:'?'};
+  const detail=document.getElementById('admin-msg-detail');
+  detail.innerHTML=`
+    <div class="msg-detail-head">
+      <div class="msg-detail-name">${m.subject}</div>
+      <div class="msg-detail-meta">
+        <span>From: <strong>${off.name}</strong></span>
+        <span>LGA: ${m.lga}</span>
+        <span>Center: ${m.center}</span>
+        <span>${m.date} ${m.time}</span>
+        <span class="msg-status-badge ${m.status==='resolved'?'resolved':'open'}" id="msg-status-label">${m.status==='resolved'?'Resolved':'Open'}</span>
+      </div>
+    </div>
+    <div class="msg-thread" id="msg-thread-${id}">
+      <div style="align-self:flex-start">
+        <div class="msg-bubble from-user">${m.body}<div class="msg-bubble-time">${m.date} ${m.time}</div></div>
+      </div>
+      ${m.replies.map(r=>`<div style="align-self:${r.from==='admin'?'flex-end':'flex-start'}"><div class="msg-bubble from-${r.from==='admin'?'admin':'user'}">${r.text}<div class="msg-bubble-time">${r.time}</div></div></div>`).join('')}
+    </div>
+    <div class="msg-compose">
+      <textarea placeholder="Type your reply..." id="admin-reply-input-${id}"></textarea>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <button class="btn btn-primary btn-sm" onclick="sendAdminReply(${id})"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Reply</button>
+        ${m.status==='open'?`<button class="btn btn-outline btn-sm" onclick="resolveMsg(${id})"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Resolve</button>`:''}
+      </div>
+    </div>`;
+  if(!noRender)renderAdminMessages();
+  updateMsgBadge();
+}
+function sendAdminReply(id){
+  const input=document.getElementById('admin-reply-input-'+id);
+  if(!input||!input.value.trim()){showToast('Please type a reply','error');return}
+  const m=MESSAGES.find(x=>x.id===id);if(!m)return;
+  const now=new Date();
+  m.replies.push({from:'admin',text:input.value.trim(),time:now.toLocaleDateString('en-GB')+' '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})});
+  showToast('Reply sent','success');
+  // show notification on user side
+  if(currentUser&&currentUser.id===m.officerId){document.getElementById('user-notif-dot').style.display='block';document.getElementById('user-msg-badge').style.display='block'}
+  viewAdminMsg(id,true);renderAdminMessages();
+}
+function resolveMsg(id){
+  const m=MESSAGES.find(x=>x.id===id);if(!m)return;
+  m.status='resolved';showToast('Issue marked as resolved','success');viewAdminMsg(id,true);renderAdminMessages();
+}
+
+function renderUserMessages(){
+  if(!currentUser)return;
+  const myMsgs=MESSAGES.filter(m=>m.officerId===currentUser.id);
+  const container=document.getElementById('user-sent-list');
+  const hasReply=myMsgs.some(m=>m.replies.length>0&&m.replies[m.replies.length-1].from==='admin');
+  if(hasReply){document.getElementById('user-notif-dot').style.display='none';document.getElementById('user-msg-badge').style.display='none'}
+  if(!myMsgs.length){container.innerHTML='<div style="padding:40px;text-align:center;color:#ccc"><svg viewBox="0 0 24 24" style="width:36px;height:36px;stroke:#ddd;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block;margin:0 auto 10px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><p style="font-size:13px">No messages yet.</p></div>';return}
+  container.innerHTML=myMsgs.map(m=>`<div class="compose-sent-item">
+    <div class="csi-header">
+      <div class="csi-subject">${m.subject} <span class="msg-status-badge ${m.status==='resolved'?'resolved':'open'}" style="font-size:11px">${m.status==='resolved'?'Resolved':'Open'}</span></div>
+      <div class="csi-meta">${m.date} · ${m.lga} · ${m.center}</div>
+    </div>
+    <div class="csi-body">${m.body}</div>
+    ${m.replies.filter(r=>r.from==='admin').map(r=>`<div class="csi-reply"><div class="csi-reply-label">Admin Reply</div><div class="csi-reply-text">${r.text}</div></div>`).join('')}
+  </div>`).join('');
+}
+function sendMessage(){
+  if(!currentUser)return;
+  const cat=document.getElementById('msg-category').value;
+  const body=document.getElementById('msg-body').value.trim();
+  if(!cat||!body){showToast('Please fill all fields','error');return}
+  const now=new Date();
+  MESSAGES.unshift({id:msgIdCounter++,officerId:currentUser.id,subject:cat,body,lga:currentUser.lga,center:currentUser.center,status:'open',date:now.toISOString().split('T')[0],time:now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}),read:false,replies:[]});
+  closeModal('new-msg-modal');
+  document.getElementById('msg-category').value='';document.getElementById('msg-body').value='';
+  showToast('Message sent to administrator','success');
+  updateMsgBadge();renderUserMessages();
+}
+
+// ═══ REPORTS ═══
+function genReport(type){
+  document.getElementById('range-inputs').style.display='none';
+  document.getElementById('center-inputs').style.display='none';
+  document.getElementById('report-output-area').style.display='none';
+  if(type==='range'){document.getElementById('range-inputs').style.display='block';return}
+  if(type==='center'){
+    document.getElementById('rpt-center').innerHTML='<option value="">-- Select --</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
+    document.getElementById('center-inputs').style.display='block';return;
+  }
+  const today=new Date().toISOString().split('T')[0];
+  let filt=VOTERS,title='',meta='';
+  if(type==='daily'){filt=VOTERS.filter(v=>v.recorded===today);title='Daily Report';meta='Date: '+today}
+  else if(type==='weekly'){const w=new Date();w.setDate(w.getDate()-7);filt=VOTERS.filter(v=>v.recorded>=w.toISOString().split('T')[0]);title='Weekly Report';meta='Last 7 days'}
+  else if(type==='range-go'){
+    const s=document.getElementById('rpt-start').value,e=document.getElementById('rpt-end').value;
+    if(!s||!e){showToast('Select both dates','error');return}
+    filt=VOTERS.filter(v=>v.recorded>=s&&v.recorded<=e);title='Date Range Report';meta=s+' to '+e;
+    document.getElementById('range-inputs').style.display='none';
+  } else if(type==='center-go'){
+    const cn=document.getElementById('rpt-center').value;const period=document.getElementById('rpt-period').value;
+    if(!cn){showToast('Select a center','error');return}
+    filt=VOTERS.filter(v=>v.center===cn);
+    if(period==='today')filt=filt.filter(v=>v.recorded===today);
+    else if(period==='week'){const w=new Date();w.setDate(w.getDate()-7);filt=filt.filter(v=>v.recorded>=w.toISOString().split('T')[0])}
+    title='Center Report — '+cn;meta=period==='today'?'Today':period==='week'?'This Week':'All Time';
+    document.getElementById('center-inputs').style.display='none';
+  }
+  const reg=filt.filter(v=>v.status==='Registered').length;
+  const prog=filt.filter(v=>v.status==='In Progress').length;
+  const notreg=filt.filter(v=>v.status==='Not Registered').length;
+  document.getElementById('rpt-title').textContent=title;
+  document.getElementById('rpt-meta').textContent=meta;
+  document.getElementById('rpt-sum').innerHTML=`
+    <div class="rs-item"><div class="rs-n" style="color:#111">${filt.length}</div><div class="rs-l">Total</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:var(--green)">${reg}</div><div class="rs-l">Registered</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:#c47d00">${prog}</div><div class="rs-l">In Progress</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:var(--red)">${notreg}</div><div class="rs-l">Not Registered</div></div>`;
+  document.getElementById('rpt-tbody').innerHTML=filt.map((v,i)=>`<tr>
+    <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${v.name}</td><td>${v.gender}</td>
+    <td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'—'}</td>
+    <td style="color:#aaa;font-size:12px">${v.recorded}</td>
+  </tr>`).join('');
+  document.getElementById('report-output-area').style.display='block';
+}
+function exportCSV(){
+  const h=['Name','Gender','DOB','Phone','LGA','Ward','Center','VIN','Status','Recorded'];
+  const rows=VOTERS.map(v=>[v.name,v.gender,v.dob,v.phone,v.lga,v.ward,v.center,v.vin,v.status,v.recorded]);
+  const csv=[h,...rows].map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent(csv);a.download='voters_export.csv';a.click();
+  showToast('CSV exported','success');
+}
+
+// ═══ STATS POPUP ═══
+const CENTER_TODAY=[
+  {name:"Nasarawa Govt School",lga:"Nasarawa",today:61,total:340,registered:220},
+  {name:"Fagge Community Hall",lga:"Fagge",today:47,total:290,registered:188},
+  {name:"Tarauni Central",lga:"Tarauni",today:42,total:510,registered:330},
+  {name:"Gwale Main Center",lga:"Gwale",today:35,total:420,registered:270},
+  {name:"Kumbotso Center",lga:"Kumbotso",today:29,total:195,registered:125},
+  {name:"Dala Town Center",lga:"Dala",today:24,total:280,registered:182},
+  {name:"Kano Municipal HQ",lga:"Kano Municipal",today:44,total:380,registered:245},
+  {name:"Ungogo Center",lga:"Ungogo",today:18,total:170,registered:108},
+];
+function openStatsPopup(type){
+  const popup=document.getElementById('stats-popup');
+  const body=document.getElementById('sp-body');
+  const title=document.getElementById('sp-title');
+  let html='';
+  if(type==='total'){
+    title.textContent='Total Recorded Voters';
+    const maxTotal=Math.max(...CENTER_TODAY.map(c=>c.total));
+    html=`<div class="sp-kpi-grid">
+      <div class="sp-kpi"><div class="sp-kpi-label">Total Voters</div><div class="sp-kpi-val green">15,320</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val blue">9,841</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">3,217</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Not Registered</div><div class="sp-kpi-val red">2,262</div></div>
+    </div>
+    <div class="sp-section-title">Registration by Center — All Time &amp; Today</div>
+    <div style="overflow-x:auto;margin-bottom:4px">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr>
+          <th style="text-align:left;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">Center</th>
+          <th style="text-align:left;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">LGA</th>
+          <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">All Time</th>
+          <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">Today</th>
+          <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">Registered</th>
+        </tr></thead>
+        <tbody>${CENTER_TODAY.slice().sort((a,b)=>b.total-a.total).map(c=>`<tr style="border-bottom:1px solid #f0f3ef">
+          <td style="padding:9px 10px;font-weight:500;color:#111">${c.name}</td>
+          <td style="padding:9px 10px;color:#888">${c.lga}</td>
+          <td style="padding:9px 10px;text-align:right"><span style="font-weight:600;color:var(--green)">${c.total}</span></td>
+          <td style="padding:9px 10px;text-align:right"><span class="badge ${c.today>=40?'green':'orange'}" style="font-size:11.5px">${c.today} today</span></td>
+          <td style="padding:9px 10px;text-align:right;color:#666">${c.registered}</td>
+        </tr>`).join('')}</tbody>
+      </table>
+    </div>`;
+  } else if(type==='today'){
+    title.textContent='Recorded Today — By Center';
+    const totalToday=CENTER_TODAY.reduce((s,c)=>s+c.today,0);
+    html=`<div class="sp-kpi-grid">
+      <div class="sp-kpi"><div class="sp-kpi-label">Total Today</div><div class="sp-kpi-val green">${totalToday}</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Centers Active</div><div class="sp-kpi-val blue">${CENTER_TODAY.length}</div></div>
+    </div>
+    <div class="sp-section-title">Today's Records by Center</div>
+    <div class="sp-progress-list">${CENTER_TODAY.sort((a,b)=>b.today-a.today).map(c=>`<div class="sp-prog-item"><div class="sp-prog-top"><span class="sp-prog-name">${c.name} <span style="font-size:11px;color:#aaa">(${c.lga})</span></span><span class="sp-prog-count">${c.today} today</span></div><div class="sp-prog-bar"><div class="sp-prog-fill ${c.today>35?'green':'red'}" style="width:${(c.today/80*100).toFixed(0)}%"></div></div></div>`).join('')}</div>`;
+  } else if(type==='week'){
+    title.textContent='Registered This Week';
+    html=`<div class="sp-kpi-grid">
+      <div class="sp-kpi"><div class="sp-kpi-label">This Week</div><div class="sp-kpi-val green">2,450</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Daily Average</div><div class="sp-kpi-val blue">350</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val green">1,580</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">620</div></div>
+    </div>
+    <div class="sp-section-title">Weekly Trend (Last 7 Days)</div>
+    <div class="sp-progress-list">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=>{const v=[320,380,290,440,410,280,330][i];return`<div class="sp-prog-item"><div class="sp-prog-top"><span class="sp-prog-name">${d}</span><span class="sp-prog-count">${v} voters</span></div><div class="sp-prog-bar"><div class="sp-prog-fill green" style="width:${(v/500*100).toFixed(0)}%"></div></div></div>`}).join('')}</div>`;
+  } else if(type==='registered'){
+    title.textContent='Registration Status Breakdown';
+    html=`<div class="sp-kpi-grid">
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val green">9,841</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">3,217</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Not Registered</div><div class="sp-kpi-val red">2,262</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Total</div><div class="sp-kpi-val blue">15,320</div></div>
+    </div>
+    <div class="sp-section-title">Status Per Center</div>
+    <div class="sp-progress-list">${CENTER_TODAY.map(c=>`<div class="sp-prog-item"><div class="sp-prog-top"><span class="sp-prog-name">${c.name}</span><span class="sp-prog-count">${c.registered} / ${c.total} registered</span></div><div class="sp-prog-bar"><div class="sp-prog-fill green" style="width:${(c.registered/c.total*100).toFixed(0)}%"></div></div></div>`).join('')}</div>`;
+  } else if(type==='lgas'){
+    title.textContent='Coverage — All 44 LGAs';
+    html=`<div class="sp-kpi-grid"><div class="sp-kpi"><div class="sp-kpi-label">LGAs Active</div><div class="sp-kpi-val green">44</div></div><div class="sp-kpi"><div class="sp-kpi-label">Total Centers</div><div class="sp-kpi-val blue">${CENTERS.length}</div></div></div>
+    <div class="sp-section-title">LGA Coverage</div>
+    <div style="display:flex;flex-wrap:wrap;gap:7px">${LGAS.map(l=>`<span style="background:var(--lgreen);color:var(--green);font-size:11.5px;font-weight:500;padding:4px 12px;border-radius:20px;border:1px solid #c8e6c9">${l}</span>`).join('')}</div>`;
+  }
+  body.innerHTML=html;
+  popup.classList.add('open');
+}
+function closeStatsPopup(){document.getElementById('stats-popup').classList.remove('open')}
+document.getElementById('stats-popup').addEventListener('click',e=>{if(e.target===document.getElementById('stats-popup'))closeStatsPopup()});
+
+// ═══ MODAL ═══
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal-overlay').forEach(o=>{o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open')})});
+
+// ═══ TOAST ═══
+function showToast(msg,type='success'){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+type;
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ═══ STATISTICS PANEL ═══
+let statsPeriod='today';
+function setStatsPeriod(p){
+  statsPeriod=p;
+  document.querySelectorAll('.stats-period-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sp-btn-'+p).classList.add('active');
+  renderStatisticsPanel();
+}
+function renderStatisticsPanel(){
+  const today=new Date().toISOString().split('T')[0];
+  const weekAgo=new Date();weekAgo.setDate(weekAgo.getDate()-7);
+  const weekStr=weekAgo.toISOString().split('T')[0];
+
+  // Filter voters by period
+  let filtered;
+  if(statsPeriod==='today') filtered=VOTERS.filter(v=>v.recorded===today);
+  else if(statsPeriod==='week') filtered=VOTERS.filter(v=>v.recorded>=weekStr);
+  else filtered=VOTERS;
+
+  const totalF=filtered.length;
+  const regF=filtered.filter(v=>v.status==='Registered').length;
+  const progF=filtered.filter(v=>v.status==='In Progress').length;
+  const notF=filtered.filter(v=>v.status==='Not Registered').length;
+
+  // KPI row
+  const periodLabel=statsPeriod==='today'?'Today':statsPeriod==='week'?'This Week':'All Time';
+  document.getElementById('stats-kpi-row').innerHTML=`
+    <div class="kpi"><div class="kpi-label">Total (${periodLabel})</div><div class="kpi-val">${totalF}</div></div>
+    <div class="kpi green"><div class="kpi-label">Registered</div><div class="kpi-val">${regF}</div><div class="kpi-sub">${totalF?((regF/totalF)*100).toFixed(1)+'%':'-'}</div></div>
+    <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val">${progF}</div><div class="kpi-sub">${totalF?((progF/totalF)*100).toFixed(1)+'%':'-'}</div></div>
+    <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val">${notF}</div><div class="kpi-sub">${totalF?((notF/totalF)*100).toFixed(1)+'%':'-'}</div></div>`;
+
+  // Update titles
+  const titles={'today':"Today's Registration by Center","week":"This Week's Registration by Center","all":"All-Time Registration by Center"};
+  document.getElementById('stats-table-title').textContent=titles[statsPeriod];
+  document.getElementById('stats-bar-title').textContent=statsPeriod==='today'?"Today's Records per Center":statsPeriod==='week'?"This Week per Center":"All-Time per Center";
+  document.getElementById('stats-table-date').textContent=statsPeriod==='today'?today:statsPeriod==='week'?weekStr+' to '+today:'';
+
+  // Build per-center data
+  const centerData=CENTERS.map(c=>{
+    const cv=filtered.filter(v=>v.center===c.name);
+    // always include today count alongside
+    const todayVoters=VOTERS.filter(v=>v.center===c.name&&v.recorded===today);
+    return {
+      name:c.name, lga:c.lga,
+      count:cv.length,
+      todayCount:todayVoters.length,
+      reg:cv.filter(v=>v.status==='Registered').length,
+      prog:cv.filter(v=>v.status==='In Progress').length,
+      notreg:cv.filter(v=>v.status==='Not Registered').length,
+      officers:USERS.filter(u=>u.center===c.name).length
+    };
+  }).filter(c=>statsPeriod==='all'?c.count>=0:c.count>0).sort((a,b)=>b.count-a.count);
+
+  // Table
+  if(!centerData.length){
+    document.getElementById('stats-centers-tbody').innerHTML=`<tr><td colspan="8" style="text-align:center;padding:30px;color:#ccc">No records for this period</td></tr>`;
+  } else {
+    document.getElementById('stats-centers-tbody').innerHTML=centerData.map((c,i)=>`<tr>
+      <td style="color:#aaa">${i+1}</td>
+      <td style="font-weight:600;color:#111">${c.name}</td>
+      <td>${c.lga}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-weight:700;font-size:15px;color:#111">${c.count}</span>
+          ${statsPeriod!=='today'?`<span class="badge ${c.todayCount>0?'green':'gray'}" style="font-size:11px">${c.todayCount} today</span>`:''}
+        </div>
+      </td>
+      <td><span class="badge green">${c.reg}</span></td>
+      <td><span class="badge orange">${c.prog}</span></td>
+      <td><span class="badge red">${c.notreg}</span></td>
+      <td><span class="badge gray">${c.officers}</span></td>
+    </tr>`).join('');
+  }
+  document.getElementById('stats-table-summary').textContent=`${centerData.length} center(s) • ${totalF} total records`;
+
+  // Bar chart
+  const maxCount=Math.max(...centerData.map(c=>c.count),1);
+  document.getElementById('stats-center-bars').innerHTML=centerData.slice(0,10).map(c=>`<div>
+    <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+      <span style="font-size:12.5px;font-weight:500;color:#333">${c.name}</span>
+      <div style="display:flex;gap:6px;align-items:center">
+        <span style="font-size:12px;color:#999">${c.count}</span>
+        ${statsPeriod!=='today'?`<span style="font-size:11px;background:var(--lgreen);color:var(--green);padding:1px 7px;border-radius:10px;font-weight:600">${c.todayCount} today</span>`:''}
+      </div>
+    </div>
+    <div style="height:8px;background:#eee;border-radius:4px;overflow:hidden">
+      <div style="height:100%;width:${(c.count/maxCount*100).toFixed(0)}%;background:var(--green);border-radius:4px"></div>
+    </div>
+  </div>`).join('');
+
+  // Status breakdown
+  const maxStat=Math.max(regF,progF,notF,1);
+  document.getElementById('stats-status-breakdown').innerHTML=`
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Registered</span><span style="font-size:13px;font-weight:600;color:var(--green)">${regF} (${totalF?((regF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((regF/totalF)*100).toFixed(1):0}%;background:var(--green);border-radius:5px"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">In Progress</span><span style="font-size:13px;font-weight:600;color:#c47d00">${progF} (${totalF?((progF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((progF/totalF)*100).toFixed(1):0}%;background:#f5a623;border-radius:5px"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Not Registered</span><span style="font-size:13px;font-weight:600;color:var(--red)">${notF} (${totalF?((notF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((notF/totalF)*100).toFixed(1):0}%;background:var(--red);border-radius:5px"></div></div></div>`;
+}
+
+// ═══ TIME ═══
+function updateTime(){
+  const s=new Date().toLocaleString('en-GB',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+  ['topbar-time','topbar-time2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=s});
+}
+
+// ═══ INIT ═══
+(function init(){
+  const tt=document.getElementById('ticker-track');
+  if(tt)tt.innerHTML+=tt.innerHTML;
+  document.getElementById('lga-tags-strip').innerHTML=LGAS.map(l=>`<span class="ltag">${l}</span>`).join('');
+  updateTime();setInterval(updateTime,30000);
+  checkMobileLayout();
+})();
+</script>
+</body>
+</html>
+
+please help me one more update which remove women just and change the name to aky-door-to-door political network and is not only for women is for both so make the update in the entire. that mean for registration of vorter and that of user we are to add gender. again please we can have many admin but those cannot create new admin and cannot delete admin cannot delete user so we have one that role is superAdmia
