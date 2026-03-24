@@ -544,17 +544,18 @@ tr:last-child td{border-bottom:none}
   <div id="page-home-top"></div>
 
   <div class="ticker"><div class="ticker-track" id="ticker-track">
-    <span class="ticker-item"><span class="tdot"></span>Total Registered: 15,320</span>
+    <span class="ticker-item"><span class="tdot"></span>Total Voters Recorded: 15,320</span>
     <span class="ticker-item"><span class="tdot"></span>Registered Today: 420</span>
     <span class="ticker-item"><span class="tdot"></span>This Week: 2,450</span>
-    <span class="ticker-item"><span class="tdot"></span>Male: 4,596</span>
-    <span class="ticker-item"><span class="tdot"></span>Female: 10,724</span>
-    <span class="ticker-item"><span class="tdot"></span>Gwale LGA: 35 registered today</span>
-    <span class="ticker-item"><span class="tdot"></span>Tarauni LGA: 42 registered today</span>
-    <span class="ticker-item"><span class="tdot"></span>Nasarawa LGA: 61 registered today</span>
-    <span class="ticker-item"><span class="tdot"></span>Kumbotso LGA: 29 registered today</span>
-    <span class="ticker-item"><span class="tdot"></span>Fagge LGA: 47 registered today</span>
-    <span class="ticker-item"><span class="tdot"></span>44 LGAs Active — All of Kano State</span>
+    <span class="ticker-item"><span class="tdot"></span>Registered: 9,841</span>
+    <span class="ticker-item"><span class="tdot"></span>In Progress: 3,217</span>
+    <span class="ticker-item"><span class="tdot"></span>Not Registered: 2,262</span>
+    <span class="ticker-item"><span class="tdot"></span>Gwale Center: 35 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Tarauni Central: 42 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Nasarawa School: 61 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Kumbotso Center: 29 today</span>
+    <span class="ticker-item"><span class="tdot"></span>Fagge Hall: 47 today</span>
+    <span class="ticker-item"><span class="tdot"></span>44 LGAs Active</span>
   </div></div>
 
   <!-- Hero -->
@@ -574,7 +575,7 @@ tr:last-child td{border-bottom:none}
         <p class="sub">Sign in to access the voter registration system</p>
         <div class="login-tabs">
           <button class="ltab active" onclick="setLoginRole('admin',this)">Admin</button>
-          <button class="ltab" onclick="setLoginRole('user',this)">Field Ambassador</button>
+          <button class="ltab" onclick="setLoginRole('user',this)">Field Officer</button>
         </div>
         <div class="fld"><label>Username</label><input type="text" id="login-user" placeholder="Enter username"/></div>
         <div class="fld"><label>Password</label><input type="password" id="login-pass" placeholder="••••••••"/></div>
@@ -587,10 +588,10 @@ tr:last-child td{border-bottom:none}
 
   <!-- Stats Bar -->
   <div class="statsbar" id="stats-bar">
-    <div class="sc" onclick="openStatsPopup('total')"><div class="sc-n">15,320</div><div class="sc-l">Total Registered</div><div class="sc-hint">Click to explore ↗</div></div>
-    <div class="sc" onclick="openStatsPopup('today')"><div class="sc-n">420</div><div class="sc-l">Registered Today</div><div class="sc-hint">Click for center detail ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('total')"><div class="sc-n">15,320</div><div class="sc-l">Total Recorded</div><div class="sc-hint">Click to explore ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('registered')"><div class="sc-n">9,841</div><div class="sc-l">Registered</div><div class="sc-hint">Click for breakdown ↗</div></div>
+    <div class="sc" onclick="openStatsPopup('today')"><div class="sc-n">420</div><div class="sc-l">Recorded Today</div><div class="sc-hint">Click for center detail ↗</div></div>
     <div class="sc" onclick="openStatsPopup('week')"><div class="sc-n">2,450</div><div class="sc-l">This Week</div><div class="sc-hint">Click for weekly view ↗</div></div>
-    <div class="sc"><div class="sc-n">10,724</div><div class="sc-l">Female</div><div class="sc-hint">70% of total</div></div>
     <div class="sc" onclick="openStatsPopup('lgas')"><div class="sc-n">44</div><div class="sc-l">LGAs Covered</div><div class="sc-hint">Click for LGA view ↗</div></div>
   </div>
 
@@ -664,7 +665,7 @@ tr:last-child td{border-bottom:none}
         <div class="sec-tag">About the Network</div>
         <div class="sec-h">Mobilizing Communities Across Kano State</div>
         <p>The AKY DOOR TO DOOR WOMEN AMBASSADORS is a civic initiative ensuring every citizen in Kano State is registered and ready to participate fully in the democratic process.</p>
-        <p>Field registration ambassadors are deployed across all 44 LGAs to collect voter information, track registration status, and monitor progress in real time through our digital platform.</p>
+        <p>Field registration officers are deployed across all 44 LGAs to collect voter information, track registration status, and monitor progress in real time through our digital platform.</p>
         <p>Our outreach targets all segments of the population including residents, market communities, and <strong>tertiary institution students and staff</strong> across Kano State.</p>
         <p>Administrators generate reports, monitor center-level activity, and ensure no eligible voter is left behind.</p>
         <div style="margin-top:16px;background:#fff;border-radius:10px;padding:16px 18px;border:1px solid var(--border)">
@@ -679,7 +680,7 @@ tr:last-child td{border-bottom:none}
         </div>
       </div>
       <div class="feat-g">
-        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="fname">Field Registration</div><div class="fdesc">Ambassadors collect voter data door to door across all communities.</div></div>
+        <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="fname">Field Registration</div><div class="fdesc">Officers collect voter data door to door across all communities.</div></div>
         <div class="fcard"><div class="ficon red"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="fname">Live Monitoring</div><div class="fdesc">Real-time statistics and progress tracking per center and LGA.</div></div>
         <div class="fcard"><div class="ficon red"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="fname">44 LGA Coverage</div><div class="fdesc">Full coverage of all Local Government Areas in Kano State.</div></div>
         <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div class="fname">Tertiary Institutions</div><div class="fdesc">Reaching students and staff in universities, polytechnics and colleges.</div></div>
@@ -688,8 +689,8 @@ tr:last-child td{border-bottom:none}
   </section>
 
   <div class="lga-strip">
-    <h3>Active Coverage — All 44 Local Government Areas of Kano State</h3>
-    <p style="color:rgba(255,255,255,.82);font-size:13.5px;margin-top:10px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7">Our field ambassadors are deployed and active across all 44 local government areas of Kano State, ensuring comprehensive voter outreach and registration coverage throughout the entire state.</p>
+    <h3>Active Coverage — All 44 LGAs of Kano State</h3>
+    <div class="lga-tags" id="lga-tags-strip"></div>
   </div>
 
   <footer class="pub-footer">
@@ -701,9 +702,9 @@ tr:last-child td{border-bottom:none}
         </div>
         <div class="fdesc2">A civic initiative mobilizing citizens across all 44 LGAs of Kano State for full voter participation and democratic engagement.</div>
         <div style="margin-top:14px;display:flex;flex-direction:column;gap:7px">
-          <a href="mailto:info@door-to-door.org.ng" style="font-size:12.5px;color:#7cc99a;text-decoration:none;display:flex;align-items:center;gap:7px">
+          <a href="/cdn-cgi/l/email-protection#4d2c26342922223f7f2922223f2c202f2c3e3e2c29223f3e0d2a202c2421632e2220" style="font-size:12.5px;color:#7cc99a;text-decoration:none;display:flex;align-items:center;gap:7px">
             <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:#7cc99a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            info@door-to-door.org.ng
+                        <span class="__cf_email__" data-cfemail="6a0b01130e050518580e0505180b07080b19190b0e0518192a0d070b030644090507"><span class="__cf_email__" data-cfemail="90f1fbe9f4ffffe2a2f4ffffe2f1fdf2f1e3e3f1f4ffe2e3d0f7fdf1f9fcbef3fffd">[email&#160;protected]</span></span>
 </a>
           <a href="tel:08032849071" style="font-size:12.5px;color:#888;text-decoration:none;display:flex;align-items:center;gap:7px">
             <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:#888;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 7.59 7.59l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -721,7 +722,7 @@ tr:last-child td{border-bottom:none}
     <div class="foot-bot">
       <div class="fcopy">© 2025 AKY DOOR TO DOOR WOMEN AMBASSADORS. Kano State, Nigeria.</div>
       <div style="display:flex;align-items:center;gap:16px">
-               <a href="mailto:info@door-to-door.org.ng" style="font-size:11.5px;color:#555;text-decoration:none">info@door-to-door.org.ng</a>
+               <a href="/cdn-cgi/l/email-protection#01606a78656e6e7333656e6e73606c6360727260656e737241666c60686d2f626e6c" style="font-size:11.5px;color:#555;text-decoration:none"><span class="__cf_email__" data-cfemail="e7868c9e83888895d583888895868a858694948683889594a7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="4a2b21332e252538782e2525382b27282b39392b2e2538390a2d272b232664292527">[email&#160;protected]</span></span></a>
  <div class="fdom">door-to-door.org.ng</div>
       </div>
     </div>
@@ -817,21 +818,21 @@ tr:last-child td{border-bottom:none}
       <!-- DASHBOARD -->
       <div class="panel active" id="panel-dash">
         <div class="kpi-grid">
-          <div class="kpi green"><div class="kpi-label">Total Registered</div><div class="kpi-val">15,320</div><div class="kpi-sub">All time</div></div>
-          <div class="kpi blue"><div class="kpi-label">Registered Today</div><div class="kpi-val">420</div><div class="kpi-sub">Active registrations</div></div>
-          <div class="kpi gold"><div class="kpi-label">This Week</div><div class="kpi-val">2,450</div><div class="kpi-sub">7-day total</div></div>
-          <div class="kpi"><div class="kpi-label">Active Ambassadors</div><div class="kpi-val">24</div><div class="kpi-sub">Field deployed</div></div>
+          <div class="kpi green"><div class="kpi-label">Total Voters</div><div class="kpi-val">15,320</div><div class="kpi-sub">All time</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val">9,841</div><div class="kpi-sub">64.2% of total</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val">3,217</div><div class="kpi-sub">21.0% of total</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val">2,262</div><div class="kpi-sub">14.8% of total</div></div>
         </div>
         <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
-          <div class="kpi"><div class="kpi-label">Male</div><div class="kpi-val">4,596</div><div class="kpi-sub">30% of total</div></div>
-          <div class="kpi"><div class="kpi-label">Female</div><div class="kpi-val">10,724</div><div class="kpi-sub">70% of total</div></div>
-          <div class="kpi green"><div class="kpi-label">LGAs Covered</div><div class="kpi-val">44</div><div class="kpi-sub">All of Kano State</div></div>
+          <div class="kpi"><div class="kpi-label">Recorded Today</div><div class="kpi-val">420</div></div>
+          <div class="kpi"><div class="kpi-label">This Week</div><div class="kpi-val">2,450</div></div>
+          <div class="kpi"><div class="kpi-label">Active Officers</div><div class="kpi-val">24</div></div>
         </div>
         <div class="dash-grid">
           <div class="card">
             <div class="card-head"><h3>Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showPanel('panel-voters','a-nav-voters')">View All</button></div>
             <div class="card-body" style="padding:0"><div class="tbl-wrap">
-              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Center</th><th>Pre-Reg No.</th><th>Date</th></tr></thead>
+              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Center</th><th>Status</th><th>Date</th></tr></thead>
               <tbody id="dash-recent-voters"></tbody></table>
             </div></div>
           </div>
@@ -846,11 +847,12 @@ tr:last-child td{border-bottom:none}
             <div class="card-body"><div class="center-bars" id="center-bars"></div></div>
           </div>
           <div class="card">
-            <div class="card-head"><h3>Gender Breakdown</h3></div>
+            <div class="card-head"><h3>Status Breakdown</h3></div>
             <div class="card-body">
               <div style="display:flex;flex-direction:column;gap:14px;padding:4px 0">
-                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Female</span><span style="font-size:13px;font-weight:600;color:var(--green)">10,724 (70%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:70%;background:var(--green);border-radius:5px"></div></div></div>
-                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Male</span><span style="font-size:13px;font-weight:600;color:#1565c0">4,596 (30%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:30%;background:#1565c0;border-radius:5px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Registered</span><span style="font-size:13px;font-weight:600;color:var(--green)">9,841 (64.2%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:64.2%;background:var(--green);border-radius:5px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">In Progress</span><span style="font-size:13px;font-weight:600;color:#c47d00">3,217 (21.0%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:21%;background:#f5a623;border-radius:5px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Not Registered</span><span style="font-size:13px;font-weight:600;color:var(--red)">2,262 (14.8%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:14.8%;background:var(--red);border-radius:5px"></div></div></div>
               </div>
             </div>
           </div>
@@ -863,13 +865,14 @@ tr:last-child td{border-bottom:none}
           <button class="btn btn-primary" onclick="openVoterModal()"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Register Voter</button>
         </div>
         <div class="filters">
-          <input type="text" id="voter-search" placeholder="Search name, pre-reg no., phone..." oninput="renderVotersTable()"/>
+          <input type="text" id="voter-search" placeholder="Search name, VIN, phone..." oninput="renderVotersTable()"/>
           <select id="voter-lga-filter" onchange="renderVotersTable()"><option value="">All LGAs</option></select>
+          <select id="voter-status-filter" onchange="renderVotersTable()"><option value="">All Status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select>
           <select id="voter-center-filter" onchange="renderVotersTable()"><option value="">All Centers</option></select>
           <button class="btn btn-outline btn-sm" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Center</th><th>Pre-Reg No.</th><th>Recorded</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Center</th><th>VIN</th><th>Status</th><th>Recorded</th><th>Actions</th></tr></thead>
           <tbody id="voters-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
@@ -894,7 +897,7 @@ tr:last-child td{border-bottom:none}
           </select>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Full Name</th><th>Type</th><th>Username</th><th>Phone</th><th>LGA</th><th>School/Centre</th><th>Access</th><th>Created</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Type</th><th>Username</th><th>Phone</th><th>LGA</th><th>School/Centre</th><th>Pre-Number</th><th>Access</th><th>Created</th><th>Actions</th></tr></thead>
           <tbody id="users-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="users-count-label"></span></div></div>
@@ -910,7 +913,7 @@ tr:last-child td{border-bottom:none}
           <select id="center-lga-filter" onchange="renderCentersTable()"><option value="">All LGAs</option></select>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Voters</th><th>Today</th><th>Ambassadors</th><th>Created</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Voters</th><th>Today</th><th>Officers</th><th>Created</th><th>Actions</th></tr></thead>
           <tbody id="centers-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="centers-count-label"></span></div></div>
@@ -924,7 +927,7 @@ tr:last-child td{border-bottom:none}
         </div>
         <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:9px;padding:11px 16px;margin-bottom:16px;font-size:13px;color:#c47d00;display:flex;align-items:center;gap:9px">
           <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Admin accounts can manage voters, ambassadors, centers, reports and messages. Only the Super Admin can create or delete admin accounts. Admins cannot delete field ambassadors.
+          Admin accounts can manage voters, officers, centers, reports and messages. Only the Super Admin can create or delete admin accounts. Admins cannot delete field officers.
         </div>
         <div class="card"><div class="tbl-wrap">
           <table><thead><tr><th>#</th><th>Name</th><th>Username</th><th>Phone</th><th>Role</th><th>Created</th><th>Actions</th></tr></thead>
@@ -954,7 +957,7 @@ tr:last-child td{border-bottom:none}
           <div class="card-head"><h3 id="stats-table-title">Today's Registration by Center</h3><span style="font-size:12px;color:#aaa" id="stats-table-date"></span></div>
           <div class="tbl-wrap">
             <table>
-              <thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Recorded</th><th>Today</th><th>Male</th><th>Female</th><th>Ambassadors</th></tr></thead>
+              <thead><tr><th>#</th><th>Center Name</th><th>LGA</th><th>Total Recorded</th><th>Registered</th><th>In Progress</th><th>Not Registered</th><th>Officers</th></tr></thead>
               <tbody id="stats-centers-tbody"></tbody>
             </table>
           </div>
@@ -970,7 +973,7 @@ tr:last-child td{border-bottom:none}
             <div class="card-body"><div id="stats-center-bars" style="display:flex;flex-direction:column;gap:12px"></div></div>
           </div>
           <div class="card">
-            <div class="card-head"><h3>Gender Breakdown</h3></div>
+            <div class="card-head"><h3>Status Breakdown</h3></div>
             <div class="card-body"><div id="stats-status-breakdown" style="display:flex;flex-direction:column;gap:14px;padding:4px 0"></div></div>
           </div>
         </div>
@@ -997,7 +1000,7 @@ tr:last-child td{border-bottom:none}
           <div style="font-family:'Playfair Display',serif;font-size:19px;color:#111;margin-bottom:4px" id="rpt-title"></div>
           <div style="font-size:12.5px;color:#aaa;margin-bottom:16px" id="rpt-meta"></div>
           <div class="report-sum" id="rpt-sum"></div>
-          <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Gender</th><th>LGA</th><th>Ward</th><th>Center</th><th>Pre-Reg No.</th><th>Date</th></tr></thead><tbody id="rpt-tbody"></tbody></table></div>
+          <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Gender</th><th>LGA</th><th>Ward</th><th>Center</th><th>Status</th><th>VIN</th><th>Date</th></tr></thead><tbody id="rpt-tbody"></tbody></table></div>
           <div style="margin-top:14px;display:flex;gap:10px">
             <button class="btn btn-outline btn-sm" onclick="window.print()"><svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Print</button>
             <button class="btn btn-outline btn-sm" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
@@ -1007,7 +1010,7 @@ tr:last-child td{border-bottom:none}
 
       <!-- MESSAGES (ADMIN) -->
       <div class="panel" id="panel-messages">
-        <div class="page-hdr"><div><h2>Messages</h2><p>Communications from field ambassadors</p></div></div>
+        <div class="page-hdr"><div><h2>Messages</h2><p>Communications from field officers</p></div></div>
         <div class="msg-layout">
           <div class="msg-list">
             <div class="msg-list-head">
@@ -1064,7 +1067,7 @@ tr:last-child td{border-bottom:none}
       <div class="sb-user">
         <div class="sb-uid">Logged in as</div>
         <div class="sb-uname" id="user-sb-name">Officer</div>
-        <div class="sb-urole" id="user-sb-lga">Field Ambassador</div>
+        <div class="sb-urole" id="user-sb-lga">Field Officer</div>
       </div>
       <nav class="sb-nav">
         <div class="sb-section">Main</div>
@@ -1120,15 +1123,15 @@ tr:last-child td{border-bottom:none}
         <div style="height:14px"></div>
         <div class="kpi-grid">
           <div class="kpi green"><div class="kpi-label">My Total</div><div class="kpi-val" id="u-total">0</div></div>
-          <div class="kpi blue"><div class="kpi-label">Today</div><div class="kpi-val" id="u-today">0</div></div>
-          <div class="kpi gold"><div class="kpi-label">This Week</div><div class="kpi-val" id="u-week">0</div></div>
-          <div class="kpi"><div class="kpi-label">This Month</div><div class="kpi-val" id="u-month">0</div></div>
+          <div class="kpi blue"><div class="kpi-label">Registered</div><div class="kpi-val" id="u-reg">0</div></div>
+          <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val" id="u-prog">0</div></div>
+          <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val" id="u-notreg">0</div></div>
         </div>
         <div class="dash-grid">
           <div class="card">
             <div class="card-head"><h3>My Recent Voters</h3><button class="btn btn-outline btn-sm" onclick="showUserPanel('upanel-voters','u-nav-voters')">View All</button></div>
             <div class="card-body" style="padding:0"><div class="tbl-wrap">
-              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Pre-Reg No.</th><th>Date</th></tr></thead>
+              <table><thead><tr><th>Name</th><th>LGA</th><th>Ward</th><th>Status</th><th>Date</th></tr></thead>
               <tbody id="user-recent-tbody"></tbody></table>
             </div></div>
           </div>
@@ -1150,9 +1153,10 @@ tr:last-child td{border-bottom:none}
         </div>
         <div class="filters">
           <input type="text" id="u-voter-search" placeholder="Search..." oninput="renderUserVotersTable()"/>
+          <select id="u-voter-status-filter" onchange="renderUserVotersTable()"><option value="">All Status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Pre-Reg No.</th><th>Date</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>VIN</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
           <tbody id="u-voters-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="u-voters-count-label"></span></div></div>
@@ -1179,7 +1183,8 @@ tr:last-child td{border-bottom:none}
             </div>
             <div class="form-section-label red">Voter Registration Details</div>
             <div class="form-grid" style="margin-bottom:16px">
-              <div class="form-group form-full"><label>Pre-Registration Number <span class="req">*</span></label><input type="text" id="rv-prenumber" placeholder="e.g. PRE-00123"/></div>
+              <div class="form-group"><label>VIN (Optional)</label><input type="text" id="rv-vin" placeholder="Leave blank if not yet registered"/></div>
+              <div class="form-group"><label>Registration Status <span class="req">*</span></label><select id="rv-status"><option value="">Select status</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select></div>
             </div>
             <div style="display:flex;gap:10px">
               <button class="btn btn-primary" onclick="saveVoter()"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Save Voter Record</button>
@@ -1215,6 +1220,7 @@ tr:last-child td{border-bottom:none}
               <div class="prof-info-row"><span class="label">Phone</span><span class="value" id="u-prof-phone">-</span></div>
               <div class="prof-info-row"><span class="label">LGA</span><span class="value" id="u-prof-lga">-</span></div>
               <div class="prof-info-row"><span class="label">School / Centre</span><span class="value" id="u-prof-center">-</span></div>
+              <div class="prof-info-row"><span class="label">Pre-Number</span><span class="value" id="u-prof-prenumber">-</span></div>
               <div class="prof-info-row"><span class="label">Total Voters</span><span class="value" id="u-prof-total">-</span></div>
             </div>
           </div>
@@ -1254,7 +1260,8 @@ tr:last-child td{border-bottom:none}
       </div>
       <div class="form-section-label red" style="margin-bottom:12px">Registration Details</div>
       <div class="form-grid">
-        <div class="form-group form-full"><label>Pre-Registration Number <span class="req">*</span></label><input type="text" id="m-prenumber" placeholder="e.g. PRE-00123"/></div>
+        <div class="form-group"><label>VIN (Optional)</label><input type="text" id="m-vin" placeholder="Blank if not registered"/></div>
+        <div class="form-group"><label>Status <span class="req">*</span></label><select id="m-status"><option value="">Select</option><option>Registered</option><option>In Progress</option><option>Not Registered</option></select></div>
       </div>
     </div>
     <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('voter-modal')">Cancel</button><button class="btn btn-primary" onclick="saveVoterModal()">Save Record</button></div>
@@ -1266,7 +1273,7 @@ tr:last-child td{border-bottom:none}
   <div class="modal modal-sm">
     <div class="modal-head" style="background:#1a1a2e"><h3 style="color:#fff" id="admin-modal-title">Add Admin Account</h3><button class="modal-close white" onclick="closeModal('admin-modal')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="modal-body">
-      <div style="background:var(--lred);border-radius:8px;padding:10px 13px;margin-bottom:14px;font-size:12.5px;color:var(--red)">New admins cannot create other admins or delete field ambassadors. Only Super Admin has those privileges.</div>
+      <div style="background:var(--lred);border-radius:8px;padding:10px 13px;margin-bottom:14px;font-size:12.5px;color:var(--red)">New admins cannot create other admins or delete field officers. Only Super Admin has those privileges.</div>
       <div class="form-grid">
         <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="adm-name"/></div>
         <div class="form-group"><label>Username <span class="req">*</span></label><input type="text" id="adm-uname"/></div>
@@ -1298,6 +1305,7 @@ tr:last-child td{border-bottom:none}
         <div class="form-group"><label>Password <span class="req">*</span></label><input type="password" id="u-pass" placeholder="Leave blank to keep existing"/></div>
         <div class="form-group"><label>LGA <span class="req">*</span></label><select id="u-lga" onchange="updateCentersForUser()"><option value="">Select LGA</option></select></div>
         <div class="form-group form-full"><label>School / Centre <span class="req">*</span></label><select id="u-center"><option value="">Select Center</option></select></div>
+        <div class="form-group form-full"><label>Pre-Number <span class="req">*</span></label><input type="text" id="u-prenumber" placeholder="e.g. PRE-001"/></div>
       </div>
       <div style="margin-top:12px;padding:12px 14px;background:var(--lgreen);border-radius:8px;border:1px solid #c8e6c9">
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-weight:600;color:var(--dgreen)">
@@ -1360,6 +1368,7 @@ tr:last-child td{border-bottom:none}
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
 <script>
   // ══════════════════════════════════════
 // KANO LGA + WARD DATA (from soluap.com)
@@ -1450,6 +1459,7 @@ let CENTERS = [
 const FN=["Amina","Fatima","Aisha","Maryam","Zainab","Hauwa","Rukayya","Safiya","Ramlatu","Bilkisu","Hadiza","Khadija","Asma'u","Ramatu","Nana","Falmata","Jamila","Binta","Ladidi","Hafsat"];
 const MN=["Usman","Ibrahim","Musa","Suleiman","Abdullahi","Kabiru","Haruna","Lawal","Bello","Ahmad","Yusuf","Rabiu","Sani","Nasiru","Tahir","Idris","Bashir","Auwal","Isa","Hamza"];
 const SN=["Sani","Musa","Ibrahim","Abdullahi","Garba","Umar","Bello","Yusuf","Lawal","Danjuma","Aliyu","Haruna","Kabiru","Idris","Abubakar","Isa","Suleiman","Aminu","Rabiu","Nasiru"];
+const STATUSES=["Registered","In Progress","Not Registered"];
 const ri=(a)=>a[Math.floor(Math.random()*a.length)];
 const rn=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
 
@@ -1463,6 +1473,7 @@ for(let i=0;i<80;i++){
   const ward=ri(wards);
   const cs=CENTERS.filter(c=>c.lga===lga);
   const center=cs.length?ri(cs):CENTERS[0];
+  const status=ri(STATUSES);
   const officer=ri(USERS);
   const dob=new Date(rn(1960,2005),rn(0,11),rn(1,28));
   const daysBack=rn(0,60);
@@ -1473,8 +1484,8 @@ for(let i=0;i<80;i++){
     phone:'080'+rn(10000000,99999999),
     address:'No '+rn(1,200)+', '+ward+' Area',
     lga,ward,center:center.name,
-    preNumber:'PRE-'+String(vid).padStart(5,'0'),
-    officerId:officer.id,
+    vin:status==='Registered'?'KN'+rn(100000,999999)+'A':'',
+    status,officerId:officer.id,
     recorded:rec.toISOString().split('T')[0]
   });
 }
@@ -1620,7 +1631,7 @@ function loadAdminDash(){
   }
   const tbody=document.getElementById('dash-recent-voters');
   const recent=VOTERS.slice(-8).reverse();
-  tbody.innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td><td style="font-family:monospace;font-size:12px">${v.preNumber||'—'}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
+  tbody.innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td><td>${statusBadge(v.status)}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
 
   const acts=[
     {t:'g',msg:'Fatima Musa registered voter Aisha Ibrahim',time:'2 min ago'},
@@ -1641,9 +1652,6 @@ function loadAdminDash(){
 function loadUserDash(){
   if(!currentUser)return;
   const my=VOTERS.filter(v=>v.officerId===currentUser.id);
-  const today=new Date().toISOString().split('T')[0];
-  const weekAgo=new Date();weekAgo.setDate(weekAgo.getDate()-7);const weekStr=weekAgo.toISOString().split('T')[0];
-  const monthAgo=new Date();monthAgo.setDate(monthAgo.getDate()-30);const monthStr=monthAgo.toISOString().split('T')[0];
   document.getElementById('user-sb-name').textContent=currentUser.name;
   document.getElementById('user-sb-lga').textContent=currentUser.lga+' — '+currentUser.center;
   const initials=currentUser.name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
@@ -1651,9 +1659,9 @@ function loadUserDash(){
   document.getElementById('user-dash-name').textContent=currentUser.name;
   document.getElementById('user-dash-meta').textContent=currentUser.center+' · '+currentUser.lga;
   document.getElementById('u-total').textContent=my.length;
-  document.getElementById('u-today').textContent=my.filter(v=>v.recorded===today).length;
-  document.getElementById('u-week').textContent=my.filter(v=>v.recorded>=weekStr).length;
-  document.getElementById('u-month').textContent=my.filter(v=>v.recorded>=monthStr).length;
+  document.getElementById('u-reg').textContent=my.filter(v=>v.status==='Registered').length;
+  document.getElementById('u-prog').textContent=my.filter(v=>v.status==='In Progress').length;
+  document.getElementById('u-notreg').textContent=my.filter(v=>v.status==='Not Registered').length;
   document.getElementById('u-prof-av').textContent=initials;
   document.getElementById('u-prof-name').textContent=currentUser.name;
   const typeLabel=currentUser.ambassadorType?`Field Ambassador — ${currentUser.ambassadorType==='D2D'?'Door-to-Door':currentUser.ambassadorType}`:'Field Ambassador';
@@ -1662,9 +1670,10 @@ function loadUserDash(){
   document.getElementById('u-prof-phone').textContent=currentUser.phone;
   document.getElementById('u-prof-lga').textContent=currentUser.lga;
   document.getElementById('u-prof-center').textContent=currentUser.center;
+  document.getElementById('u-prof-prenumber').textContent=currentUser.preNumber||'—';
   document.getElementById('u-prof-total').textContent=my.length;
   const recent=my.slice(-6).reverse();
-  document.getElementById('user-recent-tbody').innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td style="font-family:monospace;font-size:12px">${v.preNumber||'—'}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
+  document.getElementById('user-recent-tbody').innerHTML=recent.map(v=>`<tr><td style="font-weight:500">${v.name}</td><td>${v.lga}</td><td>${v.ward}</td><td>${statusBadge(v.status)}</td><td style="color:#aaa;font-size:12px">${v.recorded}</td></tr>`).join('');
 }
 
 function svgForAct(t){
@@ -1675,6 +1684,11 @@ function svgForAct(t){
 }
 
 // ═══ TABLES ═══
+function statusBadge(s){
+  if(s==='Registered')return`<span class="badge green">Registered</span>`;
+  if(s==='In Progress')return`<span class="badge orange">In Progress</span>`;
+  return`<span class="badge red">Not Registered</span>`;
+}
 const svgEdit=()=>`<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`;
 const svgTrash=()=>`<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></svg>`;
 
@@ -1712,8 +1726,9 @@ function updateCentersForUser(){
 function renderVotersTable(){
   const s=(document.getElementById('voter-search')||{}).value||'';
   const lga=(document.getElementById('voter-lga-filter')||{}).value||'';
+  const st=(document.getElementById('voter-status-filter')||{}).value||'';
   const ct=(document.getElementById('voter-center-filter')||{}).value||'';
-  const filt=VOTERS.filter(v=>(!s||v.name.toLowerCase().includes(s.toLowerCase())||(v.preNumber&&v.preNumber.toLowerCase().includes(s.toLowerCase()))||v.phone.includes(s))&&(!lga||v.lga===lga)&&(!ct||v.center===ct));
+  const filt=VOTERS.filter(v=>(!s||v.name.toLowerCase().includes(s.toLowerCase())||v.vin.includes(s)||v.phone.includes(s))&&(!lga||v.lga===lga)&&(!st||v.status===st)&&(!ct||v.center===ct));
   const pages=Math.ceil(filt.length/PER_PAGE)||1;
   if(voterPage>pages)voterPage=1;
   const slice=filt.slice((voterPage-1)*PER_PAGE,voterPage*PER_PAGE);
@@ -1722,7 +1737,8 @@ function renderVotersTable(){
     <td style="color:#aaa">${(voterPage-1)*PER_PAGE+i+1}</td>
     <td style="font-weight:500">${v.name}</td><td>${v.gender}</td><td>${v.dob}</td><td>${v.phone}</td>
     <td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td>
-    <td style="font-family:monospace;font-size:12px">${v.preNumber||'<span style="color:#ccc">—</span>'}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
     <td style="color:#aaa;font-size:12px">${v.recorded}</td>
     <td><div style="display:flex;gap:4px">
       <button class="btn-icon" title="Edit" onclick="editVoter(${v.id})">${svgEdit()}</button>
@@ -1764,6 +1780,7 @@ function renderUsersTable(){
     <td>${u.phone}</td>
     <td>${u.lga}</td>
     <td>${u.center}</td>
+    <td style="font-family:monospace;font-size:12px">${u.preNumber||'<span style="color:#ccc">—</span>'}</td>
     <td>
       <span class="badge ${u.access!==false?'green':'red'}" style="cursor:pointer" title="Click to toggle access" onclick="toggleAmbassadorAccess(${u.id})">
         ${u.access!==false?'Active':'Suspended'}
@@ -1799,12 +1816,14 @@ function renderCentersTable(){
 function renderUserVotersTable(){
   if(!currentUser)return;
   const s=(document.getElementById('u-voter-search')||{}).value||'';
-  const filt=VOTERS.filter(v=>v.officerId===currentUser.id&&(!s||v.name.toLowerCase().includes(s.toLowerCase())));
+  const st=(document.getElementById('u-voter-status-filter')||{}).value||'';
+  const filt=VOTERS.filter(v=>v.officerId===currentUser.id&&(!s||v.name.toLowerCase().includes(s.toLowerCase()))&&(!st||v.status===st));
   document.getElementById('u-voters-count-label').textContent=`${filt.length} voter(s)`;
   document.getElementById('u-voters-tbody').innerHTML=filt.map((v,i)=>`<tr>
     <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${v.name}</td><td>${v.gender}</td>
     <td>${v.dob}</td><td>${v.phone}</td><td>${v.lga}</td><td>${v.ward}</td>
-    <td style="font-family:monospace;font-size:12px">${v.preNumber||'<span style="color:#ccc">—</span>'}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'<span style="color:#ccc">—</span>'}</td>
+    <td>${statusBadge(v.status)}</td>
     <td style="color:#aaa;font-size:12px">${v.recorded}</td>
     <td><div style="display:flex;gap:4px">
       <button class="btn-icon" onclick="editVoterUser(${v.id})">${svgEdit()}</button>
@@ -1824,21 +1843,21 @@ function openVoterModal(voter){
     document.getElementById('m-dob').value=voter.dob;document.getElementById('m-phone').value=voter.phone;
     document.getElementById('m-address').value=voter.address||'';document.getElementById('m-lga').value=voter.lga;
     updateWards('m-lga','m-ward');document.getElementById('m-ward').value=voter.ward;
-    document.getElementById('m-center').value=voter.center;document.getElementById('m-prenumber').value=voter.preNumber||'';
+    document.getElementById('m-center').value=voter.center;document.getElementById('m-vin').value=voter.vin;
+    document.getElementById('m-status').value=voter.status;
   } else {
     document.getElementById('voter-modal-title').textContent='Register Voter';editingVoterId=null;
-    ['m-name','m-dob','m-phone','m-address','m-prenumber'].forEach(id=>document.getElementById(id).value='');
-    ['m-gender','m-lga','m-ward','m-center'].forEach(id=>document.getElementById(id).value='');
+    ['m-name','m-dob','m-phone','m-address','m-vin'].forEach(id=>document.getElementById(id).value='');
+    ['m-gender','m-lga','m-ward','m-center','m-status'].forEach(id=>document.getElementById(id).value='');
   }
   document.getElementById('voter-modal').classList.add('open');
 }
 function editVoter(id){openVoterModal(VOTERS.find(x=>x.id===id))}
 function saveVoterModal(){
-  const f={name:document.getElementById('m-name').value.trim(),gender:document.getElementById('m-gender').value,dob:document.getElementById('m-dob').value,phone:document.getElementById('m-phone').value.trim(),lga:document.getElementById('m-lga').value,ward:document.getElementById('m-ward').value,center:document.getElementById('m-center').value};
-  const preNumber=document.getElementById('m-prenumber').value.trim();
-  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
-  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber,address:document.getElementById('m-address').value.trim()});showToast('Voter updated','success')}
-  else{VOTERS.push({id:vid++,...f,preNumber,address:document.getElementById('m-address').value.trim(),officerId:1,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  const f={name:document.getElementById('m-name').value.trim(),gender:document.getElementById('m-gender').value,dob:document.getElementById('m-dob').value,phone:document.getElementById('m-phone').value.trim(),lga:document.getElementById('m-lga').value,ward:document.getElementById('m-ward').value,center:document.getElementById('m-center').value,status:document.getElementById('m-status').value};
+  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!f.status){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,vin:document.getElementById('m-vin').value.trim(),address:document.getElementById('m-address').value.trim()});showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,vin:document.getElementById('m-vin').value.trim(),address:document.getElementById('m-address').value.trim(),officerId:1,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
   closeModal('voter-modal');renderVotersTable();
 }
 
@@ -1852,11 +1871,12 @@ function openUserModal(user){
     document.getElementById('u-uname').value=user.username;
     document.getElementById('u-phone').value=user.phone;
     document.getElementById('u-pass').value='';
+    document.getElementById('u-prenumber').value=user.preNumber||'';
     document.getElementById('u-lga').value=user.lga;updateCentersForUser();document.getElementById('u-center').value=user.center;
     document.getElementById('u-access').checked=user.access!==false;
   } else {
     document.getElementById('user-modal-title').textContent='Add Field Ambassador';editingUserId=null;
-    ['u-name','u-uname','u-phone','u-pass'].forEach(id=>document.getElementById(id).value='');
+    ['u-name','u-uname','u-phone','u-pass','u-prenumber'].forEach(id=>document.getElementById(id).value='');
     ['u-type','u-lga','u-center'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('u-center').innerHTML='<option value="">Select Center</option>';
     document.getElementById('u-access').checked=true;
@@ -1871,18 +1891,19 @@ function saveUser(){
   const phone=document.getElementById('u-phone').value.trim();
   const lga=document.getElementById('u-lga').value;
   const center=document.getElementById('u-center').value;
+  const preNumber=document.getElementById('u-prenumber').value.trim();
   const access=document.getElementById('u-access').checked;
-  if(!name||!ambassadorType||!username||!phone||!lga||!center){showToast('Fill all required fields','error');return}
+  if(!name||!ambassadorType||!username||!phone||!lga||!center||!preNumber){showToast('Fill all required fields','error');return}
   const pass=document.getElementById('u-pass').value.trim();
   if(editingUserId){
     const u=USERS.find(x=>x.id===editingUserId);
-    Object.assign(u,{name,ambassadorType,username,phone,lga,center,access});
+    Object.assign(u,{name,ambassadorType,username,phone,lga,center,preNumber,access});
     if(pass)u.password=pass;
     showToast('Ambassador updated','success');
   } else {
     if(!pass){showToast('Password required','error');return}
     if(USERS.find(x=>x.username===username)){showToast('Username already taken','error');return}
-    USERS.push({id:USERS.length+1,name,ambassadorType,username,phone,password:pass,lga,center,access,created:new Date().toISOString().split('T')[0]});
+    USERS.push({id:USERS.length+1,name,ambassadorType,username,phone,password:pass,lga,center,preNumber,access,created:new Date().toISOString().split('T')[0]});
     showToast('Ambassador created','success');
   }
   closeModal('user-modal');renderUsersTable();
@@ -2013,16 +2034,15 @@ function populateRegisterForm(){
   if(currentUser)csel.value=currentUser.center;
 }
 function saveVoter(){
-  const f={name:document.getElementById('rv-name').value.trim(),gender:document.getElementById('rv-gender').value,dob:document.getElementById('rv-dob').value,phone:document.getElementById('rv-phone').value.trim(),lga:document.getElementById('rv-lga').value,ward:document.getElementById('rv-ward').value,center:document.getElementById('rv-center').value};
-  const preNumber=document.getElementById('rv-prenumber').value.trim();
-  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
-  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber,address:document.getElementById('rv-address').value.trim()});editingVoterId=null;showToast('Voter updated','success')}
-  else{VOTERS.push({id:vid++,...f,preNumber,address:document.getElementById('rv-address').value.trim(),officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  const f={name:document.getElementById('rv-name').value.trim(),gender:document.getElementById('rv-gender').value,dob:document.getElementById('rv-dob').value,phone:document.getElementById('rv-phone').value.trim(),lga:document.getElementById('rv-lga').value,ward:document.getElementById('rv-ward').value,center:document.getElementById('rv-center').value,status:document.getElementById('rv-status').value};
+  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!f.status){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,vin:document.getElementById('rv-vin').value.trim(),address:document.getElementById('rv-address').value.trim()});editingVoterId=null;showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,vin:document.getElementById('rv-vin').value.trim(),address:document.getElementById('rv-address').value.trim(),officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
   clearVoterForm();loadUserDash();showUserPanel('upanel-voters','u-nav-voters');
 }
 function clearVoterForm(){
-  ['rv-name','rv-dob','rv-phone','rv-address','rv-prenumber'].forEach(id=>document.getElementById(id).value='');
-  ['rv-gender','rv-lga','rv-ward','rv-center'].forEach(id=>document.getElementById(id).value='');
+  ['rv-name','rv-dob','rv-phone','rv-address','rv-vin'].forEach(id=>document.getElementById(id).value='');
+  ['rv-gender','rv-lga','rv-ward','rv-center','rv-status'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('reg-form-title').textContent='Register Voter';editingVoterId=null;
 }
 function editVoterUser(id){
@@ -2036,7 +2056,7 @@ function editVoterUser(id){
   updateWards('rv-lga','rv-ward');document.getElementById('rv-ward').value=v.ward;
   const csel=document.getElementById('rv-center');
   csel.innerHTML='<option value="">Select Center</option>'+CENTERS.map(c=>`<option value="${c.name}">${c.name}</option>`).join('');
-  csel.value=v.center;document.getElementById('rv-prenumber').value=v.preNumber||'';
+  csel.value=v.center;document.getElementById('rv-vin').value=v.vin;document.getElementById('rv-status').value=v.status;
 }
 
 // ═══ MESSAGING ═══
@@ -2170,25 +2190,28 @@ function genReport(type){
     title='Center Report — '+cn;meta=period==='today'?'Today':period==='week'?'This Week':'All Time';
     document.getElementById('center-inputs').style.display='none';
   }
-  const male=filt.filter(v=>v.gender==='Male').length;
-  const female=filt.filter(v=>v.gender==='Female').length;
+  const reg=filt.filter(v=>v.status==='Registered').length;
+  const prog=filt.filter(v=>v.status==='In Progress').length;
+  const notreg=filt.filter(v=>v.status==='Not Registered').length;
   document.getElementById('rpt-title').textContent=title;
   document.getElementById('rpt-meta').textContent=meta;
   document.getElementById('rpt-sum').innerHTML=`
     <div class="rs-item"><div class="rs-n" style="color:#111">${filt.length}</div><div class="rs-l">Total</div></div>
-    <div class="rs-item"><div class="rs-n" style="color:var(--green)">${female}</div><div class="rs-l">Female</div></div>
-    <div class="rs-item"><div class="rs-n" style="color:#1565c0">${male}</div><div class="rs-l">Male</div></div>`;
+    <div class="rs-item"><div class="rs-n" style="color:var(--green)">${reg}</div><div class="rs-l">Registered</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:#c47d00">${prog}</div><div class="rs-l">In Progress</div></div>
+    <div class="rs-item"><div class="rs-n" style="color:var(--red)">${notreg}</div><div class="rs-l">Not Registered</div></div>`;
   document.getElementById('rpt-tbody').innerHTML=filt.map((v,i)=>`<tr>
     <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${v.name}</td><td>${v.gender}</td>
     <td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td>
-    <td style="font-family:monospace;font-size:12px">${v.preNumber||'—'}</td>
+    <td>${statusBadge(v.status)}</td>
+    <td style="font-family:monospace;font-size:12px">${v.vin||'—'}</td>
     <td style="color:#aaa;font-size:12px">${v.recorded}</td>
   </tr>`).join('');
   document.getElementById('report-output-area').style.display='block';
 }
 function exportCSV(){
-  const h=['Name','Gender','DOB','Phone','LGA','Ward','Center','Pre-Reg No.','Recorded'];
-  const rows=VOTERS.map(v=>[v.name,v.gender,v.dob,v.phone,v.lga,v.ward,v.center,v.preNumber||'',v.recorded]);
+  const h=['Name','Gender','DOB','Phone','LGA','Ward','Center','VIN','Status','Recorded'];
+  const rows=VOTERS.map(v=>[v.name,v.gender,v.dob,v.phone,v.lga,v.ward,v.center,v.vin,v.status,v.recorded]);
   const csv=[h,...rows].map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');
   const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent(csv);a.download='voters_export.csv';a.click();
   showToast('CSV exported','success');
@@ -2211,13 +2234,13 @@ function openStatsPopup(type){
   const title=document.getElementById('sp-title');
   let html='';
   if(type==='total'){
-    title.textContent='Total Registered Voters';
+    title.textContent='Total Recorded Voters';
     const maxTotal=Math.max(...CENTER_TODAY.map(c=>c.total));
     html=`<div class="sp-kpi-grid">
-      <div class="sp-kpi"><div class="sp-kpi-label">Total Registered</div><div class="sp-kpi-val green">15,320</div></div>
-      <div class="sp-kpi"><div class="sp-kpi-label">Female</div><div class="sp-kpi-val blue">10,724</div></div>
-      <div class="sp-kpi"><div class="sp-kpi-label">Male</div><div class="sp-kpi-val gold">4,596</div></div>
-      <div class="sp-kpi"><div class="sp-kpi-label">LGAs Covered</div><div class="sp-kpi-val green">44</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Total Voters</div><div class="sp-kpi-val green">15,320</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val blue">9,841</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">3,217</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Not Registered</div><div class="sp-kpi-val red">2,262</div></div>
     </div>
     <div class="sp-section-title">Registration by Center — All Time &amp; Today</div>
     <div style="overflow-x:auto;margin-bottom:4px">
@@ -2227,17 +2250,19 @@ function openStatsPopup(type){
           <th style="text-align:left;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">LGA</th>
           <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">All Time</th>
           <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">Today</th>
+          <th style="text-align:right;padding:8px 10px;background:#f9faf8;border-bottom:1px solid var(--border);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.4px">Registered</th>
         </tr></thead>
         <tbody>${CENTER_TODAY.slice().sort((a,b)=>b.total-a.total).map(c=>`<tr style="border-bottom:1px solid #f0f3ef">
           <td style="padding:9px 10px;font-weight:500;color:#111">${c.name}</td>
           <td style="padding:9px 10px;color:#888">${c.lga}</td>
           <td style="padding:9px 10px;text-align:right"><span style="font-weight:600;color:var(--green)">${c.total}</span></td>
           <td style="padding:9px 10px;text-align:right"><span class="badge ${c.today>=40?'green':'orange'}" style="font-size:11.5px">${c.today} today</span></td>
+          <td style="padding:9px 10px;text-align:right;color:#666">${c.registered}</td>
         </tr>`).join('')}</tbody>
       </table>
     </div>`;
   } else if(type==='today'){
-    title.textContent='Registered Today — By Center';
+    title.textContent='Recorded Today — By Center';
     const totalToday=CENTER_TODAY.reduce((s,c)=>s+c.today,0);
     html=`<div class="sp-kpi-grid">
       <div class="sp-kpi"><div class="sp-kpi-label">Total Today</div><div class="sp-kpi-val green">${totalToday}</div></div>
@@ -2250,11 +2275,21 @@ function openStatsPopup(type){
     html=`<div class="sp-kpi-grid">
       <div class="sp-kpi"><div class="sp-kpi-label">This Week</div><div class="sp-kpi-val green">2,450</div></div>
       <div class="sp-kpi"><div class="sp-kpi-label">Daily Average</div><div class="sp-kpi-val blue">350</div></div>
-      <div class="sp-kpi"><div class="sp-kpi-label">Female</div><div class="sp-kpi-val green">1,715</div></div>
-      <div class="sp-kpi"><div class="sp-kpi-label">Male</div><div class="sp-kpi-val gold">735</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val green">1,580</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">620</div></div>
     </div>
     <div class="sp-section-title">Weekly Trend (Last 7 Days)</div>
     <div class="sp-progress-list">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=>{const v=[320,380,290,440,410,280,330][i];return`<div class="sp-prog-item"><div class="sp-prog-top"><span class="sp-prog-name">${d}</span><span class="sp-prog-count">${v} voters</span></div><div class="sp-prog-bar"><div class="sp-prog-fill green" style="width:${(v/500*100).toFixed(0)}%"></div></div></div>`}).join('')}</div>`;
+  } else if(type==='registered'){
+    title.textContent='Registration Status Breakdown';
+    html=`<div class="sp-kpi-grid">
+      <div class="sp-kpi"><div class="sp-kpi-label">Registered</div><div class="sp-kpi-val green">9,841</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">In Progress</div><div class="sp-kpi-val gold">3,217</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Not Registered</div><div class="sp-kpi-val red">2,262</div></div>
+      <div class="sp-kpi"><div class="sp-kpi-label">Total</div><div class="sp-kpi-val blue">15,320</div></div>
+    </div>
+    <div class="sp-section-title">Status Per Center</div>
+    <div class="sp-progress-list">${CENTER_TODAY.map(c=>`<div class="sp-prog-item"><div class="sp-prog-top"><span class="sp-prog-name">${c.name}</span><span class="sp-prog-count">${c.registered} / ${c.total} registered</span></div><div class="sp-prog-bar"><div class="sp-prog-fill green" style="width:${(c.registered/c.total*100).toFixed(0)}%"></div></div></div>`).join('')}</div>`;
   } else if(type==='lgas'){
     title.textContent='Coverage — All 44 LGAs';
     html=`<div class="sp-kpi-grid"><div class="sp-kpi"><div class="sp-kpi-label">LGAs Active</div><div class="sp-kpi-val green">44</div></div><div class="sp-kpi"><div class="sp-kpi-label">Total Centers</div><div class="sp-kpi-val blue">${CENTERS.length}</div></div></div>
@@ -2299,16 +2334,17 @@ function renderStatisticsPanel(){
   else filtered=VOTERS;
 
   const totalF=filtered.length;
-  const maleF=filtered.filter(v=>v.gender==='Male').length;
-  const femaleF=filtered.filter(v=>v.gender==='Female').length;
+  const regF=filtered.filter(v=>v.status==='Registered').length;
+  const progF=filtered.filter(v=>v.status==='In Progress').length;
+  const notF=filtered.filter(v=>v.status==='Not Registered').length;
 
   // KPI row
   const periodLabel=statsPeriod==='today'?'Today':statsPeriod==='week'?'This Week':'All Time';
   document.getElementById('stats-kpi-row').innerHTML=`
     <div class="kpi"><div class="kpi-label">Total (${periodLabel})</div><div class="kpi-val">${totalF}</div></div>
-    <div class="kpi blue"><div class="kpi-label">Today</div><div class="kpi-val">${VOTERS.filter(v=>v.recorded===today).length}</div></div>
-    <div class="kpi green"><div class="kpi-label">Female</div><div class="kpi-val">${femaleF}</div><div class="kpi-sub">${totalF?((femaleF/totalF)*100).toFixed(1)+'%':'-'}</div></div>
-    <div class="kpi"><div class="kpi-label">Male</div><div class="kpi-val">${maleF}</div><div class="kpi-sub">${totalF?((maleF/totalF)*100).toFixed(1)+'%':'-'}</div></div>`;
+    <div class="kpi green"><div class="kpi-label">Registered</div><div class="kpi-val">${regF}</div><div class="kpi-sub">${totalF?((regF/totalF)*100).toFixed(1)+'%':'-'}</div></div>
+    <div class="kpi gold"><div class="kpi-label">In Progress</div><div class="kpi-val">${progF}</div><div class="kpi-sub">${totalF?((progF/totalF)*100).toFixed(1)+'%':'-'}</div></div>
+    <div class="kpi red"><div class="kpi-label">Not Registered</div><div class="kpi-val">${notF}</div><div class="kpi-sub">${totalF?((notF/totalF)*100).toFixed(1)+'%':'-'}</div></div>`;
 
   // Update titles
   const titles={'today':"Today's Registration by Center","week":"This Week's Registration by Center","all":"All-Time Registration by Center"};
@@ -2319,14 +2355,16 @@ function renderStatisticsPanel(){
   // Build per-center data
   const centerData=CENTERS.map(c=>{
     const cv=filtered.filter(v=>v.center===c.name);
+    // always include today count alongside
     const todayVoters=VOTERS.filter(v=>v.center===c.name&&v.recorded===today);
     return {
       name:c.name, lga:c.lga,
       count:cv.length,
       todayCount:todayVoters.length,
-      male:cv.filter(v=>v.gender==='Male').length,
-      female:cv.filter(v=>v.gender==='Female').length,
-      ambassadors:USERS.filter(u=>u.center===c.name).length
+      reg:cv.filter(v=>v.status==='Registered').length,
+      prog:cv.filter(v=>v.status==='In Progress').length,
+      notreg:cv.filter(v=>v.status==='Not Registered').length,
+      officers:USERS.filter(u=>u.center===c.name).length
     };
   }).filter(c=>statsPeriod==='all'?c.count>=0:c.count>0).sort((a,b)=>b.count-a.count);
 
@@ -2344,10 +2382,10 @@ function renderStatisticsPanel(){
           ${statsPeriod!=='today'?`<span class="badge ${c.todayCount>0?'green':'gray'}" style="font-size:11px">${c.todayCount} today</span>`:''}
         </div>
       </td>
-      <td><span class="badge ${c.todayCount>0?'green':'gray'}">${c.todayCount}</span></td>
-      <td><span class="badge blue">${c.male}</span></td>
-      <td><span class="badge green">${c.female}</span></td>
-      <td><span class="badge gray">${c.ambassadors}</span></td>
+      <td><span class="badge green">${c.reg}</span></td>
+      <td><span class="badge orange">${c.prog}</span></td>
+      <td><span class="badge red">${c.notreg}</span></td>
+      <td><span class="badge gray">${c.officers}</span></td>
     </tr>`).join('');
   }
   document.getElementById('stats-table-summary').textContent=`${centerData.length} center(s) • ${totalF} total records`;
@@ -2367,10 +2405,12 @@ function renderStatisticsPanel(){
     </div>
   </div>`).join('');
 
-  // Gender breakdown
+  // Status breakdown
+  const maxStat=Math.max(regF,progF,notF,1);
   document.getElementById('stats-status-breakdown').innerHTML=`
-    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Female</span><span style="font-size:13px;font-weight:600;color:var(--green)">${femaleF} (${totalF?((femaleF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((femaleF/totalF)*100).toFixed(1):0}%;background:var(--green);border-radius:5px"></div></div></div>
-    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Male</span><span style="font-size:13px;font-weight:600;color:#1565c0">${maleF} (${totalF?((maleF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((maleF/totalF)*100).toFixed(1):0}%;background:#1565c0;border-radius:5px"></div></div></div>`;
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Registered</span><span style="font-size:13px;font-weight:600;color:var(--green)">${regF} (${totalF?((regF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((regF/totalF)*100).toFixed(1):0}%;background:var(--green);border-radius:5px"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">In Progress</span><span style="font-size:13px;font-weight:600;color:#c47d00">${progF} (${totalF?((progF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((progF/totalF)*100).toFixed(1):0}%;background:#f5a623;border-radius:5px"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:13px;color:#555">Not Registered</span><span style="font-size:13px;font-weight:600;color:var(--red)">${notF} (${totalF?((notF/totalF)*100).toFixed(1):0}%)</span></div><div style="height:10px;background:#eee;border-radius:5px"><div style="height:100%;width:${totalF?((notF/totalF)*100).toFixed(1):0}%;background:var(--red);border-radius:5px"></div></div></div>`;
 }
 
 // ═══ TIME ═══
@@ -2395,6 +2435,7 @@ function closeMobileMenu(){
 (function init(){
   const tt=document.getElementById('ticker-track');
   if(tt)tt.innerHTML+=tt.innerHTML;
+  document.getElementById('lga-tags-strip').innerHTML=LGAS.map(l=>`<span class="ltag">${l}</span>`).join('');
   updateTime();setInterval(updateTime,60000);
   checkMobileLayout();
   // Populate login hint default
