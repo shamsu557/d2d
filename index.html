@@ -863,7 +863,7 @@ tr:last-child td{border-bottom:none}
           <button class="btn btn-outline btn-sm" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Center</th><th>Pre-Reg No.</th><th>Recorded</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Center</th><th>Pre-Reg No.</th><th>Recorded</th><th>Actions</th></tr></thead>
           <tbody id="voters-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
@@ -1166,7 +1166,7 @@ tr:last-child td{border-bottom:none}
           <input type="text" id="u-voter-search" placeholder="Search..." oninput="renderUserVotersTable()"/>
         </div>
         <div class="card"><div class="tbl-wrap">
-          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>DOB</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Pre-Reg No.</th><th>Date</th><th>Actions</th></tr></thead>
+          <table><thead><tr><th>#</th><th>Full Name</th><th>Gender</th><th>Phone</th><th>LGA</th><th>Ward</th><th>Pre-Reg No.</th><th>Date</th><th>Actions</th></tr></thead>
           <tbody id="u-voters-tbody"></tbody></table>
         </div>
         <div style="padding:10px 14px;border-top:1px solid var(--border)"><span style="font-size:12.5px;color:#aaa" id="u-voters-count-label"></span></div></div>
@@ -1181,9 +1181,7 @@ tr:last-child td{border-bottom:none}
             <div class="form-grid" style="margin-bottom:16px">
               <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="rv-name" placeholder="Enter full name"/></div>
               <div class="form-group"><label>Gender <span class="req">*</span></label><select id="rv-gender"><option value="">Select gender</option><option>Female</option><option>Male</option></select></div>
-              <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="rv-dob"/></div>
               <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="rv-phone" placeholder="08012345678"/></div>
-              <div class="form-group form-full"><label>Address</label><input type="text" id="rv-address" placeholder="House number, street, area"/></div>
             </div>
             <div class="form-section-label">Location Information</div>
             <div class="form-grid" style="margin-bottom:16px">
@@ -1256,9 +1254,7 @@ tr:last-child td{border-bottom:none}
       <div class="form-grid" style="margin-bottom:14px">
         <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="m-name"/></div>
         <div class="form-group"><label>Gender <span class="req">*</span></label><select id="m-gender"><option value="">Select</option><option>Female</option><option>Male</option></select></div>
-        <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" id="m-dob"/></div>
         <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" id="m-phone" placeholder="08012345678"/></div>
-        <div class="form-group form-full"><label>Address</label><input type="text" id="m-address"/></div>
       </div>
       <div class="form-section-label" style="margin-bottom:12px">Location</div>
       <div class="form-grid" style="margin-bottom:14px">
@@ -1490,9 +1486,7 @@ for(let i=0;i<80;i++){
   const rec=new Date();rec.setDate(rec.getDate()-daysBack);
   VOTERS.push({
     id:vid++,name:fn+' '+ri(SN),gender:g,
-    dob:dob.toISOString().split('T')[0],
     phone:'080'+rn(10000000,99999999),
-    address:'No '+rn(1,200)+', '+ward+' Area',
     lga,ward,center:center.name,
     preNumber:'PRE-'+String(vid).padStart(5,'0'),
     officerId:officer.id,
@@ -1772,7 +1766,7 @@ function renderVotersTable(){
   document.getElementById('voters-count-label').textContent=`Showing ${slice.length} of ${filt.length} records`;
   document.getElementById('voters-tbody').innerHTML=slice.map((v,i)=>`<tr>
     <td style="color:#aaa">${(voterPage-1)*PER_PAGE+i+1}</td>
-    <td style="font-weight:500">${v.name}</td><td>${v.gender}</td><td>${v.dob}</td><td>${v.phone}</td>
+    <td style="font-weight:500">${v.name}</td><td>${v.gender}</td><td>${v.phone}</td>
     <td>${v.lga}</td><td>${v.ward}</td><td>${v.center}</td>
     <td style="font-family:monospace;font-size:12px">${v.preNumber||'<span style="color:#ccc">—</span>'}</td>
     <td style="color:#aaa;font-size:12px">${v.recorded}</td>
@@ -1855,7 +1849,7 @@ function renderUserVotersTable(){
   document.getElementById('u-voters-count-label').textContent=`${filt.length} voter(s)`;
   document.getElementById('u-voters-tbody').innerHTML=filt.map((v,i)=>`<tr>
     <td style="color:#aaa">${i+1}</td><td style="font-weight:500">${v.name}</td><td>${v.gender}</td>
-    <td>${v.dob}</td><td>${v.phone}</td><td>${v.lga}</td><td>${v.ward}</td>
+    <td>${v.phone}</td><td>${v.lga}</td><td>${v.ward}</td>
     <td style="font-family:monospace;font-size:12px">${v.preNumber||'<span style="color:#ccc">—</span>'}</td>
     <td style="color:#aaa;font-size:12px">${v.recorded}</td>
     <td><div style="display:flex;gap:4px">
@@ -1873,24 +1867,24 @@ function openVoterModal(voter){
   if(voter){
     document.getElementById('voter-modal-title').textContent='Edit Voter';editingVoterId=voter.id;
     document.getElementById('m-name').value=voter.name;document.getElementById('m-gender').value=voter.gender;
-    document.getElementById('m-dob').value=voter.dob;document.getElementById('m-phone').value=voter.phone;
-    document.getElementById('m-address').value=voter.address||'';document.getElementById('m-lga').value=voter.lga;
+    document.getElementById('m-phone').value=voter.phone;
+    document.getElementById('m-lga').value=voter.lga;
     updateWards('m-lga','m-ward');document.getElementById('m-ward').value=voter.ward;
     document.getElementById('m-center').value=voter.center;document.getElementById('m-prenumber').value=voter.preNumber||'';
   } else {
     document.getElementById('voter-modal-title').textContent='Register Voter';editingVoterId=null;
-    ['m-name','m-dob','m-phone','m-address','m-prenumber'].forEach(id=>document.getElementById(id).value='');
+    ['m-name','m-phone','m-prenumber'].forEach(id=>document.getElementById(id).value='');
     ['m-gender','m-lga','m-ward','m-center'].forEach(id=>document.getElementById(id).value='');
   }
   document.getElementById('voter-modal').classList.add('open');
 }
 function editVoter(id){openVoterModal(VOTERS.find(x=>x.id===id))}
 function saveVoterModal(){
-  const f={name:document.getElementById('m-name').value.trim(),gender:document.getElementById('m-gender').value,dob:document.getElementById('m-dob').value,phone:document.getElementById('m-phone').value.trim(),lga:document.getElementById('m-lga').value,ward:document.getElementById('m-ward').value,center:document.getElementById('m-center').value};
+  const f={name:document.getElementById('m-name').value.trim(),gender:document.getElementById('m-gender').value,phone:document.getElementById('m-phone').value.trim(),lga:document.getElementById('m-lga').value,ward:document.getElementById('m-ward').value,center:document.getElementById('m-center').value};
   const preNumber=document.getElementById('m-prenumber').value.trim();
-  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
-  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber,address:document.getElementById('m-address').value.trim()});showToast('Voter updated','success')}
-  else{VOTERS.push({id:vid++,...f,preNumber,address:document.getElementById('m-address').value.trim(),officerId:1,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  if(!f.name||!f.gender||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber});showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,preNumber,officerId:1,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
   closeModal('voter-modal');renderVotersTable();
 }
 
@@ -2065,15 +2059,15 @@ function populateRegisterForm(){
   if(currentUser)csel.value=currentUser.center;
 }
 function saveVoter(){
-  const f={name:document.getElementById('rv-name').value.trim(),gender:document.getElementById('rv-gender').value,dob:document.getElementById('rv-dob').value,phone:document.getElementById('rv-phone').value.trim(),lga:document.getElementById('rv-lga').value,ward:document.getElementById('rv-ward').value,center:document.getElementById('rv-center').value};
+  const f={name:document.getElementById('rv-name').value.trim(),gender:document.getElementById('rv-gender').value,phone:document.getElementById('rv-phone').value.trim(),lga:document.getElementById('rv-lga').value,ward:document.getElementById('rv-ward').value,center:document.getElementById('rv-center').value};
   const preNumber=document.getElementById('rv-prenumber').value.trim();
-  if(!f.name||!f.gender||!f.dob||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
-  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber,address:document.getElementById('rv-address').value.trim()});editingVoterId=null;showToast('Voter updated','success')}
-  else{VOTERS.push({id:vid++,...f,preNumber,address:document.getElementById('rv-address').value.trim(),officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
+  if(!f.name||!f.gender||!f.phone||!f.lga||!f.ward||!f.center||!preNumber){showToast('Fill all required fields','error');return}
+  if(editingVoterId){Object.assign(VOTERS.find(x=>x.id===editingVoterId),{...f,preNumber});editingVoterId=null;showToast('Voter updated','success')}
+  else{VOTERS.push({id:vid++,...f,preNumber,officerId:currentUser.id,recorded:new Date().toISOString().split('T')[0]});showToast('Voter registered','success')}
   clearVoterForm();loadUserDash();showUserPanel('upanel-voters','u-nav-voters');
 }
 function clearVoterForm(){
-  ['rv-name','rv-dob','rv-phone','rv-address','rv-prenumber'].forEach(id=>document.getElementById(id).value='');
+  ['rv-name','rv-phone','rv-prenumber'].forEach(id=>document.getElementById(id).value='');
   ['rv-gender','rv-lga','rv-ward','rv-center'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('reg-form-title').textContent='Register Voter';editingVoterId=null;
 }
@@ -2082,8 +2076,7 @@ function editVoterUser(id){
   showUserPanel('upanel-register','u-nav-register');
   document.getElementById('reg-form-title').textContent='Edit Voter';editingVoterId=id;
   document.getElementById('rv-name').value=v.name;document.getElementById('rv-gender').value=v.gender;
-  document.getElementById('rv-dob').value=v.dob;document.getElementById('rv-phone').value=v.phone;
-  document.getElementById('rv-address').value=v.address||'';
+  document.getElementById('rv-phone').value=v.phone;
   populateLgaDropdown('rv-lga');document.getElementById('rv-lga').value=v.lga;
   updateWards('rv-lga','rv-ward');document.getElementById('rv-ward').value=v.ward;
   const csel=document.getElementById('rv-center');
@@ -2239,8 +2232,8 @@ function genReport(type){
   document.getElementById('report-output-area').style.display='block';
 }
 function exportCSV(){
-  const h=['Name','Gender','DOB','Phone','LGA','Ward','Center','Pre-Reg No.','Recorded'];
-  const rows=VOTERS.map(v=>[v.name,v.gender,v.dob,v.phone,v.lga,v.ward,v.center,v.preNumber||'',v.recorded]);
+  const h=['Name','Gender','Phone','LGA','Ward','Center','Pre-Reg No.','Recorded'];
+  const rows=VOTERS.map(v=>[v.name,v.gender,v.phone,v.lga,v.ward,v.center,v.preNumber||'',v.recorded]);
   const csv=[h,...rows].map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');
   const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent(csv);a.download='voters_export.csv';a.click();
   showToast('CSV exported','success');
